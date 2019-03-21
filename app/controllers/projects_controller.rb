@@ -7,6 +7,10 @@ class ProjectsController < ApplicationController
     @projects = Project.all
   end
 
+  def rails
+    @rails = Project.rails
+  end
+
   def new
     @project = Project.new
   end
@@ -16,6 +20,7 @@ class ProjectsController < ApplicationController
   def edit; end
 
   def create
+    @project = Project.new(project_params)
     respond_to do |format|
       if @project.save
         format.html { redirect_to projects_path, notice: 'project was successfully created.' }
