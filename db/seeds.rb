@@ -40,3 +40,11 @@ Project.create!(
   thumb_image: 'http://placehold.it/350x200'
 )
 puts '9 projects created'
+
+3.times do |idx|
+  Project.last.technologies.create!(
+    name: "Technology #{idx}"
+  )
+end
+
+puts '3 technologies created'
