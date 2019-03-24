@@ -2,3 +2,7 @@
 <h1><%= @project.title %></h1>
 <em><%= @project.subtitle  %></em>
 <p><%= @project.body %></p>
+<h3>Technologies Used:</h3>
+<% @project.technologies.each do |t| %>
+  <p><%= t.name %></p>
+<% end %>

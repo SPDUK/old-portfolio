@@ -7,8 +7,14 @@ class ProjectsController < ApplicationController
     @projects = Project.all
   end
 
+  def rails
+    @rails = Project.rails
+  end
+
   def new
     @project = Project.new
+    # instantiates 3 technologies for the project and makes them available to the form
+    3.times { @project.technologies.build }
   end
 
   def show; end
@@ -16,6 +22,7 @@ class ProjectsController < ApplicationController
   def edit; end
 
   def create
+    @project = Project.new(project_params)
     respond_to do |format|
       if @project.save
         format.html { redirect_to projects_path, notice: 'project was successfully created.' }
@@ -53,7 +60,11 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
   end
 
+  # whitelists the fields and technologies_attributes
   def project_params
-    params.require(:project).permit(:title, :subtitle, :body)
+    params.require(:project).permit(:title,
+                                    :subtitle,
+                                    :body,
+                                    technologies_attributes: [:name])
   end
 end
