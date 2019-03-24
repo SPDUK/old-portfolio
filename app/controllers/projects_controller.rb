@@ -13,6 +13,8 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    # instantiates 3 technologies for the project and makes them available to the form
+    3.times { @project.technologies.build }
   end
 
   def show; end
@@ -58,7 +60,11 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
   end
 
+  # whitelists the fields and technologies_attributes
   def project_params
-    params.require(:project).permit(:title, :subtitle, :body)
+    params.require(:project).permit(:title,
+                                    :subtitle,
+                                    :body,
+                                    technologies_attributes: [:name])
   end
 end

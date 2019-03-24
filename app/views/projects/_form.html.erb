@@ -11,6 +11,17 @@
     <%= form.label :body %>
     <%= form.text_area :body %>
   </div>
+  <%# form within a form for nested attributes, 
+  from accepts_nested_attributes_for in controller, 
+  creates a field for each of the built technologies  %>
+  <ul>
+    <%= form.fields_for :technologies do |technology_form|  %>
+      <li>
+        <%= technology_form.label :name %>
+        <%= technology_form.text_field :name %>
+      </li>
+    <% end %>
+  </ul>
   <div class="actions">
     <%= form.submit %>
   </div>
