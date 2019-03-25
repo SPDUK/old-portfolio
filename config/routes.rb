@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root to: 'pages#home'
+  # custom path for devise
+  devise_for :users, path: "", path_names: { sign_in: "login", sign_out: "logout", sign_up: "register" }
+  root to: "pages#home"
   resources :projects, except: [:show]
   resources :blogs do
     member do
@@ -9,8 +11,8 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'projects/rails', to: 'projects#rails'
-  get 'project/:id', to: 'projects#show', as: 'project_show'
-  get '/about-me', to: 'pages#about'
-  get '/contact', to: 'pages#contact'
+  get "projects/rails", to: "projects#rails"
+  get "project/:id", to: "projects#show", as: "project_show"
+  get "/about-me", to: "pages#about"
+  get "/contact", to: "pages#contact"
 end

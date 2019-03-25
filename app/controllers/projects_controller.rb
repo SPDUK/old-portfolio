@@ -25,7 +25,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     respond_to do |format|
       if @project.save
-        format.html { redirect_to projects_path, notice: 'project was successfully created.' }
+        format.html { redirect_to projects_path, notice: "project was successfully created." }
         format.json { render :show, status: :created, location: @project }
       else
         format.html { render :new }
@@ -37,7 +37,7 @@ class ProjectsController < ApplicationController
   def update
     respond_to do |format|
       if @project.update(project_params)
-        format.html { redirect_to @project, notice: 'project was successfully updated.' }
+        format.html { redirect_to @project, notice: "project was successfully updated." }
         format.json { render :show, status: :ok, location: @project }
       else
         format.html { render :edit }
@@ -49,22 +49,22 @@ class ProjectsController < ApplicationController
   def destroy
     @project.destroy
     respond_to do |format|
-      format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
+      format.html { redirect_to projects_url, notice: "Project was successfully destroyed." }
       format.json { head :no_content }
     end
   end
 
   private
 
-  def set_project
-    @project = Project.find(params[:id])
-  end
+    def set_project
+      @project = Project.find(params[:id])
+    end
 
-  # whitelists the fields and technologies_attributes
-  def project_params
-    params.require(:project).permit(:title,
-                                    :subtitle,
-                                    :body,
-                                    technologies_attributes: [:name])
-  end
+    # whitelists the fields and technologies_attributes
+    def project_params
+      params.require(:project).permit(:title,
+                                      :subtitle,
+                                      :body,
+                                      technologies_attributes: [:name])
+    end
 end
