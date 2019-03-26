@@ -2,6 +2,10 @@
 
 class BlogsController < ApplicationController
   before_action :set_blog, only: %i[show edit update destroy toggle_status]
+  # user authorization
+  access all: [:show, :index],
+         user: { except: [:destroy, :new, :create, :update, :edit] },
+         site_admin: :all
   # declare which layout to use
   layout "blog"
 
