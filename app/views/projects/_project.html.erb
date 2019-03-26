@@ -1,0 +1,8 @@
+<h3><%= link_to project.title, project_show_path(project) %></h1>
+<p><%= project.subtitle %></p>
+<p><%= project.body %></p>
+<%= image_tag project.thumb_image unless project.thumb_image.nil? %>
+<%= link_to "Edit Project", edit_project_path(project) %>
+<td>
+  <%= link_to 'Destroy project item', project, method: :delete, data: { confirm: 'Are you sure?' } %>
+</td>
