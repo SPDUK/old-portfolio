@@ -2,7 +2,9 @@
 <p><%= project.subtitle %></p>
 <p><%= project.body %></p>
 <%= image_tag project.thumb_image unless project.thumb_image.nil? %>
-<%= link_to "Edit Project", edit_project_path(project) %>
+<%= link_to "Edit Project", edit_project_path(project) if logged_in?(:site_admin) %>
 <td>
-  <%= link_to 'Destroy project item', project, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to 'Destroy project item', 
+      project, method: :delete, 
+      data: { confirm: 'Are you sure?' } if logged_in?(:site_admin) %>
 </td>
