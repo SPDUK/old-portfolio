@@ -2,7 +2,8 @@
 @import 'font-awesome';
 
 $primary: #354a4d;
-$primary-dark: #001514;
+$primary-dark: #0e1012;
+$black: #0f0b0c;
 $primary-light: #f5f0dc;
 $alt: #fc5661;
 $alt-dark: #717f80;
@@ -45,13 +46,13 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: $primary-dark;
+  background-color: #0e1012;
 }
 body {
   color: $white;
   text-align: center;
   text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
-  background: $primary;
+  background: $primary-dark;
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -244,4 +245,13 @@ input:focus {
   display: flex;
   justify-content: left;
   color: $alt-dark;
+}
+
+canvas {
+  position: absolute;
+  z-index: 0;
+  top: 0px;
+  left: 0px;
+  width: 1272px;
+  height: 815px;
 }
