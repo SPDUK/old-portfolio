@@ -11,12 +11,15 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= render "shared/nav", location: "top" %>
-    <%= login_helper %>
-    <%= yield %>
-    <%= source_helper %>
-    <%= @copyright %>
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
+          <%= render "shared/application_nav" %>
+          <%= yield %>
+          <%= source_helper %>
+          <%= render "shared/application_footer" %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
