@@ -23,7 +23,7 @@
 const waveOptions = {
   '/': {
     el: '#site',
-    color: '#0e1012',
+    color: '#020406',
     shininess: 61.0,
     waveHeight: 12.5,
     waveSpeed: 0.65,
@@ -31,7 +31,7 @@ const waveOptions = {
   },
   '/edit': {
     el: '#site',
-    color: '#0F0B0C',
+    color: '#020406',
     shininess: 32.0,
     waveHeight: 24.5,
     waveSpeed: 0.8,
