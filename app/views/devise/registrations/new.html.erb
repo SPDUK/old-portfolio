@@ -48,8 +48,7 @@
       </div>
       <div class="card-footer">
         <div class="d-flex card-footer-links">
-          <%= link_to "Back", :back %>
-          <%= link_to "Already have an account? Log in", new_user_session_path, class: "card-footer-links-action" %>
+          <%= render "devise/shared/links" %>
         </div>
       </div>
     </div>

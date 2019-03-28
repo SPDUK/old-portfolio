@@ -227,19 +227,6 @@ input:focus {
   width: 100px;
 }
 
-.card-footer-links {
-  color: $white;
-  display: flex;
-  justify-content: space-between;
-
-  &-action {
-    color: $alt !important;
-    &:hover {
-      color: $primary-light;
-    }
-  }
-}
-
 .card-footer-links a {
   margin-left: 4px;
 }
@@ -256,4 +243,22 @@ input:focus {
 
 .is-invalid {
   background-position: center right calc(0.9em + 0.1875rem) !important;
+}
+
+.devise-links {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  a {
+    color: $white;
+    &:hover {
+      color: $primary-light;
+    }
+  }
+  &-actions a {
+    color: $alt;
+    &:hover {
+      color: $primary-light;
+    }
+  }
 }
