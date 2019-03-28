@@ -9,6 +9,13 @@ $alt: #fc5661;
 $alt-dark: #717f80;
 $white: #eaeaea;
 
+#site {
+  height: 200vh;
+  @media screen and (min-width: 678px) {
+    height: 100vh;
+  }
+}
+
 /*
  * Globals
  */
@@ -225,8 +232,8 @@ input:focus {
   display: flex;
   justify-content: space-between;
 
-  &-cancel {
-    color: $alt;
+  &-action {
+    color: $alt !important;
     &:hover {
       color: $primary-light;
     }
@@ -245,4 +252,8 @@ input:focus {
   display: flex;
   justify-content: left;
   color: $alt-dark;
+}
+
+.is-invalid {
+  background-position: center right calc(0.9em + 0.1875rem) !important;
 }
