@@ -12,32 +12,14 @@
   </head>
   <body>
     <%= render "shared/blog_nav" %>
-    <%# blog header %>
-    <div class="blog-header">
-      <div class="container">
-        <h1 class="blog-title">My Blog</h1>
-        <%= link_to 'New Blog', new_blog_path if logged_in?(:site_admin) %>
-        <p class="lead blog-description">An example blog template built with Bootstrap.</p>
-      </div>
-    </div>
-    <%# blog header end %>
+    <%= render "shared/blog_masthead"  %>
     <%# start of container and row element %>
     <div class="container">
       <div class="row">
         <%= yield %>
         <%= render "shared/blog_sidebar" %>
         <%= source_helper %>
-        <%# start of footer %>
-        <footer class="blog-footer">
-          <p>
-            <a href="https://getbootstrap.com">Bootstrap</a>
-            <%= @copyright %>
-          </p>
-          <p>
-            <a href="#">Back to top</a>
-          </p>
-        </footer>
-        <%# end of footer %>
+        <%= render "shared/blog_footer" %>
       </div>
       <%# end of container and row element %>
     </body>
