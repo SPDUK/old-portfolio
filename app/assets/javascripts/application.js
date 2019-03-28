@@ -78,12 +78,9 @@ document.addEventListener('turbolinks:load', function(event) {
 
   // do something cool with colors and options
   // setInterval(() => {
-  //   const r = Math.floor(Math.random() * 256) + 1  
-  //   const g = Math.floor(Math.random() * 256) + 1  
-  //   const b = Math.floor(Math.random() * 256) + 1  
+  //   const r = Math.floor(Math.random() * 256) + 1
+  //   const g = Math.floor(Math.random() * 256) + 1
+  //   const b = Math.floor(Math.random() * 256) + 1
   //   waves.options.color = `rgb(${r},${g},${b})`
   // }, 1000);
-
-
-
 });
