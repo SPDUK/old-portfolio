@@ -16,6 +16,15 @@ class ProjectsController < ApplicationController
     @rails = Project.rails
   end
 
+  # TODO: fix
+  # this is a bad query that could be better by limiting the amount of updates or doing it all at once
+  def sort
+    params[:order].each do |order|
+      Project.find(order[:id]).update(position: order[:position])
+    end
+    head 200, content_type: "text/html"
+  end
+
   def new
     @project = Project.new
     # instantiates 3 technologies for the project and makes them available to the form
