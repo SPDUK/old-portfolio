@@ -43,8 +43,10 @@ function afterSort(e) {
 
 ready(() => {
   const projects = document.getElementById('sortable');
-  Sortable.create(projects, {
-    onEnd: afterSort
-  });
-  setPositions();
+  if (projects) {
+    Sortable.create(projects, {
+      onEnd: afterSort
+    });
+    setPositions();
+  }
 });

@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: %i[show edit update destroy]
   # user authorization
   access all: [:show, :index, :rails],
-  user: { except: [:destroy, :new, :create, :update, :edit] },
+  user: { except: [:destroy, :new, :create, :update, :edit, :sort] },
   site_admin: :all
   layout "project"
 
