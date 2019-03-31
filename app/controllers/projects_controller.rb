@@ -4,16 +4,25 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: %i[show edit update destroy]
   # user authorization
   access all: [:show, :index, :rails],
-  user: { except: [:destroy, :new, :create, :update, :edit] },
+  user: { except: [:destroy, :new, :create, :update, :edit, :sort] },
   site_admin: :all
   layout "project"
 
   def index
-    @projects = Project.all
+    @projects = Project.by_position
   end
 
   def rails
     @rails = Project.rails
+  end
+
+  # TODO: fix
+  # this is a bad query that could be better by limiting the amount of updates or doing it all at once
+  def sort
+    params[:order].each do |order|
+      Project.find(order[:id]).update(position: order[:position])
+    end
+    head 200, content_type: "text/html"
   end
 
   def new

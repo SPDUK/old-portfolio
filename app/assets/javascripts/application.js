@@ -10,15 +10,14 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
 //= require_tree .
-//= require jquery3
-//= require popper
-//= require bootstrap-sprockets
-//= require three.min.js
-//= require waves.min.js
 
 const waveOptions = {
   '/': {
@@ -70,17 +69,22 @@ const waveOptions = {
     zoom: 0.6
   }
 };
-document.addEventListener('turbolinks:load', function(event) {
-  const url = new URL(event.data.url);
-  // const waves = VANTA.WAVES({
-  //   ...waveOptions[url.pathname]
-  // });
 
-  // do something cool with colors and options
-  // setInterval(() => {
-  //   const r = Math.floor(Math.random() * 256) + 1
-  //   const g = Math.floor(Math.random() * 256) + 1
-  //   const b = Math.floor(Math.random() * 256) + 1
-  //   waves.options.color = `rgb(${r},${g},${b})`
-  // }, 1000);
-});
+// only load background animation if it's a path we want to animate
+const { pathname } = window.location;
+if (Object.keys(waveOptions).includes(pathname)) {
+  document.addEventListener('turbolinks:load', () => {
+    // const waves = VANTA.WAVES({
+    //   ...waveOptions[pathname]
+    // });
+    // do something cool with colors and options
+    // setInterval(() => {
+    //   const r = Math.floor(Math.random() * 256) + 1
+    //   const g = Math.floor(Math.random() * 256) + 1
+    //   const b = Math.floor(Math.random() * 256) + 1
+    //   waves.options.color = `rgb(${r},${g},${b})`
+    // }, 1000);
+  });
+}
+
+
