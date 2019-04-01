@@ -3,6 +3,10 @@
 class Project < ApplicationRecord
   include Placeholder
 
+  # tells projects it needs to call mount_uploader from carrierwave
+  mount_uploader :thumb_image, ProjectUploader
+  mount_uploader :main_image, ProjectUploader
+
   has_many :technologies
   # allow nesting of technologies while creating a Project
   # Project.create(title: ..., .., technologies_attributes: [{name: "some technology"}])
@@ -10,6 +14,9 @@ class Project < ApplicationRecord
                                 reject_if: ->(attrs) { attrs["name"].blank? }
 
   validates_presence_of :title, :body, :main_image, :thumb_image
+
+
+
 
   def self.by_position
     order(:position)
