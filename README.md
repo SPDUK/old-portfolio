@@ -33,6 +33,9 @@ When uploading an image the resolutions should be
 
 ---
 
+To give a user admin, currently run `rails c` and then enter `User.first.update!(roles: [:site_admin])`
+Or update the correct user by finding it first if you have multiple test users.
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
