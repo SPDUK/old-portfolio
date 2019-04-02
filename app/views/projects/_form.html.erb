@@ -1,29 +1,29 @@
-<%= form_with(model: project, local: true) do |form| %>
+<%= form_with(model: project, local: true) do |f| %>
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <%= form.label :title %>
-        <%= form.text_field :title, class: "form-control" %>
+        <%= f.label :title %>
+        <%= f.text_field :title, class: "form-control" %>
       </div>
       <div class="form-group">
-        <%= form.label :subtitle %>
-        <%= form.text_area :subtitle, class: "form-control" %>
+        <%= f.label :subtitle %>
+        <%= f.text_area :subtitle, class: "form-control" %>
       </div>
       <div class="form-group file-container">
-        <%= form.label :main_image %>
-        <%= form.hidden_field(:main_image_cache) %>
-        <%= form.file_field :main_image, class: "form-control file-upload" %>
+        <%= f.label :main_image %>
+        <%= f.hidden_field(:main_image_cache) %>
+        <%= f.file_field :main_image, class: "form-control file-upload" %>
       </div>
       <div class="form-group file-container">
-        <%= form.label :thumb_image %>
-        <%= form.hidden_field(:thumb_image_cache) %>
-        <%= form.file_field :thumb_image, class: "form-control file-upload" %>
+        <%= f.label :thumb_image %>
+        <%= f.hidden_field(:thumb_image_cache) %>
+        <%= f.file_field :thumb_image, class: "form-control file-upload" %>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <%= form.label :body %>
-        <%= form.text_area :body, class: "form-control", rows: 10 %>
+        <%= f.label :body %>
+        <%= f.text_area :body, class: "form-control", rows: 10 %>
       </div>
     </div>
   </div>
@@ -34,15 +34,15 @@
   <div class="col-md-12">
     <h2>Technologies Used</h2>
     <div>
-      <%= form.fields_for :technologies do |technology_form|  %>
-        <div class="form-group">
-          <%= technology_form.label :name %>
-          <%= technology_form.text_field :name, class: "form-control" %>
-        </div>
+      <%= f.fields_for :technologies do |technology_form|  %>
+        <%= render "technology_fields", f: technology_form %>
       <% end %>
+      <div>
+        <%= link_to_add_association 'add technology', f, :technologies %>
+      </div>
     </div>
     <div class="form-group">
-      <%= form.submit 'Save Project', class: "btn btn-primary btn-block" %>
+      <%= f.submit 'Save Project', class: "btn btn-primary btn-block" %>
     </div>
   </div>
 <% end %>

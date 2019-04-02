@@ -27,8 +27,6 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
-    # instantiates 3 technologies for the project and makes them available to the form
-    3.times { @project.technologies.build }
   end
 
   def show; end
@@ -81,6 +79,6 @@ class ProjectsController < ApplicationController
                                       :thumb_image,
                                       :main_image,
                                       :body,
-                                      technologies_attributes: [:name])
+                                      technologies_attributes: [:id, :name, :_destroy])
     end
 end
