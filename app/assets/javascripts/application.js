@@ -87,3 +87,11 @@ if (Object.keys(waveOptions).includes(pathname)) {
     // }, 1000);
   });
 }
+$(document).ready(() => {
+  $('#remove-notice').click(() => $('.notice').remove());
+  setTimeout(() => {
+    $('.notice').fadeOut('slow', function() {
+      $(this).remove();
+    });
+  }, 3500);
+}, 3500);

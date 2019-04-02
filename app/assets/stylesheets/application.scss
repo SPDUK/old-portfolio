@@ -9,11 +9,50 @@ $alt: #fc5661;
 $alt-dark: #717f80;
 $white: #eaeaea;
 
+@mixin notice-styles {
+  padding: 1.5rem 0;
+  text-align: center;
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+@mixin notice-remove {
+  i {
+    cursor: pointer;
+    float: right;
+    padding-right: 20px;
+    padding-top: 5px;
+  }
+}
+.notice {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  &-message {
+    background: rgba(245, 240, 220, 0.7);
+    color: $black;
+    @include notice-styles;
+    @include notice-remove;
+  }
+  &-alert {
+    background: rgba(252, 86, 97, 0.7);
+    color: $white;
+    @include notice-styles;
+    @include notice-remove;
+  }
+}
 #site {
   height: 200vh;
   @media screen and (min-width: 678px) {
     height: 100vh;
   }
+}
+
+.notice {
+  background: rgba(245, 240, 220, 0.85);
+}
+.alert {
 }
 
 /*
