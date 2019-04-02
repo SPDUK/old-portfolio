@@ -28,3 +28,4 @@
 
 /config/secrets.yml
 /config/cloudinary.yml
+/public/uploads/tmp/*
