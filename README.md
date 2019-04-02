@@ -24,6 +24,15 @@ test:
   static_file_support: false
 ```
 
+---
+
+When uploading an image the resolutions should be
+
+- Main image: 600x400
+- Thumb image: 350x200
+
+---
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
