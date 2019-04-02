@@ -24,7 +24,7 @@ function setPositions() {
   });
 }
 
-async function afterSort(e) {
+async function afterSort() {
   const order = setPositions();
   const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
   try {
