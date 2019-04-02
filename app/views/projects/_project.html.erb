@@ -1,5 +1,5 @@
 <div class="card" data-id="<%= project.id %>">
-  <%= image_tag project.thumb_image unless project.thumb_image.nil? %>
+  <%= image_tag(project.thumb_image_url, width: "350", height: "200") if project.thumb_image %>
   <p class="card-text">
     <span><%= link_to project.title, project_show_path(project) %></span>
     <span><%= project.subtitle %></span>

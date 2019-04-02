@@ -78,6 +78,8 @@ class ProjectsController < ApplicationController
     def project_params
       params.require(:project).permit(:title,
                                       :subtitle,
+                                      :thumb_image,
+                                      :main_image,
                                       :body,
                                       technologies_attributes: [:name])
     end

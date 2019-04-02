@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-7">
-      <%= image_tag @project.main_image unless @project.main_image.nil? %>
+      <%= image_tag(@project.main_image_url, width: "650", height: "350") if @project.main_image %>
     </div>
     <div class="col-md-5">
       <h1><%= @project.title %></h1>

@@ -22,29 +22,3 @@ puts "10 blog posts created"
 end
 
 puts "5 skills created"
-
-8.times do |idx|
-  Project.create!(
-    title: "Project title: #{idx}",
-    subtitle: "Ruby on Rails",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla non risus ac augue elementum cursus ut vitae purus. Curabitur ligula odio, imperdiet vel venenatis quis.",
-    main_image: "http://placehold.it/600x400",
-    thumb_image: "http://placehold.it/350x200"
-  )
-end
-Project.create!(
-  title: "Project title: 8 for Angular",
-  subtitle: "Angular",
-  body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla non risus ac augue elementum cursus ut vitae purus. Curabitur ligula odio, imperdiet vel venenatis quis.",
-  main_image: "http://placehold.it/600x400",
-  thumb_image: "http://placehold.it/350x200"
-)
-puts "9 projects created"
-
-3.times do |idx|
-  Project.last.technologies.create!(
-    name: "Technology #{idx}"
-  )
-end
-
-puts "3 technologies created"

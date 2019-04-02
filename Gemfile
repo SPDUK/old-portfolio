@@ -39,15 +39,15 @@ gem "jbuilder", "~> 2.5"
 gem "bootsnap", ">= 1.1.0", require: false
 
 gem "friendly_id", "~> 5.2.4"
-
 gem "devise", "~> 4.2"
-
 gem "bootstrap", "~> 4.3.1"
 gem "jquery-rails"
 gem "petergate", "~> 1.6", ">= 1.6.3"
 gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.4"
+gem "carrierwave", "~> 1.3", ">= 1.3.1"
 gem "kaminari", "~> 0.17.0"
-
+gem "cloudinary", "~> 1.11", ">= 1.11.1"
+gem "mini_magick", "~> 4.9", ">= 4.9.3"
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem "byebug", platforms: %i[mri mingw x64_mingw]
