@@ -49,6 +49,8 @@ gem "kaminari", "~> 0.17.0"
 gem "cloudinary", "~> 1.11", ">= 1.11.1"
 gem "mini_magick", "~> 4.9", ">= 4.9.3"
 gem "cocoon", "~> 1.2", ">= 1.2.9"
+gem 'gritter', '~> 1.2'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem "byebug", platforms: %i[mri mingw x64_mingw]

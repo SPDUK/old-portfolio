@@ -1,3 +1,5 @@
+@import 'gritter';
+
 $primary: #354a4d;
 $primary-dark: #0e1012;
 $black: #0f0b0c;
@@ -5,40 +7,3 @@ $primary-light: #f5f0dc;
 $alt: #fc5661;
 $alt-dark: #717f80;
 $white: #eaeaea;
-
-// notifications
-@mixin notice-styles {
-  padding: 1.5rem 0;
-  text-align: center;
-  margin: 0;
-  font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-}
-@mixin notice-remove {
-  i {
-    cursor: pointer;
-    float: right;
-    padding-right: 20px;
-    padding-top: 5px;
-  }
-}
-.notice {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  &-message {
-    background: rgba(245, 240, 220, 0.7);
-    color: $black;
-    @include notice-styles;
-    @include notice-remove;
-  }
-  &-alert {
-    background: rgba(252, 86, 97, 0.7);
-    color: $white;
-    @include notice-styles;
-    @include notice-remove;
-  }
-}

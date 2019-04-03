@@ -1,4 +1,9 @@
 <%= form_with(model: project, local: true) do |f| %>
+  <% if project.errors.any? %>
+    <% project.errors.full_messages.each do |error| %>
+      <%= js add_gritter(error, sticky: false) %>
+    <% end %>
+  <% end %>
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
