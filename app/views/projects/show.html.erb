@@ -13,6 +13,11 @@
       <% @project.technologies.each do |t| %>
         <p><%= t.name %></p>
       <% end %>
+      <% if logged_in?(:site_admin) %>
+        <div>
+          <%= link_to "Edit project", edit_project_path(@project), class: "btn btn-warning" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

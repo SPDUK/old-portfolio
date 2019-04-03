@@ -36,4 +36,18 @@ module ApplicationHelper
   def active?(path)
     "active" if current_page? path
   end
+
+
+  # if any alerts exist, load a gritter alert for it
+  def alerts
+    alert = (flash[:alert] || flash[:error] || flash[:notice])
+    if alert
+      alert_generator(alert)
+    end
+  end
+
+  # generate an alart based on the error message passed in (eg: works for blog.errors)
+  def alert_generator(msg)
+    js add_gritter(msg, sticky: false)
+  end
 end

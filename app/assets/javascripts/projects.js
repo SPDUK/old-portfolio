@@ -24,21 +24,22 @@ function setPositions() {
   });
 }
 
-function afterSort(e) {
+async function afterSort() {
   const order = setPositions();
   const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-  fetch('/projects/sort', {
-    method: 'PUT',
-    body: JSON.stringify({ order }),
-    headers: {
-      'Content-Type': 'application/json',
-      'X-CSRF-Token': token
-    },
-    credentials: 'same-origin'
-  })
-    .then(res => console.log(res))
-    .then(response => console.log('Success:', JSON.stringify(response)))
-    .catch(error => console.log(error));
+  try {
+    await fetch('/projects/sort', {
+      method: 'PUT',
+      body: JSON.stringify({ order }),
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRF-Token': token
+      },
+      credentials: 'same-origin'
+    });
+  } catch (err) {
+    console.log(err);
+  }
 }
 
 ready(() => {

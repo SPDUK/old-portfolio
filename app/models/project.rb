@@ -9,6 +9,8 @@ class Project < ApplicationRecord
   # allow nesting of technologies while creating a Project
   # Project.create(title: ..., .., technologies_attributes: [{name: "some technology"}])
   accepts_nested_attributes_for :technologies,
+                                # we can delete nested attributes (technologies)
+                                allow_destroy: true,
                                 reject_if: ->(attrs) { attrs["name"].blank? }
 
   validates_presence_of :title, :body, :main_image, :thumb_image
