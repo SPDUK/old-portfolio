@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :comments
   # custom path for devise
   devise_for :users, path: "", path_names: { sign_in: "login", sign_out: "logout", sign_up: "register" }
   root to: "pages#home"
@@ -14,6 +13,9 @@ Rails.application.routes.draw do
       get :toggle_status
     end
   end
+
+  mount ActionCable.server => "/cable"
+
   get "projects/rails", to: "projects#rails"
   get "project/:id", to: "projects#show", as: "project_show"
 
