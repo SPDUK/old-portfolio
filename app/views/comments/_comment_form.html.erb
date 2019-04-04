@@ -1,6 +1,6 @@
   <%# only show comment form if they are logged in %>
 <% unless current_user.is_a? GuestUser %>
-  <%= form_with(model: @comment, url: "#" ) do |f| %>
+  <%= form_with(model: @comment, url: "#", id: "new_comment"  ) do |f| %>
     <div class="form-group">
       <%= f.label :content %>
       <%= f.text_area :content, class: "form-control" %>
