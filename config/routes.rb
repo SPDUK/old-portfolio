@@ -13,6 +13,9 @@ Rails.application.routes.draw do
       get :toggle_status
     end
   end
+
+  mount ActionCable.server => "/cable"
+
   get "projects/rails", to: "projects#rails"
   get "project/:id", to: "projects#show", as: "project_show"
 

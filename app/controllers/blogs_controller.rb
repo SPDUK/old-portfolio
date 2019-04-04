@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class BlogsController < ApplicationController
-  before_action :set_blog, only: %i[show edit update destroy toggle_status]
+  before_action :set_blog, only: %i[edit update destroy toggle_status]
   # user authorization
   access all: [:show, :index],
          user: { except: [:destroy, :new, :create, :update, :edit] },
@@ -19,6 +19,9 @@ class BlogsController < ApplicationController
   # GET /blogs/1
   # GET /blogs/1.json
   def show
+    # includes the comments for that blog
+    @blog = Blog.includes(:comments).friendly.find(params[:id])
+    @comment = Comment.new
     @page_title = @blog.title
     @seo_keywords << @blog.title
    end
