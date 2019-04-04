@@ -1,9 +1,17 @@
 # frozen_string_literal: true
 
-3.times do |idx|
-  Topic.create!(title: "Topic #{idx}")
+# test admin user for development
+User.create!(email: "hello@world.com", name: "hello", password: "password", roles: [:site_admin])
+# edit topics here
+general_topics = ["Programming Problems", "Programming Tools", "Docker"]
+language_topics = ["Ruby", "Elixir", "Javascript", "CSS"]
+framework_topics = ["Ruby on Rails", "React", "Phoenix"]
+topics = general_topics + language_topics + framework_topics
+topics.each do |topic|
+  Topic.create!(title: topic)
 end
-puts "3 topics created"
+puts "topics created"
+
 10.times do |idx|
   Blog.create!(
     title: "My Blog Post #{idx}",
@@ -20,5 +28,4 @@ puts "10 blog posts created"
     percent: 15
   )
 end
-
 puts "5 skills created"
