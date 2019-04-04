@@ -5,7 +5,7 @@ class CommentBroadcastJob < ApplicationJob
   queue_as :default
   def perform(comment)
     # broadcast the comment to the correct channel
-    ApplicationCable.server.broadcast("blogs_#{comments.blog.id}_channel", comment: render_comment(comment))
+    ActionCable.server.broadcast("blogs_#{comment.blog.id}_channel", comment: render_comment(comment))
   end
 
     private
