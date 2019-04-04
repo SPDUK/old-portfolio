@@ -3,6 +3,7 @@
     <div class="card-block">
       <div class="row">
         <div class="col-md-1">
+          <%= gravatar_helper(comment.user) %>
         </div>
         <div class="col-md-11">
           <%= comment.content %>
