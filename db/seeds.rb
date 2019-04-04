@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 # test admin user for development
-User.create!(email: "hello@world.com", name: "hello", password: "password", roles: [:site_admin])
+
+User.create!(email: "hello@world.com", name: "hello", password: "password", roles: [:site_admin]) if Rails.env == "development"
 # edit topics here
 general_topics = ["Programming Problems", "Programming Tools", "Docker"]
 language_topics = ["Ruby", "Elixir", "Javascript", "CSS"]
