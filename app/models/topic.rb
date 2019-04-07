@@ -3,4 +3,9 @@
 class Topic < ApplicationRecord
   validates_presence_of :title
   has_many :blogs
+
+  def self.with_blogs
+    # filter out any topics that do not have any blogs associated to them
+    includes(:blogs).where.not(blogs: { id: nil })
+  end
 end
