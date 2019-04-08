@@ -20,4 +20,9 @@ module BlogsHelper
     markdown = Redcarpet::Markdown.new(renderer, extensions)
     markdown.render(text).html_safe
   end
+
+  def blog_status_icon(blog)
+    return fa_icon("upload") if blog.draft?
+    fa_icon("check")
+  end
 end
