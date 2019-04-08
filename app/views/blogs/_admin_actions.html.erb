@@ -1,0 +1,7 @@
+<% if logged_in?(:site_admin) %>
+  <%= link_to fa_icon('pencil'),  edit_blog_path(@blog), 
+        class: "ml-auto mr-3" %>
+  <%= link_to fa_icon('trash'),
+         @blog, method: :delete,
+         data: {confirm: "Are you sure you want to delete this blog post?"} %>
+<% end %>
