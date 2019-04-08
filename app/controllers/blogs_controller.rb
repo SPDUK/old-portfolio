@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class BlogsController < ApplicationController
-  before_action :set_blog, only: %i[edit update destroy toggle_status]
-  before_action :set_sidebar_topics, except: [:update, :create, :destroy, :toggle_status]
+  before_action :set_blog, only: %i[edit update destroy]
+  before_action :set_sidebar_topics, except: [:update, :create, :destroy]
   # user authorization
   access all: [:show, :index],
          user: { except: [:destroy, :new, :create, :update, :edit] },
@@ -84,14 +84,6 @@ class BlogsController < ApplicationController
     end
   end
 
-  def toggle_status
-    if @blog.draft?
-      @blog.published!
-    else
-      @blog.draft!
-    end
-    redirect_to blogs_url, notice: "Post status has been updated!"
-  end
 
   private
 

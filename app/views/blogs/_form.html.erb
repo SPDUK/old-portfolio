@@ -14,6 +14,8 @@
                               {prompt: "Select a topic"}, class: 'form-control')%>
   </div>
   <div class="form-group">
+    <%# TODO: make this look better %>
+    [<b><%= blog.status %></b>] | 
     <%= f.label :status, "Draft" %>
     <%= f.radio_button :status, "draft" %>
     <%= f.label :status, "Published" %>
