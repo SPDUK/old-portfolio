@@ -2,7 +2,11 @@
   <h2><%= @blog.title %></h2>
   <p><%= @blog.topic.title %></p>
   <%= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin) %>
-  <p><%= @blog.body %></p>
+  <%# TODO: make this a toggle switch or use JS somehow %>
+  <style>
+    <%= ::Rouge::Themes::Base16.mode(:dark).render(scope: '.highlight') %>
+  </style>
+  <p><%= markdown @blog.body %></p>
   <%= render "comments/comment_form" %>
   <div id="comments" data-blog-id="<%= @blog.id %>">
     <%= render @blog.comments %>

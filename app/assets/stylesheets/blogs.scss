@@ -185,3 +185,14 @@ h6,
     font-style: italic;
   }
 }
+
+//  rouge styles for markdown
+div.highlight {
+  border-radius: 5px;
+  padding: 10px;
+  padding-bottom: 0px;
+  margin-bottom: 12px;
+}
+pre.highlight {
+  padding-bottom: 10px;
+}
