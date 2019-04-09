@@ -10,7 +10,7 @@
   }
 }
 html {
-  scroll-behavior: smooth !important;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -62,12 +62,8 @@ h6,
   position: relative;
   padding: 1rem;
   font-weight: 500;
-  color: #cdddeb;
 }
-.nav-link:hover,
-.nav-link:focus {
-  background-color: transparent;
-}
+
 .nav-link.active {
   font-weight: 800;
 }

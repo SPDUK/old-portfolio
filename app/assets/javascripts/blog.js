@@ -35,11 +35,13 @@ $(document).on('turbolinks:load', () => {
     }
   }
 
+  // set default settings, turbolinks sometimes breaks, so it needs to recalculate on refresh
   if (isWide) {
     // only add scroll listener if on desktop
     $(window).scroll(wideSettings);
-    // set default settings, turbolinks sometimes breaks typical page flow so it needs to recalculate on refresh
     wideSettings();
+  } else {
+    nav.classList.add('bg-white');
   }
 
   function handleResize() {
