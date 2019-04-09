@@ -20,7 +20,6 @@
 //= require turbolinks
 //= require cocoon
 //= require gritter
-//= require_tree .
 
 const waveOptions = {
   '/': {
