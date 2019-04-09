@@ -9,10 +9,16 @@
     font-size: 18px;
   }
 }
+html {
+  scroll-behavior: smooth !important;
+}
 
 body {
+  // padding to overlay fixed navbar at the top
+  padding-top: 120px;
   font-family: Georgia, 'Times New Roman', Times, serif;
   color: #555;
+  background-color: rgb(251, 251, 253);
 }
 
 h1,
@@ -60,26 +66,10 @@ h6,
 }
 .nav-link:hover,
 .nav-link:focus {
-  color: #fff;
   background-color: transparent;
 }
-
-/* Active state gets a caret at the bottom */
 .nav-link.active {
-  color: #fff;
-}
-.nav-link.active:after {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 0;
-  margin-left: -0.3rem;
-  vertical-align: middle;
-  content: '';
-  border-right: 0.3rem solid transparent;
-  border-bottom: 0.3rem solid;
-  border-left: 0.3rem solid transparent;
+  font-weight: 800;
 }
 
 /*
@@ -100,7 +90,9 @@ h6,
   font-size: 1.1rem;
   color: #999;
 }
-
+.blog-nav {
+  transition: background-color 0.15s ease;
+}
 @media (min-width: 40em) {
   .blog-title {
     font-size: 3.5rem;
