@@ -19,8 +19,8 @@ class ProjectsController < ApplicationController
   # TODO: fix
   # this is a bad query that could be better by limiting the amount of updates or doing it all at once
   def sort
-    params[:order].each do |order|
-      Project.find(order[:id]).update(position: order[:position])
+    params[:order].each do |_key, value|
+      Project.find(value[:id]).update(position: value[:position])
     end
     head 200, content_type: "text/html"
   end
