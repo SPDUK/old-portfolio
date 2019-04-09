@@ -1,3 +1,13 @@
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets
+//= require rails-ujs
+//= require activestorage
+//= require turbolinks
+//= require cocoon
+//= require gritter
+//= require Sortable.min.js
+
 function ready(fn) {
   if (
     document.attachEvent ? document.readyState === 'complete' : document.readyState !== 'loading'
