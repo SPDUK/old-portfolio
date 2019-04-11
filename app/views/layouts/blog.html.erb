@@ -20,7 +20,6 @@
   <body>
     <%= render "shared/blog_nav" %>
     <%= render "shared/blog_masthead"  %>
-    <%# start of container and row element %>
     <div class="container">
       <div class="row">
         <%= yield %>
@@ -28,6 +27,5 @@
         <%= render "shared/blog_footer" %>
         <%= alerts %>
       </div>
-      <%# end of container and row element %>
     </body>
   </html>
