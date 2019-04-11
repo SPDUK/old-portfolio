@@ -27,7 +27,7 @@ class BlogsController < ApplicationController
     # if the user is an admin or the blog is published, show it, else redirect back
     if logged_in?(:site_admin) || @blog.published?
       # includes the comments for that blog
-      @blog = Blog.includes(:comments).friendly.find(params[:id])
+      @blog = Blog.includes(comments: :user).friendly.find(params[:id])
       @comment = Comment.new
       @page_title = @blog.title
       @seo_keywords << @blog.title
