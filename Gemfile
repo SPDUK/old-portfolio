@@ -49,6 +49,7 @@ gem "redcarpet", "~> 3.4"
 gem "rouge", "~> 3.3"
 
 group :development, :test do
+  gem 'bullet', '~> 5.9'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem "byebug", platforms: %i[mri mingw x64_mingw]
 end
