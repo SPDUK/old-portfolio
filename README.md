@@ -33,6 +33,9 @@ When uploading an image the resolutions should be
 
 ---
 
+To generate placeholder content run `rake db:setup` and a test admin user is created as `hello@world.com` with the password `password`.
+You can modify the seeds in the `/db/seeds.rb` file.
+
 To give a user admin, currently run `rails c` and then enter `User.first.update!(roles: [:site_admin])`
 Or update the correct user by finding it first if you have multiple test users.
 

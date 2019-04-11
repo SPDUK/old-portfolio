@@ -1,7 +1,14 @@
-<div class="blog-masthead">
+<nav class="blog-nav navbar fixed-top navbar-expand-md navbar-light">
   <div class="container">
-    <nav class="nav blog-nav">
-      <%= nav_helper("nav-link", "span") %>
-    </nav>
+    <b><%= link_to "SP", root_path, class: "navbar-brand" %></b>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <%= nav_helper("nav-link", "li") %>
+        <%= login_helper("nav-link") %>
+      </ul>
+    </div>
   </div>
-</div>
+</nav>

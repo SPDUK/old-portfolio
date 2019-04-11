@@ -8,7 +8,7 @@
     <meta name="keywords" content=<%= @seo_keywords %> />
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'projects', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'projects', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
     <%= render "shared/project_nav"  %>
@@ -16,6 +16,5 @@
     <%= yield %>
     <%= render "shared/project_footer" %>
     <%= alerts %>
-    <%= source_helper %>
   </body>
 </html>

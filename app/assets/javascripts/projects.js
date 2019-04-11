@@ -1,16 +1,12 @@
-function ready(fn) {
-  if (
-    document.attachEvent ? document.readyState === 'complete' : document.readyState !== 'loading'
-  ) {
-    fn();
-  } else {
-    document.addEventListener('DOMContentLoaded', fn);
-  }
-}
-
-if (window.location.pathname === '/projects') {
-  ready();
-}
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets
+//= require rails-ujs
+//= require activestorage
+//= require turbolinks
+//= require cocoon
+//= require gritter
+//= require Sortable.min.js
 
 // returns a new array with the data pos added on to the card, and
 function setPositions() {
@@ -26,23 +22,15 @@ function setPositions() {
 
 async function afterSort() {
   const order = setPositions();
-  const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-  try {
-    await fetch('/projects/sort', {
-      method: 'PUT',
-      body: JSON.stringify({ order }),
-      headers: {
-        'Content-Type': 'application/json',
-        'X-CSRF-Token': token
-      },
-      credentials: 'same-origin'
-    });
-  } catch (err) {
-    console.log(err);
-  }
+
+  $.ajax({
+    type: 'PUT',
+    url: '/projects/sort',
+    data: { order }
+  });
 }
 
-ready(() => {
+$(document).on('turbolinks:load', () => {
   const projects = document.getElementById('sortable');
   if (projects) {
     Sortable.create(projects, {

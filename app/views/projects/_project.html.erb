@@ -1,7 +1,9 @@
-<div class="card" data-id="<%= project.id %>">
-  <%= image_tag(project.thumb_image_url, width: "350", height: "200") if project.thumb_image %>
-  <p class="card-text">
-    <span><%= link_to project.title, project_show_path(project) %></span>
-    <span><%= project.subtitle %></span>
-  </p>
+<div class="col-sm-6 col-md-4">
+  <div class="card" data-id="<%= project.id %>">
+    <%= image_tag(project.thumb_image_url, width: "100%") if project.thumb_image %>
+    <p class="card-text">
+      <span><%= link_to project.title, project_show_path(project) %></span>
+      <span><%= project.subtitle %></span>
+    </p>
+  </div>
 </div>

@@ -1,7 +1,18 @@
 <div class="col-sm-8 blog-main">
   <h2><%= @blog.title %></h2>
-  <%= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin) %>
-  <p><%= @blog.body %></p>
+  <nav class="breadcrumb d-flex" aria-label="breadcrumb">
+    <%= link_to "Blogs", blogs_path, class: "breadcrumb-item" %>
+    <%= link_to @blog.topic.title, topic_path(@blog.topic), class: "breadcrumb-item" %>
+    <span class="breadcrumb-item active"><%= @blog.title %></span>
+    <%# pass in local variables %>
+    <%= render partial: "blogs/admin_actions" %>
+  </nav>
+  <p><%= @blog.topic.title %></p>
+  <%# TODO: make this a toggle switch or use JS somehow %>
+  <style>
+    <%= ::Rouge::Themes::Base16.mode(:dark).render(scope: '.highlight') %>
+  </style>
+  <p><%= markdown @blog.body %></p>
   <%= render "comments/comment_form" %>
   <div id="comments" data-blog-id="<%= @blog.id %>">
     <%= render @blog.comments %>
