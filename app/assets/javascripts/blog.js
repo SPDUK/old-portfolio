@@ -1,6 +1,3 @@
-//= require jquery3
-//= require popper
-//= require bootstrap-sprockets
 //= require rails-ujs
 //= require activestorage
 //= require cable
@@ -63,4 +60,15 @@ $(document).on('turbolinks:load', () => {
     }
   }
   $(window).resize(handleResize);
+
+  // proof of toggling bootstrap themes dynamically
+  // setTimeout(() => {
+  //   $('head').append(
+  //     '<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/darkly/bootstrap.min.css" rel="stylesheet" integrity="sha384-w+8Gqjk9Cuo6XH9HKHG5t5I1VR4YBNdPt/29vwgfZR485eoEJZ8rJRbm3TR32P6k" crossorigin="anonymous" id="style1" />'
+  //   );
+  // }, 2000);
+
+  // setTimeout(() => {
+  //   $('#style1').attr('disabled', 'disabled');
+  // }, 5000);
 });

@@ -11,9 +11,6 @@
 // about supported directives.
 //
 
-//= require jquery3
-//= require popper
-//= require bootstrap-sprockets
 //= require rails-ujs
 //= require activestorage
 //= require cable
@@ -88,11 +85,3 @@ if (Object.keys(waveOptions).includes(pathname)) {
     // }, 1000);
   });
 }
-$(document).ready(() => {
-  $('#remove-notice').click(() => $('.notice').remove());
-  setTimeout(() => {
-    $('.notice').fadeOut('slow', function() {
-      $(this).remove();
-    });
-  }, 3500);
-}, 3500);
