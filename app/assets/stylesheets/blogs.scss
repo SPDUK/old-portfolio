@@ -1,4 +1,3 @@
-@import 'font-awesome';
 @import './variables.scss';
 
 /*
@@ -175,4 +174,11 @@ div.highlight {
 }
 pre.highlight {
   padding-bottom: 10px;
+}
+
+.blog-admin-actions {
+  a,
+  i {
+    margin: 0 5px;
+  }
 }

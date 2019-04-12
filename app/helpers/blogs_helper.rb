@@ -22,7 +22,6 @@ module BlogsHelper
   end
 
   def blog_status_icon(blog)
-    return fa_icon("upload") if blog.draft?
-    fa_icon("check")
+    blog.draft? ? "mr-3 fa-upload" : "mr-3 fa-check"
   end
 end
