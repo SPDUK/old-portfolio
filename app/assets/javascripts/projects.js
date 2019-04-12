@@ -4,7 +4,7 @@
 //= require cocoon
 //= require gritter
 
-// returns a new array with the data pos added on to the card, and
+// returns a new array with the data pos added on to the card
 function setPositions() {
   const cards = Array.from(document.getElementsByClassName('card'));
   return cards.map((card, idx) => {
