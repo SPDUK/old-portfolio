@@ -182,3 +182,10 @@ pre.highlight {
     margin: 0 5px;
   }
 }
+
+.navbar-toggler {
+  border: 0px;
+}
+#nav {
+  transition: top 0.35s ease-in-out;
+}

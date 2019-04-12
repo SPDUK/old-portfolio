@@ -17,35 +17,59 @@ $(document).on('turbolinks:load', () => {
   const WIDE_AMOUNT = 768;
   let isWide = window.innerWidth > WIDE_AMOUNT;
 
-  function wideSettings() {
-    if (window.scrollY < 200) {
-      nav.classList.remove('bg-white');
-      const fontSize = 18 - this.scrollY / 100;
-      const height = 80 - this.scrollY / 10;
-      nav.style.fontSize = fontSize <= 16 ? '16px' : `${fontSize}px`;
-      nav.style.height = height <= 60 ? '60px' : `${height}px`;
-      nav.style.backgroundColor = `rgba(255,255,255, ${window.scrollY / 100})`;
+  let lastST = 0;
+  function hideScrolledNav() {
+    const delta = 30;
+    const navHeight = nav.offsetHeight;
+    const ST = window.scrollY;
+    if (Math.abs(lastST - ST) <= delta) return;
+
+    // if scrolling down - hide the navbar
+    if (ST > lastST && ST > navHeight) {
+      nav.style.top = `${-navHeight}px`;
+      // if scrolling up - show navbar
+    } else if (ST + window.innerHeight < $(document).height()) {
+      nav.style.top = '0px';
+      // if the menu is open and they are scrolling up, close the menu
+      const mobileNav = $('.navbar-toggler');
+      if (mobileNav && mobileNav.attr('aria-expanded') === 'true') {
+        mobileNav.click();
+      }
+    }
+    lastST = ST;
+  }
+
+  function handleScroll() {
+    // do fancy scrolling animations on desktop
+    if (isWide) {
+      if (window.scrollY < 200) {
+        nav.classList.remove('bg-white');
+        const fontSize = 18 - this.scrollY / 100;
+        const height = 80 - this.scrollY / 10;
+        nav.style.fontSize = fontSize <= 16 ? '16px' : `${fontSize}px`;
+        nav.style.height = height <= 60 ? '60px' : `${height}px`;
+        nav.style.backgroundColor = `rgba(255,255,255, ${window.scrollY / 100})`;
+      } else {
+        nav.classList.add('bg-white');
+        nav.style.fontSize = `16px`;
+        nav.style.height = `60px`;
+      }
     } else {
       nav.classList.add('bg-white');
-      nav.style.fontSize = `16px`;
-      nav.style.height = `60px`;
+    }
+    // always hide navbar if scrolling down, show if scrolling up
+    if (window.scrollY > 300) {
+      hideScrolledNav();
     }
   }
 
-  // set default settings, turbolinks sometimes breaks, so it needs to recalculate on refresh
-  if (isWide) {
-    // only add scroll listener if on desktop
-    $(window).scroll(wideSettings);
-    wideSettings();
-  } else {
-    nav.classList.add('bg-white');
-  }
+  $(window).scroll(handleScroll);
+  handleScroll();
 
   function handleResize() {
     // if window is being resized UNDER wide amount, and the window was previously wide
     // remove event listener and reset mobile settings
     if (window.innerWidth < WIDE_AMOUNT && isWide) {
-      $(window).off('scroll', wideSettings);
       nav.classList.add('bg-white');
       nav.style.fontSize = 'unset';
       nav.style.height = 'unset';
@@ -54,8 +78,6 @@ $(document).on('turbolinks:load', () => {
     // if window is being resized OVER wide amount, and the window was previously NOT wide
     // add event listener back and set the positional wide settings
     if (window.innerWidth > WIDE_AMOUNT && !isWide) {
-      $(window).scroll(wideSettings);
-      wideSettings();
       isWide = true;
     }
   }
