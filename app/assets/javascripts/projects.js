@@ -3,7 +3,6 @@
 //= require turbolinks
 //= require cocoon
 //= require gritter
-//= require Sortable.min.js
 
 // returns a new array with the data pos added on to the card, and
 function setPositions() {
