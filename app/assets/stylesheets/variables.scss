@@ -7,3 +7,23 @@ $primary-light: #f5f0dc;
 $alt: #fc5661;
 $alt-dark: #717f80;
 $white: #eaeaea;
+
+.hidden-desktop {
+  display: block;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+.hidden-mobile {
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
+}
+.reddit {
+  color: rgb(255, 86, 0) !important;
+}
+
+.gitlab {
+  color: #fca429 !important;
+}

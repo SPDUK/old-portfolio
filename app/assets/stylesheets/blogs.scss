@@ -15,7 +15,7 @@ html {
 body {
   // padding to overlay fixed navbar at the top
   padding-top: 120px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  // font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 h1,
@@ -30,7 +30,7 @@ h5,
 .h5,
 h6,
 .h6 {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  // font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: normal;
 }
 
@@ -187,5 +187,17 @@ pre.highlight {
   border: 0px;
 }
 #nav {
-  transition: top 0.35s ease-in-out;
+  transition: top 0.35s ease-out, font-size 0.05s ease-out, background-color 0.3s ease-out;
+}
+
+.navbar-social {
+  display: flex;
+  justify-content: space-around;
+  a {
+    padding-left: 15px;
+    font-size: 1.8em;
+    @media screen and (min-width: 768px) {
+      font-size: 1.2em;
+    }
+  }
 }

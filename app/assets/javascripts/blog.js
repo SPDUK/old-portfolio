@@ -19,7 +19,7 @@ $(document).on('turbolinks:load', () => {
 
   let lastST = 0;
   function hideScrolledNav() {
-    const delta = 30;
+    const delta = 20;
     const navHeight = nav.offsetHeight;
     const ST = window.scrollY;
     if (Math.abs(lastST - ST) <= delta) return;
@@ -39,23 +39,29 @@ $(document).on('turbolinks:load', () => {
     lastST = ST;
   }
 
+  function toggleNavColors(theme) {
+    const remove = theme === 'light' ? 'dark' : 'light';
+    nav.classList.add(`bg-${theme}`);
+    nav.classList.add(`navbar-${theme}`);
+    nav.classList.remove(`bg-${remove}`);
+    nav.classList.remove(`navbar-${remove}`);
+  }
   function handleScroll() {
     // do fancy scrolling animations on desktop
     if (isWide) {
       if (window.scrollY < 200) {
-        nav.classList.remove('bg-white');
+        toggleNavColors('dark');
         const fontSize = 18 - this.scrollY / 100;
         const height = 80 - this.scrollY / 10;
         nav.style.fontSize = fontSize <= 16 ? '16px' : `${fontSize}px`;
         nav.style.height = height <= 60 ? '60px' : `${height}px`;
-        nav.style.backgroundColor = `rgba(255,255,255, ${window.scrollY / 100})`;
       } else {
-        nav.classList.add('bg-white');
+        toggleNavColors('light');
         nav.style.fontSize = `16px`;
         nav.style.height = `60px`;
       }
     } else {
-      nav.classList.add('bg-white');
+      nav.classList.add('bg-light');
     }
     // always hide navbar if scrolling down, show if scrolling up
     if (window.scrollY > 300) {
@@ -70,7 +76,7 @@ $(document).on('turbolinks:load', () => {
     // if window is being resized UNDER wide amount, and the window was previously wide
     // remove event listener and reset mobile settings
     if (window.innerWidth < WIDE_AMOUNT && isWide) {
-      nav.classList.add('bg-white');
+      nav.classList.add('bg-dark');
       nav.style.fontSize = 'unset';
       nav.style.height = 'unset';
       isWide = false;
