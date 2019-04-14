@@ -60,7 +60,7 @@ $(document).on('turbolinks:load', () => {
 
   let lastST = 0;
   function hideScrolledNav() {
-    const delta = 20;
+    const delta = 5;
     const navHeight = nav.offsetHeight;
     const ST = window.scrollY;
     if (Math.abs(lastST - ST) <= delta) return;
