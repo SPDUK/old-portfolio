@@ -10,7 +10,7 @@
   <p><%= @blog.topic.title %></p>
   <%# TODO: make this a toggle switch or use JS somehow %>
   <style>
-    <%= ::Rouge::Themes::Base16.mode(:dark).render(scope: '.highlight') %>
+    <%= ::Rouge::Themes::Gruvbox.mode(:light).render(scope: '.highlight') %>
   </style>
   <p><%= markdown @blog.body %></p>
   <%= render "comments/comment_form" %>

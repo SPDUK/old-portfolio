@@ -5,7 +5,48 @@
 //= require cocoon
 //= require gritter
 
+function setLightTheme() {
+  Cookies.set('theme', 'light');
+  $('#bootstrap-dark').remove();
+  $('#syntax-dark').remove();
+}
+function setDarkTheme() {
+  Cookies.set('theme', 'dark');
+  $('head').append(
+    '<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/darkly/bootstrap.min.css" rel="stylesheet" integrity="sha384-w+8Gqjk9Cuo6XH9HKHG5t5I1VR4YBNdPt/29vwgfZR485eoEJZ8rJRbm3TR32P6k" crossorigin="anonymous" id="bootstrap-dark" />'
+  );
+  $('<link>', {
+    rel: 'stylesheet',
+    id: 'syntax-dark',
+    type: 'text/css',
+    href: 'https://res.cloudinary.com/dmjolhdaq/raw/upload/v1555203029/Portfolio/dracula.css'
+  }).appendTo('head');
+
+  $('#bootstrap-light').remove();
+  $('#syntax-light').remove();
+}
+
+function setTheme() {
+  const theme = Cookies.get('theme');
+  if (theme === 'light') setLightTheme();
+  else setDarkTheme();
+}
+
+function toggleTheme() {
+  const theme = Cookies.get('theme');
+  // toggle from dark (or no theme) to light
+  if (!theme || theme === 'dark') {
+    setLightTheme();
+  } else {
+    setDarkTheme();
+  }
+}
+
 $(document).on('turbolinks:load', () => {
+  setTheme();
+  // change this to class as we have 2
+  $('.theme-toggle').click(toggleTheme);
+
   // scroll top on page load
   window.scroll({
     top: 0.000001,
@@ -88,15 +129,4 @@ $(document).on('turbolinks:load', () => {
     }
   }
   $(window).resize(handleResize);
-
-  // proof of toggling bootstrap themes dynamically
-  // setTimeout(() => {
-  //   $('head').append(
-  //     '<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/darkly/bootstrap.min.css" rel="stylesheet" integrity="sha384-w+8Gqjk9Cuo6XH9HKHG5t5I1VR4YBNdPt/29vwgfZR485eoEJZ8rJRbm3TR32P6k" crossorigin="anonymous" id="style1" />'
-  //   );
-  // }, 2000);
-
-  // setTimeout(() => {
-  //   $('#style1').attr('disabled', 'disabled');
-  // }, 5000);
 });
