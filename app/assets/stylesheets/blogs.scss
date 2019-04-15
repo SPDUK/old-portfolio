@@ -85,9 +85,7 @@ h6,
 .blog-description {
   font-size: 1.1rem;
 }
-.blog-nav {
-  transition: background-color 0.15s ease;
-}
+
 @media (min-width: 40em) {
   .blog-title {
     font-size: 3.5rem;
@@ -172,7 +170,7 @@ pre.highlight {
   border: 0px !important;
 }
 #nav {
-  transition: top 0.35s ease-out, font-size 0.05s ease-out, background-color 0.3s ease-out;
+  transition: background-color 0.4s ease-out, font-size 0.1s ease, height 0.15s ease, top 0.4s ease-out;
 }
 
 .navbar-social {

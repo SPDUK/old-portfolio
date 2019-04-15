@@ -95,8 +95,8 @@ $(document).on('turbolinks:load', () => {
     if (isWide) {
       if (window.scrollY < titleHeight) {
         toggleNavColors('transparent');
-        const fontSize = 18 - this.scrollY / 55;
-        const height = 80 - this.scrollY / 5.5;
+        const fontSize = 18 - window.scrollY / 60;
+        const height = 80 - window.scrollY / 6;
         nav.style.fontSize = fontSize <= 16 ? '16px' : `${fontSize}px`;
         nav.style.height = height <= 60 ? '60px' : `${height}px`;
       } else {
