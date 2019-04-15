@@ -91,7 +91,7 @@ $(document).on('turbolinks:load', () => {
   }
   function handleScroll() {
     // do fancy scrolling animations on desktop
-    const titleHeight = $('.blog-title').position().top - 60;
+    const titleHeight = $('#blog-title').position().top - 60;
     if (isWide) {
       if (window.scrollY < titleHeight) {
         toggleNavColors('transparent');
