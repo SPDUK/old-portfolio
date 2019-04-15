@@ -1,14 +1,14 @@
 .toggleWrapper {
+  cursor: pointer;
   position: absolute;
   top: 50%;
   left: 50%;
   overflow: hidden;
-  padding: 0 200px;
+  padding: 6px;
   transform: translate3d(-50%, -50%, 0);
 }
 
 .toggle {
-  cursor: pointer;
   display: inline-block;
   position: relative;
   width: 45px;
