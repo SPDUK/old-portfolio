@@ -6,7 +6,7 @@
     <b><%= link_to "SP", root_path, class: "navbar-brand mx-auto" %></b>
     <div class="navbar nav nav-right hidden-desktop">
       <div class="nav-item theme-toggle">
-        theme toggle
+        <%= render "shared/theme_toggle" %>
       </div>
     </div>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -40,11 +40,10 @@
           <a class="nav-link" href ="https://www.reddit.com/user/SPD_"> <i class="fa fa-reddit"></i></a>
         </li>
       </ul>
-      <div class="ml-3 navbar nav nav-right hidden-mobile">
-        <div class="nav-item theme-toggle">
-          theme toggle
-        </div>
+      <div class="ml-3 navbar nav nav-right hidden-mobile theme-toggle">
+        <%= render "shared/theme_toggle" %>
       </div>
     </div>
   </div>
+</div>
 </nav>

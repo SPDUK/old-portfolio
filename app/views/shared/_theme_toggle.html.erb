@@ -1,0 +1,12 @@
+<div class="toggleWrapper">
+  <div  class="toggle">
+    <span class="toggle-handler">
+      <% 1.upto(3) do |idx| %>
+        <%= content_tag :span, "", class: "crater crater-#{idx}" %>
+      <% end %>
+    </span>
+    <% 1.upto(6) do |idx| %>
+      <%= content_tag :span, "", class: "star star-#{idx}" %>
+    <% end %>
+  </div>
+</div>

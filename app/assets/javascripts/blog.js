@@ -7,6 +7,7 @@
 
 function setLightTheme() {
   Cookies.set('theme', 'light');
+  $('.theme-toggle').removeClass('toggle-on');
   $('#bootstrap-dark').remove();
   $('#syntax-dark').remove();
 }
@@ -22,6 +23,7 @@ function setDarkTheme() {
     href: 'https://res.cloudinary.com/dmjolhdaq/raw/upload/v1555203029/Portfolio/dracula.css'
   }).appendTo('head');
 
+  $('.theme-toggle').addClass('toggle-on');
   $('#bootstrap-light').remove();
   $('#syntax-light').remove();
 }
