@@ -83,7 +83,7 @@ $(document).on('turbolinks:load', () => {
   }
 
   function toggleNavColors(theme) {
-    const remove = theme === 'light' ? 'dark' : 'light';
+    const remove = theme === 'light' ? 'transparent' : 'light';
     nav.classList.add(`bg-${theme}`);
     nav.classList.add(`navbar-${theme}`);
     nav.classList.remove(`bg-${remove}`);
@@ -91,11 +91,12 @@ $(document).on('turbolinks:load', () => {
   }
   function handleScroll() {
     // do fancy scrolling animations on desktop
+    const titleHeight = $('.blog-title').position().top - 60;
     if (isWide) {
-      if (window.scrollY < 200) {
-        toggleNavColors('dark');
-        const fontSize = 18 - this.scrollY / 100;
-        const height = 80 - this.scrollY / 10;
+      if (window.scrollY < titleHeight) {
+        toggleNavColors('transparent');
+        const fontSize = 18 - this.scrollY / 55;
+        const height = 80 - this.scrollY / 5.5;
         nav.style.fontSize = fontSize <= 16 ? '16px' : `${fontSize}px`;
         nav.style.height = height <= 60 ? '60px' : `${height}px`;
       } else {
@@ -103,11 +104,9 @@ $(document).on('turbolinks:load', () => {
         nav.style.fontSize = `16px`;
         nav.style.height = `60px`;
       }
-    } else {
-      nav.classList.add('bg-light');
     }
     // always hide navbar if scrolling down, show if scrolling up
-    if (window.scrollY > 300) {
+    if (window.scrollY > titleHeight + 60 * 2) {
       hideScrolledNav();
     }
   }
@@ -119,7 +118,10 @@ $(document).on('turbolinks:load', () => {
     // if window is being resized UNDER wide amount, and the window was previously wide
     // remove event listener and reset mobile settings
     if (window.innerWidth < WIDE_AMOUNT && isWide) {
-      nav.classList.add('bg-dark');
+      nav.classList.add('bg-light');
+      nav.classList.add('navbar-light');
+      nav.classList.remove('bg-transparent');
+      nav.classList.remove('navbar-transparent');
       nav.style.fontSize = 'unset';
       nav.style.height = 'unset';
       isWide = false;
@@ -128,6 +130,7 @@ $(document).on('turbolinks:load', () => {
     // add event listener back and set the positional wide settings
     if (window.innerWidth > WIDE_AMOUNT && !isWide) {
       isWide = true;
+      handleScroll();
     }
   }
   $(window).resize(handleResize);

@@ -15,7 +15,10 @@ html {
 body {
   transition: 0.3s ease;
   // padding to overlay fixed navbar at the top
-  padding-top: 120px;
+  padding-top: 200px;
+  @media screen and (min-width: 678px) {
+    padding-top: 20vh;
+  }
   // font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -166,7 +169,7 @@ pre.highlight {
 }
 
 .navbar-toggler {
-  border: 0px;
+  border: 0px !important;
 }
 #nav {
   transition: top 0.35s ease-out, font-size 0.05s ease-out, background-color 0.3s ease-out;
