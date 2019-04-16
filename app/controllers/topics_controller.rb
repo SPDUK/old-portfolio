@@ -11,9 +11,9 @@ class TopicsController < ApplicationController
   def show
     @topic = Topic.find(params[:id])
     if logged_in?(:site_admin)
-      @blogs = @topic.blogs.recent.page(params[:page]).per(5)
+      @blogs = @topic.blogs.recent
     else
-      @blogs = @topic.blogs.recent.published.page(params[:page]).per(5).order(created_at: :desc)
+      @blogs = @topic.blogs.recent.published.order(created_at: :desc)
     end
     @page_title = "My blogs!"
   end
