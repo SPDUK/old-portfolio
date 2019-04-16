@@ -1,21 +1,12 @@
 @import './variables.scss';
+@import './navbar.scss';
+@import './toggle.scss';
 
 #site {
   height: 200vh;
   @media screen and (min-width: 678px) {
     height: 100vh;
   }
-}
-
-/*
- * Globals
- */
-
-/* Links */
-a,
-a:focus,
-a:hover {
-  color: $white;
 }
 
 /* Custom default button */
@@ -33,145 +24,18 @@ a:hover {
   background-color: $white;
 }
 
-.btn-secondary:hover {
-  background-color: $primary-light;
-}
+// .btn-secondary:hover {
+//   background-color: $primary-light;
+// }
 
-/*
- * Base structure
- */
+// /*
+//  * Base structure
+//  */
 
-html,
-body {
-  height: 100%;
-  background-color: #0e1012;
-}
-body {
-  color: $white;
-  text-align: center;
-  text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
-  background: $primary-dark;
-}
-
-/* Extra markup and styles for table-esque vertical and horizontal centering */
-.site-wrapper {
-  // display: table;
-  width: 100%;
-  height: 100%; /* For at least Firefox */
-  min-height: 100%;
-}
-
-.cover-container {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-/* Padding for spacing */
-.inner {
-  padding: 2rem;
-}
-
-/*
- * Header
- */
-
-.masthead {
-  margin-bottom: 2rem;
-}
-
-.masthead-brand {
-  margin-bottom: 0;
-}
-
-.nav-masthead .nav-link {
-  padding: 0.25rem 0;
-  font-weight: bold;
-  color: $white;
-  background-color: transparent;
-  border-bottom: 0.25rem solid transparent;
-}
-
-.nav-masthead .nav-link:hover,
-.nav-masthead .nav-link:focus {
-  border-bottom-color: $alt;
-}
-
-.nav-masthead .nav-link + .nav-link {
-  margin-left: 1rem;
-}
-
-.nav-masthead .active {
-  color: $alt;
-  border-bottom-color: $alt;
-}
-
-@media (min-width: 48em) {
-  .masthead-brand {
-    float: left;
-  }
-  .nav-masthead {
-    float: right;
-  }
-}
-
-/*
- * Cover
- */
-
-.cover {
-  padding: 0 1.5rem;
-}
-.cover .btn-lg {
-  padding: 0.75rem 1.25rem;
-  font-weight: bold;
-}
-
-/*
- * Footer
- */
-
-.mastfoot {
-  color: $white;
-}
-
-/*
- * Affix and center
- */
-
-@media (min-width: 40em) {
-  /* Pull out the header and footer */
-  .masthead {
-    top: 0;
-  }
-  .mastfoot {
-    bottom: 0;
-  }
-  /* Start the vertical centering */
-  .site-wrapper-inner {
-    vertical-align: middle;
-  }
-  /* Handle the widths */
-  .masthead,
-  .mastfoot,
-  .cover-container {
-    width: 100%; /* Must be percentage or pixels for horizontal alignment */
-  }
-}
-
-@media (min-width: 62em) {
-  .masthead,
-  .mastfoot,
-  .cover-container {
-    width: 55rem;
-  }
-}
-
-// custom styles and bootstrap overrides
-
-.container {
-  height: 100%;
-  align-content: center;
-}
+// .cover-container {
+//   margin-right: auto;
+//   margin-left: auto;
+// }
 
 .card {
   margin-top: auto;
@@ -183,12 +47,6 @@ body {
 
 .card-header h3 {
   color: white;
-}
-
-.social_icon {
-  position: absolute;
-  right: 20px;
-  top: -45px;
 }
 
 .input-group-prepend span {
@@ -255,8 +113,4 @@ input:focus {
       color: $primary-light;
     }
   }
-}
-
-.app-nav span {
-  margin: 0px 15px;
 }

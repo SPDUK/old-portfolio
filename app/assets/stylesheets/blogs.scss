@@ -1,5 +1,6 @@
 @import './variables.scss';
 @import './toggle.scss';
+@import './navbar.scss';
 
 /*
  * Globals
@@ -8,24 +9,6 @@
   html {
     font-size: 18px;
   }
-}
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  transition: 0.3s ease;
-  // padding to overlay fixed navbar at the top
-  padding-top: 200px;
-  @media screen and (min-width: 678px) {
-    padding-top: 20vh;
-  }
-  // font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-// Override Bootstrap's default container.
-.container {
-  max-width: 40rem !important;
 }
 
 /*
@@ -37,17 +20,6 @@ body {
   background-color: #428bca;
   -webkit-box-shadow: inset 0 -0.1rem 0.25rem rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 -0.1rem 0.25rem rgba(0, 0, 0, 0.1);
-}
-
-/* Nav links */
-.nav-link {
-  position: relative;
-  padding: 1rem;
-  font-weight: 500;
-}
-
-.nav-link.active {
-  font-weight: 800;
 }
 
 /*
@@ -139,24 +111,5 @@ pre.highlight {
   a,
   i {
     margin: 0 5px;
-  }
-}
-
-.navbar-toggler {
-  border: 0px !important;
-}
-#nav {
-  transition: background-color 0.4s ease-out, font-size 0.1s ease, height 0.15s ease, top 0.4s ease-out;
-}
-
-.navbar-social {
-  display: flex;
-  justify-content: space-around;
-  a {
-    padding-left: 15px;
-    font-size: 1.8em;
-    @media screen and (min-width: 768px) {
-      font-size: 1.2em;
-    }
   }
 }

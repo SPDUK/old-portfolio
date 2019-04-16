@@ -1,11 +1,9 @@
 @import './variables.scss';
+@import './navbar.scss';
+@import './toggle.scss';
 
 body {
   min-height: 75rem; /* Can be removed; just added for demo purposes */
-}
-
-.navbar {
-  margin-bottom: 0;
 }
 
 .jumbotron {
