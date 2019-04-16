@@ -9,67 +9,19 @@
   }
 }
 
-/* Custom default button */
-.btn-secondary,
-.btn-secondary:hover,
-.btn-secondary:focus {
-  color: $primary-dark;
-  text-shadow: none; /* Prevent inheritance from `body` */
-  background-color: $white;
-  border: 0.05rem solid $white;
-}
-
-.btn-secondary {
-  color: $primary-dark;
-  background-color: $white;
-}
-
-// .btn-secondary:hover {
-//   background-color: $primary-light;
-// }
-
-// /*
-//  * Base structure
-//  */
-
-// .cover-container {
-//   margin-right: auto;
-//   margin-left: auto;
-// }
-
 .card {
-  margin-top: auto;
-  margin-bottom: auto;
   width: 400px;
   max-width: 400px;
-  background-color: rgba(0, 0, 0, 0.45) !important;
-}
-
-.card-header h3 {
-  color: white;
 }
 
 .input-group-prepend span {
   width: 40px;
-  background-color: $primary-light;
-  color: $primary-dark;
   border: 0 !important;
 }
 
 input:focus {
   outline: 0 0 0 0 !important;
   box-shadow: 0 0 0 0 !important;
-}
-
-.remember {
-  color: $white;
-}
-
-.remember input {
-  width: 20px;
-  height: 20px;
-  margin-left: 15px;
-  margin-right: 5px;
 }
 
 .login_btn {
@@ -90,7 +42,6 @@ input:focus {
 .form-label {
   display: flex;
   justify-content: left;
-  color: $alt-dark;
 }
 
 .is-invalid {
