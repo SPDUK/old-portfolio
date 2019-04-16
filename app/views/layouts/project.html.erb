@@ -14,9 +14,11 @@
   </head>
   <body>
     <%= render "shared/nav"  %>
-    <%= render "shared/project_masthead" %>
-    <%= yield %>
-    <%= render "shared/project_footer" %>
-    <%= alerts %>
+    <div class="wrapper">
+      <%= render "shared/project_masthead" %>
+      <%= yield %>
+      <%= render "shared/project_footer" %>
+      <%= alerts %>
+    </div>
   </body>
 </html>

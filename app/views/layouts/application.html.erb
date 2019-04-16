@@ -13,14 +13,12 @@
   </head>
   <body>
     <%= render "shared/nav" %>
-    <div id="site" class="site-wrapper">
-      <div class="site-wrapper-inner">
-        <div class="cover-container">
-          <%= yield %>
-          <%= render "shared/application_footer" %>
-          <%= alerts %>
-        </div>
-      </div>
+    <%= render "shared/fog" %>
+    <div class="wrapper">
+      <%= yield %>
     </div>
-  </body>
+    <%= render "shared/application_footer" %>
+    <%= alerts %>
+  </div>
+</body>
 </html>

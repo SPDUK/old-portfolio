@@ -1,9 +1,14 @@
+function toggleBackgroundImage(color) {
+  document.body.style.background = `url('https://res.cloudinary.com/dmjolhdaq/image/upload/v1555440140/Portfolio/firewatch-${color}.jpg') no-repeat center center fixed`;
+}
 function setLightTheme() {
   Cookies.set('theme', 'light');
   $('.theme-toggle').removeClass('toggle-on');
   $('#bootstrap-dark').remove();
   $('#syntax-dark').remove();
+  toggleBackgroundImage('light');
 }
+
 function setDarkTheme() {
   Cookies.set('theme', 'dark');
   $('head').append(
@@ -15,6 +20,7 @@ function setDarkTheme() {
     type: 'text/css',
     href: 'https://res.cloudinary.com/dmjolhdaq/raw/upload/v1555203029/Portfolio/dracula.css'
   }).appendTo('head');
+  toggleBackgroundImage('dark');
 
   $('.theme-toggle').addClass('toggle-on');
   $('#bootstrap-light').remove();

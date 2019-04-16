@@ -20,12 +20,14 @@
   </head>
   <body>
     <%= render "shared/nav" %>
-    <%= render "shared/blog_masthead"  %>
-    <div class="container">
-      <div class="row">
-        <%= yield %>
-        <%= render "shared/blog_footer" %>
-        <%= alerts %>
+    <div class="wrapper">
+      <%= render "shared/blog_masthead"  %>
+      <div class="container">
+        <div class="row">
+          <%= yield %>
+          <%= render "shared/blog_footer" %>
+          <%= alerts %>
+        </div>
       </div>
     </body>
   </html>
