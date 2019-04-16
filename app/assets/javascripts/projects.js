@@ -3,6 +3,7 @@
 //= require turbolinks
 //= require cocoon
 //= require gritter
+// = require navbar
 
 // returns a new array with the data pos added on to the card
 function setPositions() {

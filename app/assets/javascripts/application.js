@@ -17,6 +17,7 @@
 //= require turbolinks
 //= require cocoon
 //= require gritter
+// = require navbar
 
 const waveOptions = {
   '/': {
