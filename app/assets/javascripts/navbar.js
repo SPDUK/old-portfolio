@@ -39,7 +39,6 @@ function toggleTheme() {
 
 $(document).on('turbolinks:load', () => {
   setTheme();
-  // change this to class as we have 2
   $('.theme-toggle').click(toggleTheme);
 
   const nav = document.querySelector('#nav');

@@ -71,18 +71,6 @@ const waveOptions = {
 };
 
 // only load background animation if it's a path we want to animate
-const { pathname } = window.location;
-if (Object.keys(waveOptions).includes(pathname)) {
-  document.addEventListener('turbolinks:load', () => {
-    // const waves = VANTA.WAVES({
-    //   ...waveOptions[pathname]
-    // });
-    // do something cool with colors and options
-    // setInterval(() => {
-    //   const r = Math.floor(Math.random() * 256) + 1
-    //   const g = Math.floor(Math.random() * 256) + 1
-    //   const b = Math.floor(Math.random() * 256) + 1
-    //   waves.options.color = `rgb(${r},${g},${b})`
-    // }, 1000);
-  });
-}
+
+// document.addEventListener('turbolinks:load', () => {
+// });
