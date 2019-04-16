@@ -1,4 +1,4 @@
-<div class="col-sm-8 blog-main">
+<div class="col-sm-12 blog-main">
   <h2><%= @blog.title %></h2>
   <nav class="breadcrumb d-flex" aria-label="breadcrumb">
     <%= link_to "Blogs", blogs_path, class: "breadcrumb-item" %>
@@ -10,7 +10,7 @@
   <p><%= @blog.topic.title %></p>
   <%# TODO: make this a toggle switch or use JS somehow %>
   <style>
-    <%= ::Rouge::Themes::Base16.mode(:dark).render(scope: '.highlight') %>
+    <%= ::Rouge::Themes::Gruvbox.mode(:light).render(scope: '.highlight') %>
   </style>
   <p><%= markdown @blog.body %></p>
   <%= render "comments/comment_form" %>

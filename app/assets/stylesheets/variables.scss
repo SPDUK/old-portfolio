@@ -7,3 +7,24 @@ $primary-light: #f5f0dc;
 $alt: #fc5661;
 $alt-dark: #717f80;
 $white: #eaeaea;
+
+// needs to be !important to not break if changing stylesheets when changing themes
+.hidden-desktop {
+  display: block !important;
+  @media screen and (min-width: 768px) {
+    display: none !important;
+  }
+}
+.hidden-mobile {
+  display: none !important;
+  @media screen and (min-width: 768px) {
+    display: block !important;
+  }
+}
+
+// overrides for gritter styles
+.gritter-css3 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-size: 16px;
+}

@@ -1,4 +1,5 @@
 @import './variables.scss';
+@import './toggle.scss';
 
 /*
  * Globals
@@ -13,33 +14,18 @@ html {
 }
 
 body {
+  transition: 0.3s ease;
   // padding to overlay fixed navbar at the top
-  padding-top: 120px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding-top: 200px;
+  @media screen and (min-width: 678px) {
+    padding-top: 20vh;
+  }
+  // font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3,
-h4,
-.h4,
-h5,
-.h5,
-h6,
-.h6 {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: normal;
-}
-
-/*
- * Override Bootstrap's default container.
- */
-
+// Override Bootstrap's default container.
 .container {
-  max-width: 60rem;
+  max-width: 40rem !important;
 }
 
 /*
@@ -81,32 +67,11 @@ h6,
 .blog-description {
   font-size: 1.1rem;
 }
-.blog-nav {
-  transition: background-color 0.15s ease;
-}
+
 @media (min-width: 40em) {
   .blog-title {
     font-size: 3.5rem;
   }
-}
-
-/*
- * Main column and sidebar layout
- */
-
-/* Sidebar modules for boxing content */
-.sidebar-module {
-  padding: 1rem;
-  /*margin: 0 -1rem 1rem;*/
-}
-.sidebar-module-inset {
-  padding: 1rem;
-  border-radius: 0.25rem;
-}
-.sidebar-module-inset p:last-child,
-.sidebar-module-inset ul:last-child,
-.sidebar-module-inset ol:last-child {
-  margin-bottom: 0;
 }
 
 /* Pagination */
@@ -146,12 +111,6 @@ h6,
   margin-bottom: 0;
 }
 
-.gritter-css3 {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  font-size: 16px;
-}
-
 .comment-card > .card {
   margin-top: 15px;
 }
@@ -184,8 +143,20 @@ pre.highlight {
 }
 
 .navbar-toggler {
-  border: 0px;
+  border: 0px !important;
 }
 #nav {
-  transition: top 0.35s ease-in-out;
+  transition: background-color 0.4s ease-out, font-size 0.1s ease, height 0.15s ease, top 0.4s ease-out;
+}
+
+.navbar-social {
+  display: flex;
+  justify-content: space-around;
+  a {
+    padding-left: 15px;
+    font-size: 1.8em;
+    @media screen and (min-width: 768px) {
+      font-size: 1.2em;
+    }
+  }
 }

@@ -5,13 +5,50 @@
 //= require cocoon
 //= require gritter
 
+function setLightTheme() {
+  Cookies.set('theme', 'light');
+  $('.theme-toggle').removeClass('toggle-on');
+  $('#bootstrap-dark').remove();
+  $('#syntax-dark').remove();
+}
+function setDarkTheme() {
+  Cookies.set('theme', 'dark');
+  $('head').append(
+    '<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/darkly/bootstrap.min.css" rel="stylesheet" integrity="sha384-w+8Gqjk9Cuo6XH9HKHG5t5I1VR4YBNdPt/29vwgfZR485eoEJZ8rJRbm3TR32P6k" crossorigin="anonymous" id="bootstrap-dark" />'
+  );
+  $('<link>', {
+    rel: 'stylesheet',
+    id: 'syntax-dark',
+    type: 'text/css',
+    href: 'https://res.cloudinary.com/dmjolhdaq/raw/upload/v1555203029/Portfolio/dracula.css'
+  }).appendTo('head');
+
+  $('.theme-toggle').addClass('toggle-on');
+  $('#bootstrap-light').remove();
+  $('#syntax-light').remove();
+}
+
+function setTheme() {
+  const theme = Cookies.get('theme');
+  if (theme === 'light') setLightTheme();
+  else setDarkTheme();
+}
+
+function toggleTheme() {
+  const theme = Cookies.get('theme');
+  // toggle from dark (or no theme) to light
+  if (!theme || theme === 'dark') {
+    setLightTheme();
+  } else {
+    setDarkTheme();
+  }
+}
+
 $(document).on('turbolinks:load', () => {
-  // scroll top on page load
-  window.scroll({
-    top: 0.000001,
-    left: 0,
-    behavior: 'smooth'
-  });
+  setTheme();
+  // change this to class as we have 2
+  $('.theme-toggle').click(toggleTheme);
+
   const nav = document.querySelector('.blog-nav');
   // initial window state of wide if it's over bootstrap small size
   const WIDE_AMOUNT = 768;
@@ -19,7 +56,7 @@ $(document).on('turbolinks:load', () => {
 
   let lastST = 0;
   function hideScrolledNav() {
-    const delta = 30;
+    const delta = 5;
     const navHeight = nav.offsetHeight;
     const ST = window.scrollY;
     if (Math.abs(lastST - ST) <= delta) return;
@@ -39,27 +76,39 @@ $(document).on('turbolinks:load', () => {
     lastST = ST;
   }
 
+  function toggleNavColors(theme) {
+    const remove = theme === 'light' ? 'transparent' : 'light';
+    nav.classList.add(`bg-${theme}`);
+    nav.classList.add(`navbar-${theme}`);
+    nav.classList.remove(`bg-${remove}`);
+    nav.classList.remove(`navbar-${remove}`);
+  }
   function handleScroll() {
     // do fancy scrolling animations on desktop
+    const titleHeight = $('#blog-title').position().top - 60;
     if (isWide) {
-      if (window.scrollY < 200) {
-        nav.classList.remove('bg-white');
-        const fontSize = 18 - this.scrollY / 100;
-        const height = 80 - this.scrollY / 10;
+      if (window.scrollY < titleHeight) {
+        toggleNavColors('transparent');
+        const fontSize = 18 - window.scrollY / 60;
+        const height = 80 - window.scrollY / 6;
         nav.style.fontSize = fontSize <= 16 ? '16px' : `${fontSize}px`;
         nav.style.height = height <= 60 ? '60px' : `${height}px`;
-        nav.style.backgroundColor = `rgba(255,255,255, ${window.scrollY / 100})`;
       } else {
-        nav.classList.add('bg-white');
+        toggleNavColors('light');
         nav.style.fontSize = `16px`;
         nav.style.height = `60px`;
       }
-    } else {
-      nav.classList.add('bg-white');
     }
     // always hide navbar if scrolling down, show if scrolling up
-    if (window.scrollY > 300) {
+    if (window.scrollY > titleHeight + 60 * 2) {
       hideScrolledNav();
+    }
+
+    const url = $('a[rel="next"]').attr('href');
+
+    if (url && window.scrollY > document.body.clientHeight - window.innerHeight - 50) {
+      $('.pagination').text('Loading more blogs...');
+      $.getScript(url);
     }
   }
 
@@ -70,7 +119,10 @@ $(document).on('turbolinks:load', () => {
     // if window is being resized UNDER wide amount, and the window was previously wide
     // remove event listener and reset mobile settings
     if (window.innerWidth < WIDE_AMOUNT && isWide) {
-      nav.classList.add('bg-white');
+      nav.classList.add('bg-light');
+      nav.classList.add('navbar-light');
+      nav.classList.remove('bg-transparent');
+      nav.classList.remove('navbar-transparent');
       nav.style.fontSize = 'unset';
       nav.style.height = 'unset';
       isWide = false;
@@ -79,18 +131,8 @@ $(document).on('turbolinks:load', () => {
     // add event listener back and set the positional wide settings
     if (window.innerWidth > WIDE_AMOUNT && !isWide) {
       isWide = true;
+      handleScroll();
     }
   }
   $(window).resize(handleResize);
-
-  // proof of toggling bootstrap themes dynamically
-  // setTimeout(() => {
-  //   $('head').append(
-  //     '<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/darkly/bootstrap.min.css" rel="stylesheet" integrity="sha384-w+8Gqjk9Cuo6XH9HKHG5t5I1VR4YBNdPt/29vwgfZR485eoEJZ8rJRbm3TR32P6k" crossorigin="anonymous" id="style1" />'
-  //   );
-  // }, 2000);
-
-  // setTimeout(() => {
-  //   $('#style1').attr('disabled', 'disabled');
-  // }, 5000);
 });
