@@ -12,6 +12,9 @@
 .card {
   width: 400px;
   max-width: 400px;
+  &-footer-links a {
+    margin-left: 4px;
+  }
 }
 
 .input-group-prepend span {
@@ -19,29 +22,22 @@
   border: 0 !important;
 }
 
-input:focus {
-  outline: 0 0 0 0 !important;
-  box-shadow: 0 0 0 0 !important;
-}
-
 .login_btn {
   width: 100px;
 }
 
-.card-footer-links a {
-  margin-left: 4px;
-}
-
-.form-actions {
-  padding-top: 10px;
-  padding-bottom: 20px;
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-}
-.form-label {
-  display: flex;
-  justify-content: left;
+.form {
+  &-actions {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  &-label {
+    display: flex;
+    justify-content: left;
+  }
 }
 
 .is-invalid {
@@ -52,16 +48,4 @@ input:focus {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  a {
-    color: $white;
-    &:hover {
-      color: $primary-light;
-    }
-  }
-  &-actions a {
-    color: $alt;
-    &:hover {
-      color: $primary-light;
-    }
-  }
 }
