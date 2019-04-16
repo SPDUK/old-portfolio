@@ -1,0 +1,7 @@
+$('.blog-main').append('<%= j render(@blogs) %>')
+<% if @blogs.next_page %>
+  $('.pagination').remove()
+  $('.blog-main').append('<%= j paginate(@blogs) %>')
+<% else %>
+  $('.pagination').remove()
+<% end %>

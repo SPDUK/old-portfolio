@@ -49,12 +49,6 @@ $(document).on('turbolinks:load', () => {
   // change this to class as we have 2
   $('.theme-toggle').click(toggleTheme);
 
-  // scroll top on page load
-  window.scroll({
-    top: 0.000001,
-    left: 0,
-    behavior: 'smooth'
-  });
   const nav = document.querySelector('.blog-nav');
   // initial window state of wide if it's over bootstrap small size
   const WIDE_AMOUNT = 768;
@@ -108,6 +102,13 @@ $(document).on('turbolinks:load', () => {
     // always hide navbar if scrolling down, show if scrolling up
     if (window.scrollY > titleHeight + 60 * 2) {
       hideScrolledNav();
+    }
+
+    const url = $('a[rel="next"]').attr('href');
+
+    if (url && window.scrollY > document.body.clientHeight - window.innerHeight - 50) {
+      $('.pagination').text('Loading more blogs...');
+      $.getScript(url);
     }
   }
 
