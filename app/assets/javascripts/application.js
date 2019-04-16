@@ -19,57 +19,6 @@
 //= require gritter
 // = require navbar
 
-const waveOptions = {
-  '/': {
-    el: '#site',
-    color: '#020406',
-    shininess: 61.0,
-    waveHeight: 12.5,
-    waveSpeed: 0.65,
-    zoom: 1
-  },
-  '/edit': {
-    el: '#site',
-    color: '#020406',
-    shininess: 32.0,
-    waveHeight: 24.5,
-    waveSpeed: 0.8,
-    zoom: 0.9
-  },
-  '/login': {
-    el: '#site',
-    color: '#020406',
-    shininess: 32.0,
-    waveHeight: 24.5,
-    waveSpeed: 0.8,
-    zoom: 0.9
-  },
-  '/register': {
-    el: '#site',
-    color: '#020406',
-    shininess: 32.0,
-    waveHeight: 24.5,
-    waveSpeed: 0.8,
-    zoom: 0.9
-  },
-  '/contact': {
-    el: '#site',
-    color: '#020406',
-    shininess: 32.0,
-    waveHeight: 24.5,
-    waveSpeed: 0.8,
-    zoom: 1.2
-  },
-  '/about-me': {
-    el: '#site',
-    color: '#020406',
-    shininess: 32.0,
-    waveHeight: 24.5,
-    waveSpeed: 0.8,
-    zoom: 0.6
-  }
-};
-
 // only load background animation if it's a path we want to animate
 
 // document.addEventListener('turbolinks:load', () => {
