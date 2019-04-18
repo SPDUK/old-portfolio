@@ -8,6 +8,6 @@ module CopyrightConcern
   end
 
   def set_copyright
-    @copyright = "&copy; #{Time.now.year} | <b>spdevuk</b> all rights reserved".html_safe
+    @copyright = "&copy; #{Time.now.year} <b>spdevuk@gmail.com</b> all rights reserved".html_safe
   end
 end
