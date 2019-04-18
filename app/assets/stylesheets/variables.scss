@@ -1,4 +1,6 @@
 @import 'gritter';
+// a lot of !important is used as when toggling between stylesheets they will simply override the defaults again, so we need to make sure our settings here are persistant after toggles
+
 // needs to be !important to not break if changing stylesheets when changing themes
 .hidden-desktop {
   display: block !important;
@@ -18,7 +20,16 @@
   max-width: 45rem !important;
 }
 
+h1,
+h2,
+h3 {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 700 !important;
+}
 body {
+  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300))) !important;
+  line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px) / (1600 - 300))) !important;
+  font-family: 'Montserrat', sans-serif !important;
   background-color: #02002f;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -48,7 +59,9 @@ html {
 .gritter-css3 {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  font-size: 16px;
+
+  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+  line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px) / (1600 - 300)));
 }
 
 .wrapper {
