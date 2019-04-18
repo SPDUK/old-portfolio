@@ -4,12 +4,44 @@
 
 #site {
   height: 200vh;
-  @media screen and (min-width: 678px) {
+  @media screen and (min-width: 768px) {
     height: 100vh;
   }
 }
 
 .application {
+  display: flex;
+  text-align: center;
+  font-size: 1.2em;
+  @media screen and (min-width: 768px) {
+    text-align: left;
+  }
+
+  h4 {
+    font-size: 1.54em;
+  }
+  p {
+    max-width: 350px;
+    margin: 0 auto;
+    border-radius: 5px;
+    // if the screen is too small horizontally or vertically (can't read text) show background
+    @media screen and (max-width: 768px), screen and (max-height: 950px) {
+      text-align: left;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.5);
+      color: rgb(247, 247, 247);
+    }
+    font-size: 0.85em;
+  }
+  &-title {
+    width: 100%;
+    @media screen and(min-width: 768px) {
+      width: 50%;
+    }
+    &-link {
+      font-weight: 600;
+    }
+  }
   &-footer {
     width: 100%;
     position: fixed;
