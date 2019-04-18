@@ -7,7 +7,7 @@ function getImageWidth() {
   if (h > 850) return 2560; // 1440p just to fit vertical space
   // if a very wide mobile screen or tablet
   if (w > 400) return 1920; // 1080p
-  return 375; // mobile
+  return 420; // mobile
 }
 function toggleBackgroundImage(color) {
   const width = getImageWidth();
