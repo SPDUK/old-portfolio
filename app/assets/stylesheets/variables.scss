@@ -19,19 +19,29 @@
 }
 
 body {
-  background: url('https://res.cloudinary.com/dmjolhdaq/image/upload/v1555440140/Portfolio/firewatch-light.jpg')
-    no-repeat center center fixed;
+  background-color: #02002f;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  transition: background 600ms ease-in;
-}
-
-html {
+  background-repeat: no-repeat;
+  background-position: center top;
   scroll-behavior: smooth;
   transition: 0.3s ease;
-  // padding to overlay fixed navbar at the top
+  transition: background 600ms ease-in;
+  background-attachment: fixed;
+  // fixes browser issues with mobile browsers where image doesn't zoom out and scale properly
+  @media screen and (max-width: 400px) {
+    background-size: 100% auto;
+  }
+  // should fix the above when on a desktop (very big vertical, small width)
+  // the image has a height of 896 so it should take up fullscreen unless it's too high
+  @media screen and (max-width: 400px) and (min-height: 850px) {
+    background-size: cover;
+  }
+}
+html {
+  min-height: 100%;
 }
 
 // overrides for gritter styles

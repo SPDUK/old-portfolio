@@ -1,5 +1,20 @@
+function getImageWidth() {
+  const w = $(document).width();
+  if (w > 2560) return 3840; // 4k
+  if (w > 1920) return 2560; // 1440p
+  // if weird proportions (very tall but not widescreen..?)
+  const h = $(window).height();
+  if (h > 850) return 2560; // 1440p just to fit vertical space
+  // if a very wide mobile screen or tablet
+  if (w > 400) return 1920; // 1080p
+  return 375; // mobile
+}
 function toggleBackgroundImage(color) {
-  document.body.style.background = `url('https://res.cloudinary.com/dmjolhdaq/image/upload/v1555440140/Portfolio/firewatch-${color}.jpg') no-repeat center center fixed`;
+  const width = getImageWidth();
+  const url = `url('https://res.cloudinary.com/dmjolhdaq/image/upload/v1555440140/Portfolio/firewatch-${color}-${width}.jpg')`;
+  // if the url hasn't changed, don't do anything
+  if (url === document.body.style.background) return;
+  document.body.style.backgroundImage = url;
 }
 function setLightTheme() {
   Cookies.set('theme', 'light');
@@ -132,6 +147,8 @@ $(document).on('turbolinks:load', () => {
       isWide = true;
       handleScroll();
     }
+    const theme = Cookies.get('theme');
+    toggleBackgroundImage(theme);
   }
   $(window).resize(handleResize);
 });
