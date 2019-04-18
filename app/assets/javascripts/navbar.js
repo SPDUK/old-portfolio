@@ -65,7 +65,7 @@ $(document).on('turbolinks:load', () => {
   const nav = document.querySelector('#nav');
   // initial window state of wide if it's over bootstrap small size
   const WIDE_AMOUNT = 768;
-  let isWide = window.innerWidth > WIDE_AMOUNT;
+  let isWide = window.innerWidth >= WIDE_AMOUNT;
 
   let lastST = 0;
   function hideScrolledNav() {
@@ -132,7 +132,7 @@ $(document).on('turbolinks:load', () => {
   function handleResize() {
     // if window is being resized UNDER wide amount, and the window was previously wide
     // remove event listener and reset mobile settings
-    if (window.innerWidth < WIDE_AMOUNT && isWide) {
+    if (window.innerWidth <= WIDE_AMOUNT && isWide) {
       nav.classList.add('bg-light');
       nav.classList.add('navbar-light');
       nav.classList.remove('bg-transparent');
@@ -143,7 +143,7 @@ $(document).on('turbolinks:load', () => {
     }
     // if window is being resized OVER wide amount, and the window was previously NOT wide
     // add event listener back and set the positional wide settings
-    if (window.innerWidth > WIDE_AMOUNT && !isWide) {
+    if (window.innerWidth >= WIDE_AMOUNT && !isWide) {
       isWide = true;
       handleScroll();
     }
