@@ -49,25 +49,17 @@ You can modify the seeds in the `/db/seeds.rb` file.
 To give a user admin, currently run `docker-compose run web rails console` and then enter `User.first.update!(roles: [:site_admin])`
 Or update the correct user by finding it first if you have multiple test users.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+---
 
-Things you may want to cover:
+### Background Image
 
-- Ruby version
+The background images should have 4 versions for different resolutions, and 2 variants (light/dark)
+It builds a URL like so`.../firewatch-${color}-${width}.jpg` where color will be `light` or `dark` and `width` is one of:
 
-- System dependencies
+- 3840 (4k, 3840x2160)
+- 2560 (1440p, 2560x1440)
+- 1920 (1080p, 1920x1080)
+- 420 (mobile, 900x420)
 
-- Configuration
-
-- Database creation
-
-- Database initialization
-
-- How to run the test suite
-
-- Services (job queues, cache servers, search engines, etc.)
-
-- Deployment instructions
-
-- ...
+So for example an image should be named `firewatch-dark-1080.jpg` when uploaded to cloudinary.
+Any hidpi/modern phones will download the 1080p image.
