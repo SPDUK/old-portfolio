@@ -1,7 +1,14 @@
 @import 'gritter';
 // a lot of !important is used as when toggling between stylesheets they will simply override the defaults again, so we need to make sure our settings here are persistant after toggles
 
-// needs to be !important to not break if changing stylesheets when changing themes
+#canvas {
+  position: absolute;
+  height: 35%;
+  width: 100%;
+  z-index: -100;
+  top: 0;
+}
+
 .hidden-desktop {
   display: block !important;
   @media screen and (min-width: 768px) {
