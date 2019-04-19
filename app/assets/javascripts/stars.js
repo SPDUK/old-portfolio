@@ -64,7 +64,7 @@ function drawStars() {
   const width = (canvas.width = window.innerWidth);
   const height = (canvas.height = window.innerHeight);
   const stars = [];
-  const shootingStars = [];
+  let shootingStars = [];
   const layers = [
     { speed: 0.015, scale: 0.2, count: 320 },
     { speed: 0.03, scale: 0.5, count: 50 },
@@ -189,6 +189,10 @@ function drawStars() {
         star.y = height;
       }
     }
+
+    // if the user has changed tabs and has too many animations saved up by being tabbed out
+    // reset shootingStars back to empty
+    if (shootingStars.length > 25) shootingStars = [];
 
     for (let i = 0; i < shootingStars.length; i += 1) {
       const shootingStar = shootingStars[i];
