@@ -2,6 +2,14 @@
 @import './navbar.scss';
 @import './toggle.scss';
 
+#canvas {
+  position: absolute;
+  height: 35%;
+  width: 100%;
+  z-index: -100;
+  top: 0;
+}
+
 #site {
   height: 200vh;
   @media screen and (min-width: 768px) {
@@ -17,7 +25,6 @@
     text-align: left;
     padding-left: 0px !important;
   }
-
   h4 {
     font-size: 1.54em;
   }

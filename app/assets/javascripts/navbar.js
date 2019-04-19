@@ -1,3 +1,5 @@
+//= require stars
+
 function getImageWidth() {
   const w = $(document).width();
   if (w > 2560) return 3840; // 4k
@@ -22,6 +24,7 @@ function setLightTheme() {
   $('#bootstrap-dark').remove();
   $('#syntax-dark').remove();
   toggleBackgroundImage('light');
+  $('#canvas').remove();
 }
 
 function setDarkTheme() {
@@ -40,6 +43,12 @@ function setDarkTheme() {
   $('.theme-toggle').addClass('toggle-on');
   $('#bootstrap-light').remove();
   $('#syntax-light').remove();
+
+  // if there is no canvas (toggling from light mode), create it and draw shooting stars
+  if (!$('#canvas').length) {
+    $('body').append($('<canvas/>', { id: 'canvas' }));
+  }
+  drawStars();
 }
 
 function setTheme() {

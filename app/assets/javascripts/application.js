@@ -17,9 +17,4 @@
 //= require turbolinks
 //= require cocoon
 //= require gritter
-// = require navbar
-
-// only load background animation if it's a path we want to animate
-
-// document.addEventListener('turbolinks:load', () => {
-// });
+//= require navbar
