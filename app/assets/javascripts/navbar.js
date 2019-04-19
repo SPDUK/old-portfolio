@@ -24,6 +24,7 @@ function setLightTheme() {
   $('#bootstrap-dark').remove();
   $('#syntax-dark').remove();
   toggleBackgroundImage('light');
+  stopDrawingStars();
   $('#canvas').remove();
 }
 

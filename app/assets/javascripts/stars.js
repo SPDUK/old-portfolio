@@ -1,3 +1,4 @@
+let animation;
 function drawStars() {
   // helpers
   function lineToAngle(x1, y1, length, radians) {
@@ -219,11 +220,15 @@ function drawStars() {
         shootingStars.splice(i, 1);
       }
     }
-    requestAnimationFrame(update);
+    animation = requestAnimationFrame(update);
   }
 
   update();
 
   // shooting stars
   setInterval(createShootingStar, shootingStarEmittingInterval);
+}
+
+function stopDrawingStars() {
+  cancelAnimationFrame(animation);
 }
