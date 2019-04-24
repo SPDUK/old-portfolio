@@ -11,12 +11,18 @@ function getImageWidth() {
   if (w > 400) return 1920; // 1080p
   return 420; // mobile
 }
+const bgUrl = color =>
+  `url('https://res.cloudinary.com/dmjolhdaq/image/upload/v1555440140/Portfolio/firewatch-${color}-${getImageWidth()}.jpg')`;
 function toggleBackgroundImage(color) {
-  const width = getImageWidth();
-  const url = `url('https://res.cloudinary.com/dmjolhdaq/image/upload/v1555440140/Portfolio/firewatch-${color}-${width}.jpg')`;
+  const bg = document.getElementById('bg');
+  const bg2 = document.getElementById('bg2');
+  const opposite = color === 'dark' ? 'light' : 'dark';
+
   // if the url hasn't changed, don't do anything
-  if (url === document.body.style.background) return;
-  document.body.style.backgroundImage = url;
+  const url = bgUrl(color);
+  if (url === bg.style.background) return;
+  bg.style.backgroundImage = url;
+  bg2.style.backgroundImage = bgUrl(opposite);
 }
 function setLightTheme() {
   Cookies.set('theme', 'light');
@@ -47,7 +53,7 @@ function setDarkTheme() {
 
   // if there is no canvas (toggling from light mode), create it and draw shooting stars
   if (!$('#canvas').length) {
-    $('body').append($('<canvas/>', { id: 'canvas' }));
+    $('#bg').append($('<canvas/>', { id: 'canvas' }));
   }
   drawStars();
 }

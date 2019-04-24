@@ -2,11 +2,14 @@
 // a lot of !important is used as when toggling between stylesheets they will simply override the defaults again, so we need to make sure our settings here are persistant after toggles
 
 #canvas {
-  position: absolute;
+  position: relative;
   height: 35%;
   width: 100%;
-  z-index: -100;
-  top: 0;
+  z-index: -5;
+  top: 60px;
+  @media screen and (min-width: 768px) {
+    top: 0;
+  }
 }
 
 .hidden-desktop {
@@ -33,28 +36,47 @@ h3 {
   font-family: 'Poppins', sans-serif !important;
   font-weight: 700 !important;
 }
-body {
-  font-family: 'Montserrat', sans-serif !important;
-  background-color: #02002f;
+@mixin bg {
+  position: fixed;
+  z-index: -1;
+  height: 100vh;
+  width: 100%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
-  scroll-behavior: smooth;
   transition: 0.3s ease;
   transition: background 600ms ease-in;
   background-attachment: fixed;
-  // fixes browser issues with mobile browsers where image doesn't zoom out and scale properly
   @media screen and (max-width: 400px) {
     background-size: 100% auto;
   }
-  // should fix the above when on a desktop (very big vertical, small width)
-  // the image has a height of 896 so it should take up fullscreen unless it's too high
   @media screen and (max-width: 400px) and (min-height: 850px) {
     background-size: cover;
   }
+  @media screen and (min-width: 768px) {
+    position: absolute;
+  }
+}
+#bg {
+  @include bg;
+}
+// used on desktop views, scrolls on top of the previous background to change from day to night while scrolling
+#bg2 {
+  @media screen and (min-width: 768px) {
+    top: 100vh;
+    position: absolute;
+    @include bg;
+  }
+}
+
+body {
+  scroll-behavior: smooth;
+  z-index: 999;
+  font-family: 'Montserrat', sans-serif !important;
+  background-color: #02002f;
 }
 html {
   min-height: 100%;

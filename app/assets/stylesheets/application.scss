@@ -2,15 +2,33 @@
 @import './navbar.scss';
 @import './toggle.scss';
 
+@mixin translucent-bg {
+  text-align: left !important;
+  padding: 10px !important;
+  background: rgba(0, 0, 0, 0.3);
+  color: unset !important;
+  color: rgb(247, 247, 247) !important;
+  a {
+    color: rgb(247, 247, 247) !important;
+    text-decoration: underline;
+  }
+}
+
 #site {
   height: 200vh;
   @media screen and (min-width: 768px) {
     height: 100vh;
   }
 }
+.centered-info {
+  margin-top: 100px;
+  @include translucent-bg;
+  display: flex;
+  justify-content: center;
+  height: 70vh;
+}
 
 .application {
-  display: flex;
   text-align: center;
   font-size: 1.2em;
   @media screen and (min-width: 768px) {
@@ -20,26 +38,19 @@
   h4 {
     font-size: 1.54em;
   }
-  p {
-    max-width: 350px;
-    margin: 0 auto;
-    border-radius: 5px;
-    // if the screen is too small horizontally or vertically (can't read text) show background
-    @media screen and (max-width: 768px), screen and (max-height: 950px) {
-      text-align: left !important;
-      padding: 10px !important;
-      background: rgba(0, 0, 0, 0.5);
-      color: unset !important;
-      color: rgb(247, 247, 247) !important;
-      a {
-        color: rgb(247, 247, 247) !important;
-        text-decoration: underline;
-      }
-    }
-    font-size: 0.85em;
-  }
   &-title {
+    display: block;
     width: 100%;
+    p {
+      max-width: 350px;
+      margin: 0 auto;
+      border-radius: 5px;
+      // if the screen is too small horizontally or vertically (can't read text) show background
+      @media screen and (max-width: 768px), screen and (max-height: 950px) {
+        @include translucent-bg;
+      }
+      font-size: 0.85em;
+    }
     @media screen and(min-width: 768px) {
       width: 50%;
     }
@@ -47,6 +58,7 @@
       font-weight: 600;
     }
   }
+
   &-footer {
     width: 100%;
     position: fixed;
