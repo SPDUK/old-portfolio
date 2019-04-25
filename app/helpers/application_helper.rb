@@ -14,8 +14,6 @@ module ApplicationHelper
   def nav_helper(style, tag_type)
     nav_items = [
     { title: "Home", url: root_path },
-    { title: "About Me", url: about_me_path },
-    { title: "Contact", url: contact_path },
     { title: "My Blog", url: blogs_path },
     { title: "Projects", url: projects_path }
     ]

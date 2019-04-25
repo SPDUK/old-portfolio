@@ -5,8 +5,9 @@
 @mixin translucent-bg {
   text-align: left !important;
   padding: 10px !important;
-  background: rgba(0, 0, 0, 0.3);
-  color: unset !important;
+  background: rgba(0, 0, 0, 0.1);
+  color: #ffffff !important;
+  border-radius: 5px;
   color: rgb(247, 247, 247) !important;
   a {
     color: rgb(247, 247, 247) !important;
@@ -21,22 +22,18 @@
   }
 }
 .centered-info {
-  margin-top: 100px;
+  margin-top: 10px;
   @include translucent-bg;
   display: flex;
   justify-content: center;
-  height: 70vh;
+  // height: 70vh;
 }
 
 .application {
   text-align: center;
-  font-size: 1.2em;
   @media screen and (min-width: 768px) {
     text-align: left;
     padding-left: 0px !important;
-  }
-  h4 {
-    font-size: 1.54em;
   }
   &-title {
     display: block;
@@ -44,12 +41,10 @@
     p {
       max-width: 350px;
       margin: 0 auto;
-      border-radius: 5px;
       // if the screen is too small horizontally or vertically (can't read text) show background
       @media screen and (max-width: 768px), screen and (max-height: 950px) {
         @include translucent-bg;
       }
-      font-size: 0.85em;
     }
     @media screen and(min-width: 768px) {
       width: 50%;

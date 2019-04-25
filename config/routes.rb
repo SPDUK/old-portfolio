@@ -22,6 +22,4 @@ Rails.application.routes.draw do
 
   get "projects/rails", to: "projects#rails"
   get "project/:id", to: "projects#show", as: "project_show"
-  get "/about-me", to: "pages#about"
-  get "/contact", to: "pages#contact"
 end
