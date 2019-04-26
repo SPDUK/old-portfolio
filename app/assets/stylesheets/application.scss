@@ -5,9 +5,9 @@
 @mixin translucent-bg {
   text-align: left !important;
   padding: 1em !important;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.35);
   border-radius: 5px;
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: rgb(253, 253, 253) !important;
   p {
     a {
       color: rgb(235, 252, 255) !important;
