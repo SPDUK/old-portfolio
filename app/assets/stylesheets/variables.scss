@@ -6,7 +6,6 @@
   height: 35%;
   width: 100%;
   z-index: -5;
-  top: 60px;
   @media screen and (min-width: 768px) {
     top: 0;
   }
@@ -60,7 +59,7 @@ h3 {
 }
 // used on desktop views, scrolls on top of the previous background to change from day to night while scrolling
 #bg2 {
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px), screen and(min-height:500px) {
     top: 100vh;
     position: absolute;
     @include bg;

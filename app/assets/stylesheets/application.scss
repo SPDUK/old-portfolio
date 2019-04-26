@@ -4,29 +4,17 @@
 
 @mixin translucent-bg {
   text-align: left !important;
-  padding: 10px !important;
-  background: rgba(0, 0, 0, 0.1);
-  color: #ffffff !important;
+  padding: 1em !important;
+  background: rgba(0, 0, 0, 0.3);
   border-radius: 5px;
-  color: rgb(247, 247, 247) !important;
-  a {
-    color: rgb(247, 247, 247) !important;
-    text-decoration: underline;
+  color: rgba(255, 255, 255, 0.9) !important;
+  p {
+    a {
+      color: rgb(235, 252, 255) !important;
+      text-decoration: underline;
+      font-weight: 600;
+    }
   }
-}
-
-#site {
-  height: 200vh;
-  @media screen and (min-width: 768px) {
-    height: 100vh;
-  }
-}
-.centered-info {
-  margin-top: 10px;
-  @include translucent-bg;
-  display: flex;
-  justify-content: center;
-  // height: 70vh;
 }
 
 .application {
@@ -38,32 +26,51 @@
   &-title {
     display: block;
     width: 100%;
-    p {
-      max-width: 350px;
-      margin: 0 auto;
-      // if the screen is too small horizontally or vertically (can't read text) show background
-      @media screen and (max-width: 768px), screen and (max-height: 950px) {
-        @include translucent-bg;
-      }
-    }
+
     @media screen and(min-width: 768px) {
       width: 50%;
     }
-    &-link {
-      font-weight: 600;
+    &-subtitle {
+      font-size: 1.1em;
+      opacity: 0.7;
     }
+  }
+  &-info {
+    margin-top: 60%;
+    @include translucent-bg;
+    p {
+      font-weight: 300;
+      margin-bottom: 1.7rem;
+    }
+    &-about {
+      font-size: 1.3em;
+    }
+    &-buttons {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    // desktop styles
+    // display: flex;
+    // justify-content: center;
+    // if the screen is too small horizontally or vertically (can't read text) show background
+
+    // @media screen and (max-width: 768px), screen and (max-height: 950px) {
+    //   @include translucent-bg;
+    // }
   }
 
   &-footer {
+    padding: 1rem 0;
     width: 100%;
-    position: fixed;
     bottom: 0.3em;
     display: flex;
     justify-content: center;
     font-size: 0.9rem;
     @media screen and (min-width: 768px) {
       justify-content: flex-end;
-      padding-right: 1em;
+      padding: 0 1rem;
+      position: fixed;
     }
     a {
       opacity: 0.5;
