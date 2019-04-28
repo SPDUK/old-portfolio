@@ -36,6 +36,7 @@ When uploading an image the resolutions should be
 ---
 
 **During development use Docker**
+Allow the `run.sh` script to be run with `chmod u+x ./run.sh`, this will run `docker compose run web` so we can run commands just like we would if it wasn't inside docker.
 Create the DB: `./run rake db:create`
 Migrate the DB: `./run rake db:migrate`
 
