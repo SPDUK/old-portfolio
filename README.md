@@ -36,17 +36,17 @@ When uploading an image the resolutions should be
 ---
 
 **During development use Docker**
-Create the DB: `docker-compose run web rake db:create`
-Migrate the DB: `docker-compose run web rake db:migrate`
+Create the DB: `./run rake db:create`
+Migrate the DB: `./run rake db:migrate`
 
 simply start the server with `docker-compose up`
 
 ---
 
-To generate placeholder content run `docker-compose run web rake db:setup` and a test admin user is created as `hello@world.com` with the password `password`.
+To generate placeholder content run `./run rake db:setup` and a test admin user is created as `hello@world.com` with the password `password`.
 You can modify the seeds in the `/db/seeds.rb` file.
 
-To give a user admin, currently run `docker-compose run web rails console` and then enter `User.first.update!(roles: [:site_admin])`
+To give a user admin, currently run `./run rails console` and then enter `User.first.update!(roles: [:site_admin])`
 Or update the correct user by finding it first if you have multiple test users.
 
 ---
