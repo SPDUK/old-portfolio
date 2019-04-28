@@ -9,7 +9,8 @@
   border-radius: 3px;
   color: rgb(253, 253, 253) !important;
   p {
-    a {
+    a,
+    #contact {
       color: rgb(235, 252, 255) !important;
       text-decoration: underline;
       font-weight: 600;
@@ -35,14 +36,21 @@
     }
   }
   &-info {
-    margin-top: 60%;
+    margin-top: 50vh;
+    @media (min-width: 768px) {
+      margin-top: 100vh;
+    }
     @include translucent-bg;
+
     p {
       font-weight: 300;
       margin-bottom: 1.7rem;
     }
     &-about {
       font-size: 1.3em;
+      span {
+        font-style: italic;
+      }
     }
     &-buttons {
       display: flex;
