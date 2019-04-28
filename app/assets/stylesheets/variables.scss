@@ -60,7 +60,7 @@ h3 {
 // used on desktop views, scrolls on top of the previous background to change from day to night while scrolling
 #bg2 {
   @media screen and (min-width: 768px), screen and (min-height: 500px) {
-    top: 100vh;
+    top: 75vh;
     position: absolute;
     @include bg;
   }
@@ -68,9 +68,10 @@ h3 {
     display: none;
   }
 }
-@media (max-aspect-ratio: 16/9) {
+// if the aspect ratio is very wide, use top : 100vh
+@media (min-aspect-ratio: 19/9) {
   #bg2 {
-    top: 72vh;
+    top: 100vh;
   }
 }
 

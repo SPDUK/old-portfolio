@@ -38,7 +38,10 @@
   &-info {
     margin-top: 50vh;
     @media (min-width: 768px) {
-      margin-top: 65vh;
+      margin-top: 70vh;
+    }
+    @media (min-width: 2000px) {
+      margin-top: 75vh;
     }
     @include translucent-bg;
 
