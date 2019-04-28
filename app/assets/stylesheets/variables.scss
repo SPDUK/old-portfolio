@@ -64,7 +64,7 @@ h3 {
     position: absolute;
     @include bg;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     display: none;
   }
 }
