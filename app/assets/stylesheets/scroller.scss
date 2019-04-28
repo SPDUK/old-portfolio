@@ -1,0 +1,78 @@
+#mouse-scroll {
+  display: block;
+  position: absolute;
+  margin: auto;
+  left: 50%;
+  top: 60vh;
+  transform: translateX(-50%);
+  z-index: 9999;
+
+  span {
+    display: block;
+    width: 5px;
+    height: 5px;
+    transform: rotate(45deg);
+    border-right: 2px solid rgba(255, 255, 255, 0.7);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+    margin: 0 0 3px 5px;
+  }
+
+  .mouse {
+    height: 21px;
+    width: 14px;
+    border-radius: 10px;
+    transform: none;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    top: 170px;
+  }
+
+  .down-arrow-1,
+  .down-arrow-2,
+  .down-arrow-3 {
+    animation: mouse-scroll 1s infinite;
+    animation-direction: alternate;
+  }
+
+  .down-arrow-1 {
+    margin-top: 6px;
+    animation-delay: 0.1s;
+  }
+  .down-arrow-2 {
+    animation-delay: 0.2s;
+  }
+  .down-arrow-3 {
+    animation-delay: 0.3s;
+  }
+  .mouse-in {
+    height: 5px;
+    width: 2px;
+    display: block;
+    margin: 5px auto;
+    background: rgba(255, 255, 255, 1);
+    position: relative;
+    animation: animated-mouse 1.2s ease infinite;
+  }
+}
+
+@keyframes animated-mouse {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+@keyframes mouse-scroll {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
