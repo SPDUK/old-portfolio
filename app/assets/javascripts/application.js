@@ -21,6 +21,13 @@
 
 $(document).on('turbolinks:load', () => {
   // scroll the about div to the top of the page when clicking the mouse scroller icon
+  anime({
+    targets: '.fa-chevron-down',
+    translateY: 20,
+    loop: true,
+    easing: 'easeOutElastic(1, .6)',
+    duration: 1200
+  });
   $('#mouse-scroll').click(() => {
     const { top } = $('#about').offset();
     window.scrollTo({
@@ -28,5 +35,6 @@ $(document).on('turbolinks:load', () => {
       left: 0,
       behavior: 'smooth'
     });
+    $('#mouse-scroll').fadeOut(300);
   });
 });
