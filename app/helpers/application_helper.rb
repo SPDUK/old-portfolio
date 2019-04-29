@@ -43,7 +43,7 @@ module ApplicationHelper
     js add_gritter(msg, sticky: false)
   end
 
-  # jQuery (full), popper.js, bootstrap js&css, js-cookie
+  # jQuery (full), popper.js, bootstrap js&css, js-cookie, anime.js
   def cdn_links
     %{
       <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -57,6 +57,7 @@ module ApplicationHelper
       <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
       <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Poppins:700" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
   }.html_safe
   end
 end
