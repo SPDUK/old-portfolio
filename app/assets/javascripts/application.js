@@ -18,3 +18,15 @@
 //= require cocoon
 //= require gritter
 //= require navbar
+
+$(document).on('turbolinks:load', () => {
+  // scroll the about div to the top of the page when clicking the mouse scroller icon
+  $('#mouse-scroll').click(() => {
+    const { top } = $('#about').offset();
+    window.scrollTo({
+      top,
+      left: 0,
+      behavior: 'smooth'
+    });
+  });
+});
