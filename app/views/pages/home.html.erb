@@ -1,35 +1,40 @@
 <div class="application container">
   <div class="application-title">
-    <div id="title">I'm Steve.</div>
-    <div class="application-title-subtitle">Software Developer from Cambridgeshire, UK</div>
-  </div>
-  <div id="mouse-scroll">
-    <div class="fa fa-chevron-down"></div>
-  </div>
-  <div class="application-info">
-    <p id="about" class="application-info-about">I am a full stack developer, focusing on <span>Javascript</span>,
-      <span>Ruby</span> & <span>Elixir</span>.
-      Interested in <span>Concurrency</span>, <span>Automation</span> and <span>Functional Programming.</span>
+    <div id="title">
+      <span class="letters letters-left">Hi,</span>
+      <span class="letters letters-center">I'm</span>
+      <span class="letters letters-right">Steve</span>
+    </div>
+    <span class="application-title-subtitle letters">Software Developer from Cambridgeshire, UK.</span>
+  </h1>
+</div>
+<div id="mouse-scroll">
+  <div class="fa fa-chevron-down"></div>
+</div>
+<div class="application-info">
+  <p id="about" class="application-info-about">I am a full stack developer, focusing on <span>Javascript</span>,
+    <span>Ruby</span> & <span>Elixir</span>.
+    Interested in <span>Concurrency</span>, <span>Automation</span> and <span>Functional Programming.</span>
+  </p>
+  <ul class="application-info-list">
+    <li>I'm self-taught, always learning.</li>
+    <li>Passionate about good code.</li>
+    <li>I Follow best practices, and strict style guides.</li>
+    <li>All of my code is documented.</li>
+    <li>My functions are simple, small and modular.</li>
+    <li>I leave comments as I create and maintain code.</li>
+  </ul>
+  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus obcaecati modi corrupti repellendus sed commodi officia delectus amet.</p>
+  <div class="application-info-links">
+    <p>You can check out my <%= link_to "Blogs", blogs_path %>, 
+      take a look at my recent <%= link_to "Projects", projects_path %>,
+      follow my <a href="https://github.com/SPDUK">Github</a>, or just 
+      <span id="contact">send me an email.</span>
     </p>
-    <ul class="application-info-list">
-      <li>I'm self-taught, always learning.</li>
-      <li>Passionate about good code.</li>
-      <li>I Follow best practices, and strict style guides.</li>
-      <li>All of my code is documented.</li>
-      <li>My functions are simple, small and modular.</li>
-      <li>I leave comments as I create and maintain code.</li>
-    </ul>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus obcaecati modi corrupti repellendus sed commodi officia delectus amet.</p>
-    <div class="application-info-links">
-      <p>You can check out my <%= link_to "Blogs", blogs_path %>, 
-        take a look at my recent <%= link_to "Projects", projects_path %>,
-        follow my <a href="https://github.com/SPDUK">Github</a>, or just 
-        <span id="contact">send me an email.</span>
-      </p>
-    </div>
-    <div class="application-info-icons">
-      <h5>Tools I use</h5>
-      <%= render "shared/icons" %>
-    </div>
   </div>
+  <div class="application-info-icons">
+    <h5>Tools I use</h5>
+    <%= render "shared/icons" %>
+  </div>
+</div>
 </div>

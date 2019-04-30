@@ -37,4 +37,52 @@ $(document).on('turbolinks:load', () => {
     });
     $('#mouse-scroll').fadeOut(300);
   });
+
+  // wrap every subtitle letter in a span
+  $('.application-title-subtitle').each(function() {
+    $(this).html(
+      $(this)
+        .text()
+        .replace(/\S/g, "<span class='letter'>$&</span>")
+    );
+  });
+
+  // title animation
+  anime
+    .timeline()
+    .add({
+      targets: '#title .letters-left',
+      opacity: [0, 1],
+      translateX: ['0.5em', 0],
+      easing: 'easeOutExpo',
+      duration: 600,
+      offset: '-=300',
+      delay: 350
+    })
+    .add({
+      targets: '#title .letters-center',
+      opacity: [0, 1],
+      translateX: ['0.5em', 0],
+      easing: 'easeOutExpo',
+      duration: 300,
+      offset: '0'
+    })
+    .add({
+      targets: '#title .letters-right',
+      opacity: [0, 1],
+      translateX: ['-0.5em', 0],
+      easing: 'easeOutExpo',
+      duration: 600,
+      offset: '-=600'
+    })
+    .add({
+      targets: '.application-title-subtitle .letter', // subtitle animation
+      opacity: [0, 0.85],
+      easing: 'easeOutExpo',
+      duration: 400,
+      offset: '-=775',
+      delay(el, i) {
+        return 36 * (i + 1);
+      }
+    });
 });
