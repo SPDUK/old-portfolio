@@ -1,19 +1,29 @@
+@mixin mouse-scroll-hover {
+  rect {
+    transform: translateY(-1.5px);
+    stroke: rgb(254, 254, 254);
+  }
+}
+
 #mouse-scroll {
   cursor: pointer;
   position: absolute;
-  padding: 1em;
-  margin: auto;
-  // aligns the icon with the middle logo
   left: 50%;
   top: 55vh;
   transform: translateX(-50%);
   z-index: 9999;
   font-size: 1.5em;
-  color: rgba(255, 255, 255, 0.8) !important;
+
+  &:active {
+    @include mouse-scroll-hover();
+  }
   @media (min-width: 768px) {
     font-size: 1.8em;
     left: 50%;
     top: 70vh;
+    &:hover {
+      @include mouse-scroll-hover();
+    }
   }
   @media (min-width: 1200px) {
     top: 75vh;

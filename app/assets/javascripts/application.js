@@ -22,20 +22,21 @@
 $(document).on('turbolinks:load', () => {
   // scroll the about div to the top of the page when clicking the mouse scroller icon
   anime({
-    targets: '.fa-chevron-down',
-    translateY: 20,
+    targets: '#mouse-scroll-line',
+    translateY: 25,
     loop: true,
-    easing: 'easeOutElastic(1, .6)',
-    duration: 1200
+    easing: 'easeOutExpo',
+    opacity: [1, 0],
+    duration: 1300
   });
   $('#mouse-scroll').click(() => {
+    $('#mouse-scroll').fadeOut(300);
     const { top } = $('#about').offset();
     window.scrollTo({
       top,
       left: 0,
       behavior: 'smooth'
     });
-    $('#mouse-scroll').fadeOut(300);
   });
 
   // wrap every subtitle letter in a span
