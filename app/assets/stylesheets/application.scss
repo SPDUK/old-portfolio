@@ -65,19 +65,34 @@
       }
     }
     &-list {
-      margin: 1rem 0;
+      margin: 1.5rem 0;
       padding-left: 0.5rem;
       text-align: left;
       border-left: 1px solid rgba(255, 255, 255, 0.4);
       list-style-type: none;
+      // make the text take up 50% of the width, and align the text on the right to the right side
+      @media (min-width: 991.98px) {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        border-right: 1px solid rgba(255, 255, 255, 0.4);
+        padding-right: 0.5rem;
+      }
       li {
         margin: 0.5rem 0;
+        @media (min-width: 991.98px) {
+          flex-basis: 50%;
+          &:nth-child(even) {
+            text-align: right;
+          }
+        }
       }
     }
     &-links {
+      // applies the border mid-way
       border-top: 1px solid rgba(255, 255, 255, 0.4);
-      margin-top: 1rem;
-      padding-top: 1rem;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
     }
     &-icons {
       text-align: center;
