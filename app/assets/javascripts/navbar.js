@@ -129,9 +129,11 @@ $(document).on('turbolinks:load', () => {
       $('#mouse-scroll').fadeIn(300);
     } else {
       $('#mouse-scroll').fadeOut(300);
-      toggleNavColors('light');
-      nav.style.fontSize = `16px`;
-      nav.style.height = `60px`;
+      if (isWide) {
+        toggleNavColors('light');
+        nav.style.fontSize = `16px`;
+        nav.style.height = `60px`;
+      }
     }
     // always hide navbar if scrolling down, show if scrolling up
     if (window.scrollY > titleHeight + 60 * 2) {
