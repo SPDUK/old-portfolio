@@ -1,5 +1,4 @@
-//= require stars
-
+//= require animations/stars
 function getImageWidth() {
   const w = $(document).width();
   if (w > 2560) return 3840; // 4k
