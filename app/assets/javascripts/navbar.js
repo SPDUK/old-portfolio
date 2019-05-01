@@ -1,4 +1,6 @@
 //= require animations/stars
+//= require animations/animateGrid
+
 function getImageWidth() {
   const w = $(document).width();
   if (w > 2560) return 3840; // 4k
@@ -112,6 +114,12 @@ $(document).on('turbolinks:load', () => {
     nav.classList.remove(`navbar-${remove}`);
   }
   function handleScroll() {
+    // animate the icon grid if it comes into view
+    const icons = $('.application-info-icons');
+    if (icons && window.scrollY - icons.position().top > 350) {
+      animateIconGrid();
+    }
+
     // do fancy scrolling animations on desktop
     const title = $('#title');
     const titleHeight = title.length ? title.position().top - 60 : 200;
