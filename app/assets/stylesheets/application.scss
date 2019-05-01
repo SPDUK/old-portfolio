@@ -66,7 +66,6 @@
       margin-top: 80vh;
     }
     @include translucent-bg;
-
     p {
       font-weight: 300;
     }
@@ -150,15 +149,6 @@
         }
       }
     }
-
-    // desktop styles
-    // display: flex;
-    // justify-content: center;
-    // if the screen is too small horizontally or vertically (can't read text) show background
-
-    // @media screen and (max-width: 768px), screen and (max-height: 950px) {
-    //   @include translucent-bg;
-    // }
   }
 
   &-footer {
