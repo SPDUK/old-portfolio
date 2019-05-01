@@ -18,15 +18,11 @@
 //= require cocoon
 //= require gritter
 //= require navbar
+//= require animations/info
 
-// for some reason trying to scroll top before the page loads (but turbolink loads?) it doesn't work properly
-$(window).on('load', () => {
-  window.scrollTo({
-    top: 0,
-    left: 0,
-    behavior: 'smooth'
-  });
-});
+// stops preserving scroll, no need to scroll up on page visit
+history.scrollRestoration = 'manual';
+
 $(document).on('turbolinks:load', () => {
   document.body.classList.add('no-scroll');
 
