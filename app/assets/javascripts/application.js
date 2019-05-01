@@ -19,16 +19,22 @@
 //= require gritter
 //= require navbar
 
-$(document).on('turbolinks:load', () => {
-  // scroll the about div to the top of the page when clicking the mouse scroller icon
-  anime({
-    targets: '#mouse-scroll-line',
-    translateY: 25,
-    loop: true,
-    easing: 'easeOutExpo',
-    opacity: [1, 0],
-    duration: 1300
+// for some reason trying to scroll top before the page loads (but turbolink loads?) it doesn't work properly
+$(window).on('load', () => {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
   });
+});
+$(document).on('turbolinks:load', () => {
+  document.body.classList.add('no-scroll');
+
+  // don't let the user scroll
+
+  // $('html').scrollTop(0) || $('body').scrollTop(0);
+
+  // scroll the about div to the top of the page when clicking the mouse scroller icon
   $('#mouse-scroll').click(() => {
     $('#mouse-scroll').fadeOut(300);
     const { top } = $('#about').offset();
@@ -85,5 +91,29 @@ $(document).on('turbolinks:load', () => {
       delay(el, i) {
         return 36 * (i + 1);
       }
+    })
+    .add({
+      targets: '#mouse-scroll',
+      opacity: [0, 1],
+      translateY: ['1em', 0],
+      easing: 'easeOutExpo',
+      duration: 1200
+    })
+    .add({
+      targets: '.application-info',
+      opacity: [0, 1],
+      translateY: ['5rem', 0],
+      duration: 1200,
+      complete: () => document.body.classList.remove('no-scroll')
     });
+
+  // animate the scroller inside the mouse
+  anime({
+    targets: '#mouse-scroll-line',
+    translateY: 25,
+    loop: true,
+    easing: 'easeOutExpo',
+    opacity: [1, 0],
+    duration: 1300
+  });
 });
