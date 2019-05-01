@@ -18,6 +18,8 @@
 //= require cocoon
 //= require gritter
 //= require navbar
+//= require animations/animateGrid
+//= require animations/animateInfoList
 
 // stops preserving scroll, no need to scroll up on page visit
 history.scrollRestoration = 'manual';
@@ -107,5 +109,12 @@ $(document).on('turbolinks:load', () => {
     easing: 'easeOutExpo',
     opacity: [1, 0],
     duration: 1300
+  });
+
+  // add an event listener to each icon, animate in the grid from that index on click
+  $('.application-info-icons .col-3').each((idx, el) => {
+    $(el).click(_evt => {
+      animateGrid(idx, 150);
+    });
   });
 });

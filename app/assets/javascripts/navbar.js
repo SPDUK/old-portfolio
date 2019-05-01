@@ -1,5 +1,4 @@
 //= require animations/stars
-//= require animations/animateGrid
 
 function getImageWidth() {
   const w = $(document).width();
@@ -118,6 +117,11 @@ $(document).on('turbolinks:load', () => {
     const icons = $('.application-info-icons');
     if (icons && window.scrollY - icons.position().top > 350) {
       animateIconGrid();
+    }
+    // animate the info list if it comes into view
+    const infoList = $('.application-info-list');
+    if (infoList && window.scrollY - infoList.position().top > 100) {
+      animateInfoList();
     }
 
     // do fancy scrolling animations on desktop

@@ -76,6 +76,7 @@
       }
     }
     &-list {
+      overflow: hidden;
       margin: 1.5rem 0;
       padding-left: 0.5rem;
       text-align: left;
@@ -90,6 +91,7 @@
         padding-right: 0.5rem;
       }
       li {
+        opacity: 0;
         margin: 0.5rem 0;
         @media (min-width: 991.98px) {
           flex-basis: 50%;
@@ -98,6 +100,9 @@
           }
         }
       }
+    }
+    &-animate {
+      opacity: 0;
     }
     &-links {
       // applies the border mid-way
