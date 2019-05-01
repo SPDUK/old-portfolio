@@ -18,7 +18,6 @@
 //= require cocoon
 //= require gritter
 //= require navbar
-//= require animations/info
 
 // stops preserving scroll, no need to scroll up on page visit
 history.scrollRestoration = 'manual';
@@ -96,6 +95,7 @@ $(document).on('turbolinks:load', () => {
       targets: '.application-info',
       opacity: [0, 1],
       translateY: ['5rem', 0],
+      easing: 'easeOutExpo',
       duration: 1200
     });
 
