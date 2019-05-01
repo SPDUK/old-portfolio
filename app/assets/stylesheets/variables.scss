@@ -47,10 +47,12 @@ h3 {
   @media screen and (max-width: 400px) {
     background-size: 100% auto;
   }
-  @media screen and (max-width: 400px) and (min-height: 850px) {
+  // keep the background taking up the full screen
+  // unless the height is 1000px
+  @media (max-width: 400px), (min-height: 1000px) {
     background-size: cover;
   }
-  @media screen and (min-width: 768px) {
+  @media (min-height: 1000px) {
     position: absolute;
   }
 }
@@ -58,19 +60,14 @@ h3 {
   @include bg;
 }
 // used on desktop views, scrolls on top of the previous background to change from day to night while scrolling
+// only shows over 10000 height (causes issues otherwise)
 #bg2 {
-  @media screen and (min-width: 768px), screen and (min-height: 500px) {
+  @media (min-height: 1000px) {
     top: 78vh;
     position: absolute;
     @include bg;
   }
-  @media (max-width: 767px) {
-    display: none;
-  }
-}
-// if the aspect ratio is very wide, use top : 100vh
-@media (min-aspect-ratio: 19/9) {
-  #bg2 {
+  @media (min-aspect-ratio: 19/9) {
     top: 100vh;
   }
 }
