@@ -1,5 +1,13 @@
 @import 'gritter';
 // a lot of !important is used as when toggling between stylesheets they will simply override the defaults again, so we need to make sure our settings here are persistant after toggles
+// apply to body to stop scrolling
+.no-scroll {
+  height: 100vh;
+  overflow: hidden;
+  #mouse-scroll {
+    display: hidden;
+  }
+}
 
 #canvas {
   position: relative;
@@ -76,9 +84,6 @@ body {
   z-index: 999;
   font-family: 'Montserrat', sans-serif !important;
   background-color: #02002f;
-}
-html {
-  min-height: 100%;
 }
 
 // overrides for gritter styles
