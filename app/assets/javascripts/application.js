@@ -30,10 +30,6 @@ $(window).on('load', () => {
 $(document).on('turbolinks:load', () => {
   document.body.classList.add('no-scroll');
 
-  // don't let the user scroll
-
-  // $('html').scrollTop(0) || $('body').scrollTop(0);
-
   // scroll the about div to the top of the page when clicking the mouse scroller icon
   $('#mouse-scroll').click(() => {
     $('#mouse-scroll').fadeOut(300);
@@ -90,7 +86,8 @@ $(document).on('turbolinks:load', () => {
       offset: '-=775',
       delay(el, i) {
         return 36 * (i + 1);
-      }
+      },
+      complete: () => document.body.classList.remove('no-scroll')
     })
     .add({
       targets: '#mouse-scroll',
@@ -103,8 +100,7 @@ $(document).on('turbolinks:load', () => {
       targets: '.application-info',
       opacity: [0, 1],
       translateY: ['5rem', 0],
-      duration: 1200,
-      complete: () => document.body.classList.remove('no-scroll')
+      duration: 1200
     });
 
   // animate the scroller inside the mouse
