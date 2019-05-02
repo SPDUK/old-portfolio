@@ -71,7 +71,7 @@ h3 {
 // only shows over 10000 height (causes issues otherwise)
 #bg2 {
   @media (min-height: 1000px) {
-    top: 85vh;
+    top: 80vh;
     position: absolute;
     @include bg;
   }
