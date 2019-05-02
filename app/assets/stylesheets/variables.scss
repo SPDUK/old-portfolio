@@ -43,14 +43,16 @@ h3 {
   z-index: -1;
   height: 100vh;
   width: 100%;
+  will-change: auto;
+  transform: translate3d(0px, y, 0px);
+  -webkit-backface-visibility: hidden;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
-  transition: 0.3s ease;
-  transition: background 600ms ease-in;
+  transition: 450ms ease;
   background-attachment: fixed;
   @media screen and (max-width: 400px) {
     background-size: 100% auto;
