@@ -1,4 +1,5 @@
 //= require animations/stars
+//= require animations/animateMobileNav
 //= require navbars/functions/setDarkTheme
 //= require navbars/functions/setLightTheme
 //= require navbars/functions/hideScrolledNav
@@ -42,6 +43,8 @@ function toggleTheme() {
 }
 
 $(document).on('turbolinks:load', () => {
+  animateMobileNav();
+
   setTheme();
   $('.theme-toggle').click(toggleTheme);
 

@@ -1,3 +1,4 @@
+//= require animations/animateMobileNav
 //= require navbars/functions/setDarkTheme
 //= require navbars/functions/setLightTheme
 //= require navbars/functions/handleResize
@@ -18,6 +19,7 @@ function toggleTheme() {
 }
 
 $(document).on('turbolinks:load', () => {
+  animateMobileNav();
   setTheme();
   $('.theme-toggle').click(toggleTheme);
   const nav = document.querySelector('#nav');
