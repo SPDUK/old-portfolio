@@ -19,6 +19,7 @@ function handleNavScroll() {
       nav.style.height = height <= 60 ? '60px' : `${height}px`;
     }
     // if the window is scrolled down fade out, if scrolled up fade in
+    $('#mouse-scroll').fadeIn(300);
   } else if (isWide) {
     toggleNavColors('light');
     nav.style.fontSize = `16px`;
@@ -27,5 +28,7 @@ function handleNavScroll() {
   // always hide navbar if scrolling down, show if scrolling up
   if (window.scrollY > titleHeight + 60 * 2) {
     hideScrolledNav();
+    // hide the mouse-scroll icon if scrolling down
+    $('#mouse-scroll').fadeOut(300);
   }
 }
