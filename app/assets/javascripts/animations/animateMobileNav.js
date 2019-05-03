@@ -6,7 +6,7 @@ function animateMobileNav() {
         opacity: [0, 1],
         duration: 900,
         easing: 'easeOutExpo',
-        delay: anime.stagger(170)
+        delay: anime.stagger(110)
       });
     }
   });
