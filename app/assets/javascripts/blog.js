@@ -4,4 +4,4 @@
 //= require turbolinks
 //= require cocoon
 //= require gritter
-//= require navbar
+//= require navbars/blogNav

@@ -17,7 +17,7 @@
 //= require turbolinks
 //= require cocoon
 //= require gritter
-//= require navbar
+//= require navbars/homeNav
 //= require animations/animateGrid
 //= require animations/animateInfoList
 
