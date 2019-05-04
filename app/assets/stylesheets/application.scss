@@ -3,6 +3,9 @@
 @import './toggle.scss';
 @import './scroller.scss';
 
+body {
+  background-color: #02002f;
+}
 @mixin translucent-bg {
   text-align: left !important;
   padding: 1em !important;
