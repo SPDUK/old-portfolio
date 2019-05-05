@@ -8,6 +8,10 @@
   }
 }
 
+.container {
+  max-width: 42rem !important;
+}
+
 .blog {
   &-header {
     padding-top: 6.5em;
