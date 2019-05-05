@@ -64,3 +64,7 @@ It builds a URL like so`.../firewatch-${color}-${width}.jpg` where color will be
 
 So for example an image should be named `firewatch-dark-1080.jpg` when uploaded to cloudinary.
 Any hidpi/modern phones will download the 1080p image.
+
+### Other info
+
+`!important` is used sometimes with the css, it is used to prevent the styles being reset when changing themes, as bootstrap also likes to use `!important` too, not a big deal, but if you remove it bootstrap will override the styles when the theme is changed.
