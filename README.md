@@ -67,4 +67,6 @@ Any hidpi/modern phones will download the 1080p image.
 
 ### Other info
 
+The width of the blogs container is set up to be 80 characters wide at most, so 99% of code will naturally fit correctly inside the container.
+
 `!important` is used sometimes with the css, it is used to prevent the styles being reset when changing themes, as bootstrap also likes to use `!important` too, not a big deal, but if you remove it bootstrap will override the styles when the theme is changed.
