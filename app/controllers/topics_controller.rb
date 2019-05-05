@@ -2,7 +2,7 @@
 
 class TopicsController < ApplicationController
   layout "blog"
-  before_action :set_navbar_topics
+  before_action :header_topics
 
   def index
     @topics = Topic.all
@@ -19,8 +19,7 @@ class TopicsController < ApplicationController
   end
 
   private
-
-    def set_navbar_topics
-      @navbar_topics = Topic.with_blogs
+    def header_topics
+      @header_topics = Topic.with_blogs
     end
 end

@@ -1,8 +1,13 @@
 <div class="blog-header bg-light">
   <div class="container">
-    <h1 id="title" class="blog-title">My Blog</h1>
-    <%= link_to 'New Blog', new_blog_path if logged_in?(:site_admin) %>
-    <p class="lead blog-description">An example blog template built with Bootstrap.</p>
-    <%= link_to "Topics", topics_path %>
+    <div id="title" class="blog-title">My Blog Title</div>
+    <p class="blog-description">
+      Javascript, Ruby, Elixir.
+    </p>
+    <div class="blog-links">
+      <%= render "blogs/header_topics" %>
+      <a href="https://github.com/SPDUK">Github</a>
+      <%= link_to 'New Blog Post', new_blog_path if logged_in?(:site_admin) %>
+    </div>
   </div>
 </div>

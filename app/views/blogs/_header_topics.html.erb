@@ -1,0 +1,15 @@
+<div class="dropdown">
+  <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Blog Topics
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <% @header_topics.each do |topic| %>
+      <%= link_to topic.title, topic_path(topic), class: "dropdown-item" %>
+    <% end %>
+    <%# TODO: create new topic path  %>
+    <% if logged_in?(:site_admin) %>
+      <div class="dropdown-divider"></div>
+      <%= link_to "Add New Topic", "/topics/new", class: "dropdown-item"%>
+    <% end %>
+  </div>
+</div>
