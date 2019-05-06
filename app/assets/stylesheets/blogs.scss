@@ -101,8 +101,17 @@
         font-size: 1.2em;
       }
       &-title {
-        display: flex;
-        justify-content: space-between;
+        @media (min-width: 400px) {
+          display: flex;
+          justify-content: space-between;
+        }
+        .text-alert {
+          display: block;
+        }
+        span {
+          word-wrap: break-word;
+          word-break: break-word;
+        }
       }
       &-meta {
         font-size: 0.6em;

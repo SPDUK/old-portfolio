@@ -6,6 +6,6 @@ class Topic < ApplicationRecord
 
   def self.with_blogs
     # filter out any topics that do not have any blogs associated to them
-    includes(:blogs).where.not(blogs: { id: nil, status: "published"  })
+    includes(:blogs).where.not(blogs: { id: nil, status: "draft"  })
   end
 end
