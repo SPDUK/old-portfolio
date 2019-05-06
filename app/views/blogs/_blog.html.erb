@@ -1,4 +1,4 @@
-<div class="blog-post rounded">
+<div class="blog-post rounded <%= "border border-warning" if blog.draft? %>">
   <%= link_to(blog) do %>
     <div class="card bg-light text-dark">
       <div class="card-header">
@@ -7,10 +7,13 @@
           <span class="badge badge-dark"><%= blog.topic.title %></span>
         </div>
         <div class="card-header-meta">
+          <% if blog.draft? %>
+            <b class="text-warning">Draft | </b>
+          <% end %>
           <span class="card-header-meta-published">
             Published <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago
           </span>
-          <span class="card-header-meta-time">– 15 min read</p>
+          <span class="card-header-meta-time">– 15 min read</span>
         </div>
       </div>
       <div class="card-body text-body">
