@@ -1,8 +1,22 @@
-<div class="blog-post">
-  <h2 class="blog-post-title"><%= link_to blog.title.upcase, blog %></h2>
-  <p class="blog-post-meta">Published <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago</p>
-  <style>
-    <%= ::Rouge::Themes::Gruvbox.mode(:light).render(scope: '.highlight') %>
-  </style>
-  <p><%= markdown blog.body %></p>
-</div>
+<%= link_to(blog) do %>
+  <div class="blog-post card bg-light text-dark">
+    <div class="card-header">
+      <div class="card-header-title">
+        <span class="text-alert"><%= blog.title %></span>
+        <span class="badge badge-dark"><%= blog.topic.title %></span>
+      </div>
+      <div class="card-header-meta">
+        <span class="card-header-meta-published">
+          Published <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago
+        </span>
+        <span class="card-header-meta-time">– 15 min read</p>
+      </div>
+    </div>
+    <div class="card-body text-body">
+      <style>
+        <%= ::Rouge::Themes::Gruvbox.mode(:light).render(scope: '.highlight') %>
+      </style>
+      <p><%= markdown blog.body %></p>
+    </div>
+  </div>
+<% end %>

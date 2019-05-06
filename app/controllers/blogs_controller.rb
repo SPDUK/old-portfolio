@@ -14,9 +14,9 @@ class BlogsController < ApplicationController
   # GET /blogs.json
   def index
     if logged_in?(:site_admin)
-      @blogs = Blog.recent.page(params[:page]).per(5)
+      @blogs = Blog.includes(:topic).recent.page(params[:page]).per(5)
     else
-      @blogs = Blog.recent.published.page(params[:page]).per(5).order(created_at: :desc)
+      @blogs = Blog.includes(:topic).recent.published.page(params[:page]).per(5).order(created_at: :desc)
     end
     @page_title = "My blogs!"
   end
