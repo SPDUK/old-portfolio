@@ -1,13 +1,13 @@
 <div class="blog-main">
+  <%= render partial: "blogs/admin_actions" %>
   <h2><%= @blog.title %></h2>
-  <nav class="breadcrumb d-flex" aria-label="breadcrumb">
-    <%= link_to "Blogs", blogs_path, class: "breadcrumb-item" %>
-    <%= link_to @blog.topic.title, topic_path(@blog.topic), class: "breadcrumb-item" %>
-    <span class="breadcrumb-item active"><%= @blog.title %></span>
-    <%# pass in local variables %>
-    <%= render partial: "blogs/admin_actions" %>
-  </nav>
-  <p><%= @blog.topic.title %></p>
+  <div class="blog-meta border-bottom border-light">
+    <span class="border-right border-light">
+      Published <%= distance_of_time_in_words(@blog.created_at, Time.now) %> ago
+    </span>
+    <span class="border-right border-light">99 min read</span>
+    <%= link_to @blog.topic.title, @blog.topic, class: "badge badge-dark" %>
+  </div>
   <%# TODO: make this a toggle switch or use JS somehow %>
   <style>
     <%= ::Rouge::Themes::Gruvbox.mode(:light).render(scope: '.highlight') %>

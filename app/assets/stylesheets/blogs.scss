@@ -56,6 +56,36 @@
   &-pagination > .btn {
     border-radius: 2rem;
   }
+  // styles for an individual blog post on the show page
+  &-meta {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 0.5rem;
+    line-height: 100%;
+    font-size: 0.7em;
+    // make the meta text fit on one line for small screens
+    // TODO: find out if there's an easier way to calculate this
+    @media (min-width: 320px) {
+      font-size: 0.7em;
+    }
+    @media (min-width: 340px) {
+      font-size: 0.76em;
+    }
+    @media (min-width: 360px) {
+      font-size: 0.81em;
+    }
+    @media (min-width: 400px) {
+      font-size: 0.89em;
+    }
+    @media (min-width: 440px) {
+      font-size: 1em;
+    }
+    span {
+      margin-right: 1rem;
+      padding-right: 0.5rem;
+    }
+  }
+  // styles for the index page posts
   &-post {
     margin-bottom: 4rem;
     transition: 0.2s ease;
@@ -73,10 +103,6 @@
       &-title {
         display: flex;
         justify-content: space-between;
-        .badge {
-          height: 100%;
-          font-size: 0.7em;
-        }
       }
       &-meta {
         font-size: 0.6em;
@@ -115,7 +141,7 @@
 
 //  rouge styles for markdown
 div.highlight {
-  border-radius: 5px;
+  border-radius: 0.2rem;
   padding: 10px;
   padding-bottom: 0px;
   margin-bottom: 12px;
@@ -129,4 +155,10 @@ pre.highlight {
   i {
     margin: 0 5px;
   }
+}
+
+// make badge text smaller and make it not grow too big when using flexbox
+.badge {
+  height: 100%;
+  font-size: 0.7em;
 }
