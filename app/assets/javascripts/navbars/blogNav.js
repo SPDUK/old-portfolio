@@ -28,7 +28,7 @@ $(document).on('turbolinks:load', () => {
     handleNavScroll();
     // if the page can be paginated, use infinite scrolling
     const url = $('a[rel="next"]').attr('href');
-    if (url && window.scrollY > document.body.clientHeight - window.innerHeight - 50) {
+    if (url && window.scrollY > document.body.clientHeight - window.innerHeight - 500) {
       $('.pagination').text('Loading more blogs...');
       $.getScript(url);
     }
