@@ -6,8 +6,9 @@
     </p>
     <div class="blog-links">
       <%= render "blogs/header_topics" %>
-      <a href="https://github.com/SPDUK">Github</a>
-      <%= link_to 'New Blog Post', new_blog_path if logged_in?(:site_admin) %>
+      <a class="btn btn-sm btn-outline-success" href="https://github.com/SPDUK">Github</a>
+      <a href="https://github.com/SPDUK"></a>
+      <%= link_to 'New Blog Post', new_blog_path, class: "btn btn-sm btn-info" if logged_in?(:site_admin) %>
     </div>
   </div>
 </div>

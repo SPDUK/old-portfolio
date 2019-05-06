@@ -14,21 +14,34 @@
 
 .blog {
   &-header {
-    padding-top: 6.5em;
+    text-align: center;
+    padding-top: 5rem;
     padding-bottom: 1.25rem;
     margin-bottom: 2rem;
-    border-bottom: 0.05rem solid #eee;
   }
   &-title {
     margin-bottom: 0;
-    font-size: 2rem;
-    font-weight: normal;
-    @media (min-width: 40em) {
-      font-size: 3.5rem;
-    }
+    font-size: 2em;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
   }
   &-description {
-    font-size: 1.1rem;
+    font-weight: 700;
+  }
+  &-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 1.5rem;
+    .dropdown {
+      margin-right: 1.2em;
+    }
+    .btn-info {
+      margin-left: 1.2em;
+      @media (max-width: 350px) {
+        margin-top: 1.2em;
+      }
+    }
   }
   &-pagination {
     margin-bottom: 4rem;
