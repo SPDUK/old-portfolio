@@ -160,5 +160,5 @@ pre.highlight {
 // make badge text smaller and make it not grow too big when using flexbox
 .badge {
   height: 100%;
-  font-size: 0.7em;
+  font-size: 0.7em !important;
 }
