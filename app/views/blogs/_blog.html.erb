@@ -1,30 +1,26 @@
 <div class="blog-post rounded <%= "border border-warning" if blog.draft? %>">
-  <%= link_to(blog) do %>
-    <div class="card bg-light text-dark">
-      <div class="card-header">
-        <div class="card-header-title">
-          <span class="text-alert"><%= blog.title %></span>
-          <span class="badge badge-dark"><%= blog.topic.title %></span>
-        </div>
-        <div class="card-header-meta">
-          <% if blog.draft? %>
-            <b class="text-warning">Draft | </b>
-          <% end %>
-          <span class="card-header-meta-published">
-            Published <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago
-          </span>
-          <span class="card-header-meta-time">– 15 min read</span>
-        </div>
+  <div class="card bg-light text-dark">
+    <div class="card-header">
+      <div class="card-header-title">
+        <%= link_to blog.title, blog, class: "text-dark" %>
+        <%= link_to blog.topic.title, topic_path(blog.topic), class: "badge badge-dark" %>
       </div>
-      <div class="card-body text-body">
-        <style>
-          <%= ::Rouge::Themes::Gruvbox.mode(:light).render(scope: '.highlight') %>
-        </style>
-        <p><%= markdown blog.body.truncate(100) %></p>
-      </div>
-      <div class="btn btn-sm btn-light">
-        Read More
+      <div class="card-header-meta">
+        <% if blog.draft? %>
+          <b class="text-warning">Draft | </b>
+        <% end %>
+        <span class="card-header-meta-published">
+          Published <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago
+        </span>
+        <span class="card-header-meta-time">– 15 min read</span>
       </div>
     </div>
-  <% end %>
+    <div class="card-body text-body">
+      <style>
+        <%= ::Rouge::Themes::Gruvbox.mode(:light).render(scope: '.highlight') %>
+      </style>
+      <p><%= markdown blog.body.truncate(100) %></p>
+    </div>
+    <%= link_to "Read More", blog, class: "btn btn-sm btn-light" %>
+  </div>
 </div>

@@ -88,7 +88,7 @@
   // styles for the index page posts
   &-post {
     margin-bottom: 4rem;
-    transition: 0.2s ease;
+    transition: 0.15s ease-in-out;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     &:hover {
       transform: translateY(-3px);
@@ -105,7 +105,7 @@
           display: flex;
           justify-content: space-between;
         }
-        .text-alert {
+        .text-dark {
           display: block;
         }
         span {
