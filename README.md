@@ -35,6 +35,14 @@ When uploading an image the resolutions should be
 
 ---
 
+**Create the DB**
+For development I use a heroku free tier postgres database.
+
+- Log in to Heroku, create a new app, then add click "Configure Add-ons" while on the overview page
+- Click Heroku Postgres, make sure it's hobby tier (free).
+- Click on the database when it's created, go to settings and click view credentials
+- Grab the URI, place it into secrets.yml like so: `DEV_DB_URI: "postgres URI goes here"`
+
 **During development use Docker**
 Allow the `run.sh` script to be run with `chmod u+x ./run.sh`, this will run `docker compose run web` so we can run commands just like we would if it wasn't inside docker.
 Create the DB: `./run rake db:create`
@@ -44,7 +52,8 @@ simply start the server with `docker-compose up`
 
 ---
 
-To generate placeholder content run `./run rake db:setup` and a test admin user is created as `hello@world.com` with the password `password`.
+To generate placeholder content run `./run rake db:seed` and a test admin user is created as
+`hello@world.com` with the password `password`.
 You can modify the seeds in the `/db/seeds.rb` file.
 
 To give a user admin, currently run `./run rails console` and then enter `User.first.update!(roles: [:site_admin])`
