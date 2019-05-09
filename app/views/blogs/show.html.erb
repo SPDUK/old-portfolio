@@ -5,7 +5,7 @@
     <span class="border-right border-light">
       Published <%= distance_of_time_in_words(@blog.created_at, Time.now) %> ago
     </span>
-    <span class="border-right border-light">99 min read</span>
+    <span class="border-right border-light"><%= read_time(@blog.body) %> min read</span>
     <%= link_to @blog.topic.title, @blog.topic, class: "badge badge-dark" %>
   </div>
   <%# TODO: make this a toggle switch or use JS somehow %>
