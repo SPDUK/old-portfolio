@@ -1,12 +1,7 @@
 FROM ruby:2.6.0
-RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
+RUN apt-get update -qq && apt-get install -y nodejs
 RUN mkdir /portfolio
 WORKDIR /portfolio
-
-RUN gem install rubocop
-RUN gem install rcodetools
-RUN gem install htmlbeautifier
-
 
 COPY Gemfile /portfolio/Gemfile
 COPY Gemfile.lock /portfolio/Gemfile.lock
