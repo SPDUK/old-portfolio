@@ -2,8 +2,9 @@
   border: 0px !important;
 }
 #nav {
-  z-index: 99999;
-  transition: background-color 0.4s ease-out, font-size 0.1s ease, height 0.15s ease, top 0.4s ease-out;
+  z-index: 9999;
+  transition: background-color 0.4s ease-out, font-size 0.1s ease, height 0.15s ease,
+    top 0.4s ease-out;
   // make navbar 60px high on mobile
   @media screen and (max-width: 768px) {
     padding: 10px 1rem;
