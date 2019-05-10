@@ -51,16 +51,17 @@ $(document).on('turbolinks:load', () => {
   const nav = document.querySelector('#nav');
 
   function handleScroll() {
-    // animate the icon grid if it comes into view
-    const icons = $('.application-info-icons');
-    if (icons && window.scrollY - icons.position().top > 350) {
-      animateIconGrid();
-    }
     // animate the info list if it comes into view
     const infoList = $('.application-info-list');
-    if (infoList && window.scrollY - infoList.position().top > 100) {
+    if (window.scrollY - infoList.position().top > 100) {
       animateInfoList();
     }
+    // animate the icon grid if it comes into view
+    const icons = $('.application-info-icons');
+    if (window.scrollY - icons.position().top > 100) {
+      animateIconGrid();
+    }
+
     handleNavScroll();
     // if on the blogs page and the page can be paginated, use infinite scrolling
   }
