@@ -31,17 +31,18 @@ module ApplicationHelper
 
 
   # if any alerts exist, load a gritter alert for it
+  # generate an alart based on the error message passed in (eg: works for blog.errors)
   def alerts
-    alert = (flash[:alert] || flash[:error] || flash[:notice])
-    if alert
-      alert_generator(alert)
+    notice = (flash[:alert] || flash[:notice])
+    error = flash[:error]
+    if error
+      js add_gritter(error, title: "Error!", sticky: true)
+    elsif notice
+      js add_gritter(notice, sticky: false, time: 1000)
     end
   end
 
-  # generate an alart based on the error message passed in (eg: works for blog.errors)
-  def alert_generator(msg)
-    js add_gritter(msg, sticky: false)
-  end
+
 
   # jQuery (full), popper.js, bootstrap js&css, js-cookie, anime.js
   def cdn_links
