@@ -1,0 +1,82 @@
+#loading {
+  position: fixed;
+  background: #222;
+  z-index: 9999999;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s ease-in;
+}
+
+#loading.show {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.4s ease-in;
+}
+
+#loading-text {
+  position: absolute;
+  top: 60%;
+  width: 100%;
+  text-align: center;
+}
+
+// Gradient colours
+$color1: #ffffff;
+$color2: #e2e2e2;
+// Width and height of spinner square
+$size: 40;
+
+#spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  animation: spin 0.8s ease-in-out infinite;
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    left: -($size / 2) * 1px;
+    top: -($size / 2) * 1px;
+    width: $size * 1px;
+    height: $size * 1px;
+    -webkit-clip-path: polygon(100% 0, 0 100%, 100% 100%, 0 0);
+    clip-path: polygon(100% 0, 0 100%, 100% 100%, 0 0);
+  }
+  &:before {
+    background: linear-gradient(90deg, $color1, $color2);
+    animation: fan1 0.8s infinite alternate;
+  }
+  &:after {
+    background: linear-gradient(360deg, $color1, $color2);
+    animation: fan2 0.8s infinite alternate;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
+@keyframes fan1 {
+  0% {
+    transform: skewx(0deg);
+  }
+  100% {
+    transform: skew(45deg, -5deg);
+  }
+}
+@keyframes fan2 {
+  0% {
+    transform: rotate(90deg) skewx(0deg);
+  }
+  100% {
+    transform: rotate(90deg) skew(45deg, -5deg);
+  }
+}
