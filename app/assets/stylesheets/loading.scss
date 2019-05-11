@@ -8,19 +8,19 @@
   top: 0;
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0s 0.4s, opacity 0.4s linear;
+  transition: visibility 0.25s, opacity 0.25s linear;
 }
 
 #loading.show {
   visibility: visible;
   opacity: 1;
-  transition: opacity 0.4s linear;
+  transition: opacity 0.25s linear;
 }
 
 #loading-text {
   color: #ffffff !important;
   position: absolute;
-  top: 60%;
+  top: 50%;
   width: 100%;
   text-align: center;
 }
@@ -33,9 +33,9 @@ $size: 40;
 
 #spinner {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
-  animation: spin 0.8s ease-in-out infinite;
+  animation: spin 1s ease-in-out infinite;
   &:before,
   &:after {
     content: '';
@@ -49,11 +49,11 @@ $size: 40;
   }
   &:before {
     background: linear-gradient(90deg, $color1, $color2);
-    animation: fan1 0.8s infinite alternate;
+    animation: fan1 1s infinite alternate;
   }
   &:after {
     background: linear-gradient(360deg, $color1, $color2);
-    animation: fan2 0.8s infinite alternate;
+    animation: fan2 1s infinite alternate;
   }
 }
 

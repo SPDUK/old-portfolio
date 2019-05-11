@@ -4,6 +4,7 @@
 //= require cocoon
 //= require gritter
 // = require navbars/projectsNav
+//= require "helpers/loadingSpinner"
 
 // returns a new array with the data pos added on to the card
 function setPositions() {
@@ -28,6 +29,8 @@ async function afterSort() {
 }
 
 $(document).on('turbolinks:load', () => {
+  loadingSpinner();
+
   const projects = document.getElementById('sortable');
   if (projects) {
     Sortable.create(projects, {

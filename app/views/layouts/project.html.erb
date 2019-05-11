@@ -13,7 +13,8 @@
     <%= javascript_include_tag 'projects', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <%= render "shared/nav"  %>
+    <%= render "shared/nav" %>
+    <%= render "shared/loading" %>
     <div class="wrapper">
       <%= render "shared/project_masthead" %>
       <%= yield %>
