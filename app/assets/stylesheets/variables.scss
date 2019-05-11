@@ -1,5 +1,5 @@
 @import 'gritter';
-@import "./loading.scss";
+@import './loading.scss';
 // a lot of !important is used as when toggling between stylesheets they will simply override the defaults again, so we need to make sure our settings here are persistant after toggles
 // apply to body to stop scrolling
 .no-scroll {
@@ -97,10 +97,3 @@ body {
   font-size: 1.05em;
   line-height: 1.05em;
 }
-
-
-
-
-
-
-

@@ -8,13 +8,13 @@
   top: 0;
   visibility: hidden;
   opacity: 0;
-  transition: opacity 0.4s ease-in;
+  transition: visibility 0s 0.4s, opacity 0.4s linear;
 }
 
 #loading.show {
   visibility: visible;
   opacity: 1;
-  transition: opacity 0.4s ease-in;
+  transition: opacity 0.4s linear;
 }
 
 #loading-text {
