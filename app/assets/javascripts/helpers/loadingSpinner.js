@@ -22,10 +22,19 @@ function applyLinkAnimation() {
 
 // by default the page will load with the spinner on, we just remove it when everything has finished loading
 function loadingSpinner() {
-  // the loading spinner can run on page load, when it does respect the theme selection
+  // the loading spinner can run on page load, when it does
+  // respect the theme selection and add a dark background
   if (Cookies.get('theme') === 'dark') $('#loading').addClass('bg-black');
+
+  // fade the body in on page load
+  anime({
+    targets: 'body',
+    easing: 'easeInOutSine',
+    opacity: [0, 1],
+    duration: 450
+  });
+
   applyLinkAnimation();
-  $('html').addClass('no-scrollbar');
 
   // check to see if the page has loaded every 30ms until it has,
   // then fade out and stop checking

@@ -46,4 +46,6 @@ async function setDarkTheme() {
   $('.theme-toggle').addClass('toggle-on');
   // make the loading spinner background black
   $('#loading').addClass('bg-black');
+  // make the body backgroundColor black
+  document.body.style.backgroundColor = '#222';
 }
