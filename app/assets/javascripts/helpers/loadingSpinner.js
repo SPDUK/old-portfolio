@@ -1,5 +1,14 @@
-// whenever clicking a link, add the spinner
+function applySpinnerClasses() {
+  $('html').addClass('no-scrollbar');
+  $('#loading').addClass('show');
+  if (Cookies.get('theme') === 'dark') $('#loading').addClass('bg-black');
+}
+function removeSpinnerClasses() {
+  $('html').removeClass('no-scrollbar');
+  $('#loading').removeClass('show');
+}
 
+// whenever clicking a link, add the spinner
 // apply an animation when clicking any link to fade in the spinner
 function applyLinkAnimation() {
   $('a').each((i, el) => {
@@ -7,15 +16,14 @@ function applyLinkAnimation() {
     // ignore any empty links and the navbar dropdown
     if (!pathname || el.id === 'navbarDropdown') return;
 
-    $(el).click(_ => {
-      $('#loading').addClass('show');
-      $('html').addClass('no-scrollbar');
-    });
+    $(el).click(applySpinnerClasses);
   });
 }
 
 // by default the page will load with the spinner on, we just remove it when everything has finished loading
 function loadingSpinner() {
+  // the loading spinner can run on page load, when it does respect the theme selection
+  if (Cookies.get('theme') === 'dark') $('#loading').addClass('bg-black');
   applyLinkAnimation();
   $('html').addClass('no-scrollbar');
 
@@ -26,10 +34,7 @@ function loadingSpinner() {
       clearInterval(interval);
 
       // fade out after 100ms to make the animation look smoother
-      setTimeout(() => {
-        $('html').removeClass('no-scrollbar');
-        $('#loading').removeClass('show');
-      }, 150);
+      setTimeout(removeSpinnerClasses, 150);
     }
   }, 30);
 }

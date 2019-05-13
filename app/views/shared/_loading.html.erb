@@ -1,4 +1,5 @@
-<div id="loading" class="show">
-  <div id="spinner"></div>
-  <div id="loading-text">Loading..</div>
+<div id="loading" class="sk-fading-circle">
+  <% 1.upto(12) do |idx| %>
+    <%= content_tag :span, "", class: "sk-circle#{idx} sk-circle" %>
+  <% end %>
 </div>

@@ -12,5 +12,8 @@ function setLightTheme() {
     $('#syntax-dark').attr('disabled', 'true');
   }, 100);
 
+  // toggle the switch to light
   $('.theme-toggle').removeClass('toggle-on');
+  // make the loading spinner background white
+  $('#loading').removeClass('bg-black');
 }
