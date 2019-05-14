@@ -10,7 +10,7 @@ function hideScrolledNav() {
   if (ST > lastST && ST > navHeight) {
     nav.style.top = `${-navHeight}px`;
     // if scrolling up - show navbar
-  } else if (ST + window.innerHeight < $(document).height()) {
+  } else {
     nav.style.top = '0px';
     // if the menu is open and they are scrolling up, close the menu
     const mobileNav = $('.navbar-toggler');
