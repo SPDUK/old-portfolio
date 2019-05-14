@@ -12,6 +12,7 @@ function removeSpinnerClasses() {
 // apply an animation when clicking any link to fade in the spinner
 function applyLinkAnimation() {
   $('a').each((i, el) => {
+    if (!el.href) return;
     const { pathname } = new URL(el.href);
     // ignore any empty links and the navbar dropdown
     if (!pathname || el.id === 'navbarDropdown') return;
