@@ -47,5 +47,3 @@ function loadingSpinner() {
     }
   }, 30);
 }
-
-// TODO: if theme is light show light background and black spinner
