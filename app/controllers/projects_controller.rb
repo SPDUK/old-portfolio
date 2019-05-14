@@ -16,8 +16,7 @@ class ProjectsController < ApplicationController
     @rails = Project.rails
   end
 
-  # TODO: fix
-  # this is a bad query that could be better by limiting the amount of updates or doing it all at once
+
   def sort
     params[:order].each do |_key, value|
       Project.find(value[:id]).update(position: value[:position])
