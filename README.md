@@ -26,12 +26,14 @@ test:
 
 ---
 
-When uploading an image the resolutions should be
+When uploading an image for the projects, the resolutions should be
+- Main image: 2500x800
+- Thumb image: 768x768
 
-- Main image: 600x400
-- Thumb image: 350x200
+The main image will be used in the carousel if it's featured,
 
----
+It will also be a full width banner on the view page.
+
 
 ---
 

@@ -31,6 +31,9 @@
   @media screen and (min-width: 1200px) {
     max-width: 70% !important;
   }
+  @media screen and (min-width: 2000px) {
+    max-width: 2500px !important;
+  }
 }
 .navbar-social {
   display: flex;
