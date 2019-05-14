@@ -11,8 +11,6 @@ function handleResize() {
     nav.classList.add('navbar-light');
     nav.classList.remove('bg-transparent');
     nav.classList.remove('navbar-transparent');
-    nav.style.fontSize = 'unset';
-    nav.style.height = 'unset';
     isWide = false;
   }
   // if window is being resized OVER wide amount, and the window was previously NOT wide

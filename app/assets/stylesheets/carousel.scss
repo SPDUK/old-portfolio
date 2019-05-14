@@ -1,0 +1,33 @@
+.carousel {
+  margin-top: 60px;
+  height: 400px;
+  @media (min-width: 768px) {
+    margin-top: 0px;
+    height: 600px;
+  }
+
+  &-item {
+    box-sizing: border-box;
+    height: 400px;
+    overflow: hidden;
+    object-fit: contain;
+    background-repeat: no-repeat;
+    background-size: 768px auto;
+    background-position: center top;
+    background-image: url('https://i.imgur.com/fh2DCKy.jpg');
+    @media (min-width: 480px) {
+    }
+    @media (min-width: 768px) {
+      height: 600px;
+      background-image: url('https://i.imgur.com/J4Fun0d.jpg');
+      background-position: center top;
+      background-size: auto;
+    }
+    img {
+      display: block;
+    }
+  }
+  span {
+    cursor: pointer;
+  }
+}

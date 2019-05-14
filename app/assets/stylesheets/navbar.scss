@@ -5,10 +5,16 @@
   z-index: 9999;
   transition: background-color 0.4s ease-out, font-size 0.1s ease, height 0.15s ease,
     top 0.4s ease-out;
-  // make navbar 60px high on mobile
-  @media screen and (max-width: 768px) {
-    padding: 10px 1rem;
+  padding: 11px 1rem;
+  @media screen and (min-width: 768px) {
+    padding-top: 0;
+    height: 60px;
   }
+}
+// add overlay for glass effect
+#nav.navbar-transparent {
+  background: rgba(250, 250, 250, 0.15) !important;
+  border-bottom: 1px solid rgba(250, 250, 250, 0.2) !important;
 }
 .navbar-brand {
   font-family: 'Poppins', sans-serif;
