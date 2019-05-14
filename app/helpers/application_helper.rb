@@ -16,9 +16,9 @@ module ApplicationHelper
   # it "loads" twice otherwise and ruins the loading animation
   def nav_helper(style, tag_type)
     nav_items = [
-    { title: "Home", url: root_path },
-    { title: "My Blog", url: blogs_path },
-    { title: "Projects", url: projects_path }
+    { title: "HOME", url: root_path },
+    { title: "BLOG", url: blogs_path },
+    { title: "PROJECTS", url: projects_path }
     ]
     nav_links = ""
     nav_items.each do |link|
