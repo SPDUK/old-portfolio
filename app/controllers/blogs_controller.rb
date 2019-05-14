@@ -34,7 +34,7 @@ class BlogsController < ApplicationController
     else
       redirect_to blogs_path, notice; "You are not authorized to access this page."
     end
-   end
+  end
 
   # GET /blogs/new
   def new

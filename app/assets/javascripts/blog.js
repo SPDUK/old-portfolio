@@ -5,3 +5,8 @@
 //= require cocoon
 //= require gritter
 //= require navbars/blogNav
+//= require "helpers/loadingSpinner"
+
+$(document).on('turbolinks:load', () => {
+  loadingSpinner();
+});

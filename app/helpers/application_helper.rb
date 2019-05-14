@@ -11,6 +11,9 @@ module ApplicationHelper
   end
 
 
+  # wrap each link in a tag type, optionally pass in a class
+  # only use turbolinks when visiting the same path that they are currently on
+  # it "loads" twice otherwise and ruins the loading animation
   def nav_helper(style, tag_type)
     nav_items = [
     { title: "Home", url: root_path },
@@ -19,14 +22,27 @@ module ApplicationHelper
     ]
     nav_links = ""
     nav_items.each do |link|
-      nav_links << "<#{tag_type}><a href=#{link[:url]} class='#{style} #{active? link[:url]}'>#{link[:title]}</a></#{tag_type}>"
+      nav_links << "<#{tag_type}><a href=#{link[:url]} class='#{style} #{active? link[:url]}'  data-turbolinks=#{use_turbo? link[:url]}>#{link[:title]}</a></#{tag_type}>"
     end
     nav_links.html_safe
   end
 
+  def use_turbo?(path)
+    current_page? path || (path == "/blogs" && controller_name == "blogs")
+  end
 
+
+
+
+  # also applies active to blogs while on blog routes
   def active?(path)
-    "active" if current_page? path
+    if current_page? path
+      "active"
+    elsif path === "/blogs" && controller_name === "blogs"
+      "active"
+    elsif path === "/blogs" && controller_name === "topics"
+      "active"
+    end
   end
 
 
