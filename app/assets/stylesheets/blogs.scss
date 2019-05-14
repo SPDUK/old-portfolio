@@ -2,14 +2,11 @@
 @import './toggle.scss';
 @import './navbar.scss';
 
-@media (min-width: 48em) {
-  html {
+.blog-container.container {
+  max-width: 42rem !important;
+  @media (min-width: 48em) {
     font-size: 18px;
   }
-}
-
-.container {
-  max-width: 42rem !important;
 }
 
 .blog {
