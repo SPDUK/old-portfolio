@@ -12,11 +12,11 @@ function removeSpinnerClasses() {
 // apply an animation when clicking any link to fade in the spinner
 function applyLinkAnimation() {
   $('a').each((i, el) => {
-    if (!el.href) return;
+    // if the link is just a link added there by bootstrap, don't add the loading spinenr
+    if (!el.href || el.href.endsWith('#')) return;
     const { pathname } = new URL(el.href);
     // ignore any empty links and the navbar dropdown
-    if (!pathname || el.id === 'navbarDropdown') return;
-
+    if (!pathname) return;
     $(el).click(applySpinnerClasses);
   });
 }
