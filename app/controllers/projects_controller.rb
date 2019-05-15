@@ -9,6 +9,7 @@ class ProjectsController < ApplicationController
   layout "project"
 
   def index
+    @featured = Project.featured
     @projects = Project.by_position
   end
 

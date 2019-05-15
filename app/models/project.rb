@@ -18,8 +18,14 @@ class Project < ApplicationRecord
 
 
 
+  # not featured projects (bottom grid)
   def self.by_position
-    order(:position)
+    where(featured: false).order(:position)
+  end
+
+  # featured projects (carousel)
+  def self.featured
+    where(featured: true)
   end
 
   def self.rails
