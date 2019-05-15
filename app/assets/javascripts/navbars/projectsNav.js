@@ -3,6 +3,7 @@
 //= require navbars/functions/setLightTheme
 //= require navbars/functions/handleResize
 //= require navbars/functions/handleNavScroll
+//= require helpers/setCarouselImage
 
 // if we are on the blog layout all we need to do is set the theme
 function setTheme() {
@@ -19,6 +20,8 @@ function toggleTheme() {
 }
 
 $(document).on('turbolinks:load', () => {
+  // set carousel images based on width on page load
+  setCarouselImage();
   animateMobileNav();
   setTheme();
   $('.theme-toggle').click(toggleTheme);
@@ -27,5 +30,8 @@ $(document).on('turbolinks:load', () => {
   $(window).scroll(handleNavScroll);
   handleNavScroll();
 
-  $(window).resize(handleResize);
+  $(window).resize(() => {
+    handleResize();
+    setCarouselImage();
+  });
 });
