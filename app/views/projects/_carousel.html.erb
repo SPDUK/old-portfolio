@@ -11,6 +11,10 @@
         class="carousel-item <%= 'active' if idx === 0 %>"
          main-image="<%= item.main_image %>"
          thumb-image="<%= item.thumb_image %>">
+          <div class="carousel-caption">
+            <h5><%= item.title %></h5>
+            <%= link_to "Learn More",  project_show_path(item), class: "btn btn-info" %>
+          </div>
         </div>
       <% end %>
     </div>

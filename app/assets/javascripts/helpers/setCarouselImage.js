@@ -18,9 +18,15 @@ function setCarouselImage() {
         ),
         url('${backgroundImage}')`
       });
+    } else if (window.innerWidth < 768) {
+      $(el).css({
+        backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 36%, rgba(0,0,0,1) 75%),
+      url('${backgroundImage}')`
+      });
     } else {
-      // set the correct image based on the width
-      $(el).css({ backgroundImage: `url('${backgroundImage}')` });
+      $(el).css({
+        backgroundImage: `url('${backgroundImage}')`
+      });
     }
   });
 }
