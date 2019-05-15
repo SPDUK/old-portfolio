@@ -52,12 +52,19 @@ module ApplicationHelper
     notice = (flash[:alert] || flash[:notice])
     error = flash[:error]
     if error
-      js add_gritter(error, title: "Error!", sticky: true)
+      error_generator(error)
     elsif notice
-      js add_gritter(notice, sticky: false, time: 1000)
+      alert_generator(notice)
     end
   end
 
+  def error_generator(error)
+    js add_gritter(error, title: "Error!", sticky: true)
+  end
+
+  def alert_generator(notice)
+    js add_gritter(notice, sticky: false, time: 1000)
+  end
 
 
   # jQuery (full), popper.js, bootstrap js&css, js-cookie, anime.js
