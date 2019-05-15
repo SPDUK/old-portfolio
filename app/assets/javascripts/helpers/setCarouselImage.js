@@ -4,7 +4,7 @@ function setCarouselImage() {
   $('.carousel-item').each((idx, el) => {
     // if the screen is wide, use the main wide image, else use the thumb
     const backgroundImage =
-      window.innerWidth > 768 ? $(el).attr('main-image') : $(el).attr('thumb-image');
+      window.innerWidth >= 768 ? $(el).attr('main-image') : $(el).attr('thumb-image');
 
     // if the width is very wide,
     // set a gradient around the image that fades out the edges to black
