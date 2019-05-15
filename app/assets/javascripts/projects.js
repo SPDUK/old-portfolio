@@ -5,6 +5,7 @@
 //= require gritter
 // = require navbars/projectsNav
 //= require "helpers/loadingSpinner"
+//= require "helpers/bcSwipe.min.js"
 
 // returns a new array with the data pos added on to the card
 function setPositions() {
