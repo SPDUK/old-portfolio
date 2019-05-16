@@ -1,5 +1,5 @@
 <div class="carousel-bg">
-  <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+  <div id="carouselIndicators" class="carousel slide carousel-fade" data-ride="carousel">
     <ol class="carousel-indicators">
       <% @featured.length.times do |idx| %>
         <li data-target="#carouselIndicators" data-slide-to="<%= idx %>" class="<%= 'active' if idx === 0 %>"></li>
