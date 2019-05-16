@@ -2,20 +2,33 @@
   background: rgb(0, 0, 0);
 }
 
-.carousel {
-  margin: 0 auto;
+// to make it easier to resize the carousel height
+@mixin carousel-sm {
   height: 400px;
+  max-width: 2500px;
+}
+
+@mixin carousel-lg {
+  height: 70vh;
+  min-height: 600px;
+  max-height: 700px;
+}
+
+.carousel {
+  @include carousel-sm;
+  margin: 0 auto;
   margin-top: 48px;
   background: rgb(0, 0, 0);
-  max-width: 2500px;
   @media (min-width: 768px) {
+    @include carousel-lg;
     margin-top: 0px;
-    height: 600px;
+    height: 60vh;
+    min-height: 600px;
+    max-height: 700px;
   }
   &-item {
-    max-width: 2500px;
+    @include carousel-sm;
     box-sizing: border-box;
-    height: 400px;
     overflow: hidden;
     object-fit: contain;
     background-repeat: no-repeat;
@@ -26,8 +39,7 @@
       background-position: center top;
     }
     @media (min-width: 768px) {
-      height: 600px;
-      background-position: center top;
+      @include carousel-lg;
       background-size: auto;
     }
     img {
