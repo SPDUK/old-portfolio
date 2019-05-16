@@ -28,56 +28,52 @@ async function afterSort() {
   });
 }
 
-function animateCarouselIn(evt = false) {
+// fade out towards the direction that is swiped, fade in from that direction
+// const getDirection = evt => (direction === 'right' ? '-30' : '30');
+
+function animateCarousel(evt = false) {
+  // if the event type is slide, we are fading the animation out,
+  // otherwise the event is sliding in
+  const animateOut = evt && evt.type === 'slide';
+  // if going to the right we need to fade out from the right and in from the right
+  const direction = evt && evt.direction === 'right' ? '-30' : '30';
+  const translateX = animateOut ? [0, direction] : [direction, 0];
+  // animate from 1 to 0 when going out, and 0 to 1 when coming in
+  const opacity = animateOut ? [1, 0] : [0, 1];
+  // animate out quicker
+  const duration = animateOut ? 200 : 300;
+
   anime
-    .timeline()
-    .add({
-      easing: 'easeOutQuad',
-      translateX: [-30, 0],
-      targets: '.carousel-caption h5',
-      opacity: [0, 1],
-      duration: 350
+    .timeline({
+      easing: 'easeOutQuad'
     })
     .add({
-      easing: 'easeOutQuad',
+      translateX,
+      targets: '.carousel-caption h5',
+      opacity,
+      duration
+    })
+    .add({
       targets: '.carousel-caption .btn',
-      translateX: [-30, -0],
-      opacity: [0, 1],
-      duration: 350
+      translateX,
+      opacity,
+      duration
     });
 }
 
-function animateCarouselOut(evt = false) {
-  anime
-    .timeline()
-    .add({
-      easing: 'easeOutQuad',
-      targets: '.carousel-caption h5',
-      translateX: [0, -30],
-      opacity: [1, 0],
-      duration: 200
-    })
-    .add({
-      easing: 'easeOutQuad',
-      targets: '.carousel-caption .btn',
-      translateX: [0, -30],
-      opacity: [1, 0],
-      duration: 200
-    });
-}
 $(document).on('turbolinks:load', () => {
   loadingSpinner();
 
   $('.carousel').carousel({
     interval: 5000
   });
-  animateCarouselIn();
+  animateCarousel();
 
   // when the slide begins
-  $('.carousel').on('slide.bs.carousel', animateCarouselOut);
+  $('.carousel').on('slide.bs.carousel', animateCarousel);
 
   // after carousel has finished sliding
-  $('.carousel').on('slid.bs.carousel', animateCarouselIn);
+  $('.carousel').on('slid.bs.carousel', animateCarousel);
 
   const projects = document.getElementById('sortable');
   if (projects) {
