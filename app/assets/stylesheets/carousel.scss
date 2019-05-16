@@ -114,6 +114,7 @@
 .carousel-control-next {
   display: none;
   visibility: hidden;
+  max-width: 60px;
   @media (min-width: 768px) {
     display: flex;
   }
