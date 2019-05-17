@@ -19,10 +19,12 @@ class ProjectsController < ApplicationController
 
 
   def sort
-    params[:order].each do |_key, value|
-      Project.find(value[:id]).update(position: value[:position])
+    if logged_in?(:site_admin)
+      params[:order].each do |_key, value|
+        Project.find(value[:id]).update(position: value[:position])
+      end
+      head 200, content_type: "text/html"
     end
-    head 200, content_type: "text/html"
   end
 
   def new
