@@ -67,11 +67,10 @@ $(document).on('turbolinks:load', () => {
   $('.carousel').carousel({
     interval: 5000
   });
-  animateCarousel();
 
+  animateCarousel();
   // when the slide begins
   $('.carousel').on('slide.bs.carousel', animateCarousel);
-
   // after carousel has finished sliding
   $('.carousel').on('slid.bs.carousel', animateCarousel);
 
@@ -82,4 +81,11 @@ $(document).on('turbolinks:load', () => {
     });
     setPositions();
   }
+
+  // when clicking the thumbnail on mobile, visit the link
+  $('.project').click(evt => {
+    if (window.innerWidth >= 768) return;
+    const { href } = evt.currentTarget.getElementsByTagName('a')[0];
+    Turbolinks.visit(href);
+  });
 });

@@ -17,7 +17,18 @@
     outline: 1px solid rgba(255, 255, 255, 0.15);
     outline-offset: -1px;
   }
+  &:active,
+  &:hover {
+    @media (max-width: 768px) {
+      transition: 0.2s ease-out;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    }
+  }
   &-overlay {
+    display: none;
+    @media (min-width: 768px) {
+      display: block;
+    }
     opacity: 0;
     animation: hideOverlayBackground 0.2s ease-out forwards;
     position: absolute;
@@ -44,6 +55,9 @@
       span {
         text-align: center;
         font-size: 1.1em;
+        @media (min-width: 1000px) {
+          font-size: 1.2em;
+        }
       }
       a {
         border-radius: 0;
@@ -86,11 +100,9 @@
 @keyframes showOverlayBackground {
   from {
     opacity: 0;
-    transform: translateY(0px);
   }
   to {
     opacity: 1;
-    transform: translateY(0px);
   }
 }
 
