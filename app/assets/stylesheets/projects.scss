@@ -3,50 +3,24 @@
 @import './toggle.scss';
 @import './carousel.scss';
 
-body {
-  min-height: 75rem; /* Can be removed; just added for demo purposes */
+.projects {
+  h5 {
+    padding: 25px 0;
+  }
 }
 
-.jumbotron {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-  margin-bottom: 0;
-  background-color: #fff;
-}
-
-.jumbotron p:last-child {
-  margin-bottom: 0;
-}
-
-.jumbotron-heading {
-  font-weight: 300;
-}
-
-.jumbotron .container {
-  max-width: 40rem;
-}
-
-.album {
-  min-height: 50rem; /* Can be removed; just added for demo purposes */
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  background-color: #f7f7f7;
-}
-
-.card {
-  float: left;
-  width: 100%;
-  padding: 0.75rem;
-  margin-bottom: 2rem;
-  border: 0;
-}
-
-.card > img {
-  margin-bottom: 0.75rem;
-}
-
-.card-text {
-  font-size: 85%;
+.project {
+  margin-bottom: 1.5rem;
+  img {
+    transition: 0.2s ease;
+    outline: 1px solid rgba(255, 255, 255, 0.15);
+    outline-offset: -1px;
+    &:hover {
+      outline: 1px solid rgba(255, 255, 255, 0.5);
+    }
+  }
+  &-text {
+  }
 }
 
 footer {

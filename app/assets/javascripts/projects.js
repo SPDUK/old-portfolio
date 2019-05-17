@@ -8,8 +8,8 @@
 
 // returns a new array with the data pos added on to the card
 function setPositions() {
-  const cards = Array.from(document.getElementsByClassName('card'));
-  return cards.map((card, idx) => {
+  const projects = Array.from(document.getElementsByClassName('project'));
+  return projects.map((card, idx) => {
     card.setAttribute('data-pos', idx + 1);
     return {
       id: card.getAttribute('data-id'),
