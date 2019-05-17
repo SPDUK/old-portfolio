@@ -1,8 +1,11 @@
 <div class="col-6 col-md-4">
   <div class="project" data-id="<%= project.id %>">
     <%= image_tag(project.thumb_image_url, width: "100%") %>
-    <p class="project-text">
-      <span><%= link_to project.title, project_show_path(project) %></span>
-    </p>
+    <div class="project-overlay">
+      <p class="project-overlay-text">
+        <span class="text-white"><%= project.title %></span>
+        <%= link_to "Learn More", project_show_path(project), class: "btn btn-info" %>
+      </p>
+    </div>
   </div>
 </div>

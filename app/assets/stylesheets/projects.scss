@@ -7,6 +7,7 @@
   h5 {
     padding: 25px 0;
   }
+  margin-top: 50px;
 }
 
 .project {
@@ -15,11 +16,90 @@
     transition: 0.2s ease;
     outline: 1px solid rgba(255, 255, 255, 0.15);
     outline-offset: -1px;
-    &:hover {
-      outline: 1px solid rgba(255, 255, 255, 0.5);
+  }
+  &-overlay {
+    opacity: 0;
+    animation: hideOverlayBackground 0.2s ease-out forwards;
+    position: absolute;
+    // have to calculate the bootstrap column padding
+    bottom: 24px;
+    left: 15px;
+    right: 15px;
+    width: calc(100% - 30px);
+    height: calc(100% - 24px);
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #36bfff;
+
+    &-text {
+      animation: hideOverlayText 0.2s ease-out forwards;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      span,
+      a {
+        display: block;
+        margin: 20px auto;
+      }
+      span {
+        text-align: center;
+        font-size: 1.1em;
+      }
+      a {
+        border-radius: 0;
+        width: 80%;
+        border: 1px solid #36bfff;
+      }
     }
   }
-  &-text {
+}
+
+.project:hover > .project-overlay {
+  animation: showOverlayBackground 0.2s ease-out forwards;
+}
+.project:hover > .project-overlay > .project-overlay-text {
+  animation: showOverlayText 0.2s ease-out forwards;
+}
+
+@keyframes showOverlayText {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes hideOverlayText {
+  from {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+@keyframes showOverlayBackground {
+  from {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes hideOverlayBackground {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
 
