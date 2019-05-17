@@ -28,9 +28,6 @@ async function afterSort() {
   });
 }
 
-// fade out towards the direction that is swiped, fade in from that direction
-// const getDirection = evt => (direction === 'right' ? '-30' : '30');
-
 function animateCarousel(evt = false) {
   // if the event type is slide, we are fading the animation out,
   // otherwise the event is sliding in
@@ -82,6 +79,7 @@ $(document).on('turbolinks:load', () => {
     setPositions();
   }
 
+  getChartInfo();
   // when clicking the thumbnail on mobile, visit the link
   $('.project').click(evt => {
     if (window.innerWidth >= 768) return;
