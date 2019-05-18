@@ -6,10 +6,10 @@
 
 function setAttrs() {
   // enable dark theme
-  $('#bootstrap-dark').removeAttr('disabled');
-  $('#syntax-dark').removeAttr('disabled');
+  document.getElementById('bootstrap-dark').disabled = false;
+  document.getElementById('syntax-dark').disabled = false;
   // disable light theme
-  $('#bootstrap-light').attr('disabled', 'true');
+  document.getElementById('bootstrap-light').disabled = true;
 }
 async function downloadDarkCSS() {
   $('#loading').addClass('show');

@@ -3,14 +3,17 @@ function setLightTheme() {
   Cookies.set('theme', 'light');
 
   // enable the light theme
-  $('#bootstrap-light').removeAttr('disabled');
+  document.getElementById('bootstrap-light').disabled = false;
 
   // remove the dark theme after a delay to avoid flash of unstyled text
   // (only takes a few ms to read from cache b ut it happens sometimes anyway)
   setTimeout(() => {
-    $('#bootstrap-dark').attr('disabled', 'true');
-    $('#syntax-dark').attr('disabled', 'true');
-  }, 100);
+    // disable stylesheets for dark themes (use if to avoid error on page load)
+    const bsDark = document.getElementById('bootstrap-dark');
+    if (bsDark) bsDark.disabled = true;
+    const syntaxDark = document.getElementById('syntax-dark');
+    if (syntaxDark) syntaxDark.disabled = true;
+  }, 50);
 
   // toggle the switch to light
   $('.theme-toggle').removeClass('toggle-on');
