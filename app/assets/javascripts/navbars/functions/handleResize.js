@@ -20,3 +20,9 @@ function handleResize() {
     handleNavScroll();
   }
 }
+
+// TODO: fix resize bug
+// when toggling between modes the containers will not work properly
+// but sometimes they fix themselves without doing anything
+// Only happens on chrome -- Only happens after a resize
+// only happens if the resize is very close to a breakpoint
