@@ -28,7 +28,6 @@
   }
   &-item {
     @include carousel-sm;
-    box-sizing: border-box;
     overflow: hidden;
     object-fit: contain;
     background-repeat: no-repeat;
@@ -41,9 +40,6 @@
     @media (min-width: 768px) {
       @include carousel-lg;
       background-size: auto;
-    }
-    img {
-      display: block;
     }
   }
   &-caption {

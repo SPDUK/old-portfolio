@@ -122,3 +122,19 @@
   height: 40px;
   padding: 5px;
 }
+
+.projects-show {
+  margin-top: -48px;
+  @media (min-width: 768px) {
+    margin-top: 0px;
+  }
+  #projects-show-header {
+    height: 70vh;
+    max-height: 800px;
+    overflow: hidden;
+    object-fit: contain;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center top;
+  }
+}

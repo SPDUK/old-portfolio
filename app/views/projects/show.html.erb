@@ -1,23 +1,20 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-7">
-      <%= image_tag(@project.main_image_url, width: "650", height: "350") if @project.main_image %>
-    </div>
-    <div class="col-md-5">
-      <h1><%= @project.title %></h1>
-      <hr>
-      <em><%= @project.subtitle  %></em>
-      <p><%= @project.body %></p>
-      <hr>
-      <h3>Technologies Used:</h3>
-      <% @project.technologies.each do |t| %>
-        <p><%= t.name %></p>
-      <% end %>
-      <% if logged_in?(:site_admin) %>
-        <div>
-          <%= link_to "Edit project", edit_project_path(@project), class: "btn btn-warning" %>
-        </div>
-      <% end %>
-    </div>
+<div class="projects-show">
+  <div id="projects-show-header"
+  main-image="<%= @project.main_image_url %>"></div>
+  <div class="container">
+    <h1><%= @project.title %></h1>
+    <hr>
+    <em><%= @project.subtitle  %></em>
+    <p><%= @project.body %></p>
+    <hr>
+    <h3>Technologies Used:</h3>
+    <% @project.technologies.each do |t| %>
+      <p><%= t.name %></p>
+    <% end %>
+    <% if logged_in?(:site_admin) %>
+      <div>
+        <%= link_to "Edit project", edit_project_path(@project), class: "btn btn-warning" %>
+      </div>
+    <% end %>
   </div>
 </div>
