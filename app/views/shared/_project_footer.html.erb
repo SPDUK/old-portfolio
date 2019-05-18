@@ -1,11 +1,11 @@
-<footer class="text-muted">
-  <div class="container">
-    <p class="float-right">
-      <%= link_to "View all projects", projects_path %> | 
-      <a href="#">Back to top</a>
-    </p>
-    <p>
-      <%= @copyright %>
-    </p>
+<footer class="container footer">
+  <div class="footer-links">
+    <%= link_to "HOME", root_path, class: "text-dark border-right border-dark" %>
+    <%= link_to "BLOG", blogs_path, class: "text-dark border-right border-dark" %>
+    <%= link_to "PROJECTS", projects_path, class: "text-dark border-right border-dark" %>
+    <a class="text-dark" href="https://github.com/SPDUK">GITHUB</a>
+  </div>
+  <div class="footer-copyright">
+    <%= @copyright %>
   </div>
 </footer>
