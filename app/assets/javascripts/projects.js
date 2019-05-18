@@ -79,7 +79,6 @@ $(document).on('turbolinks:load', () => {
     setPositions();
   }
 
-  getChartInfo();
   // when clicking the thumbnail on mobile, visit the link
   $('.project').click(evt => {
     if (window.innerWidth >= 768) return;
