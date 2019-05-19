@@ -103,3 +103,14 @@ html.no-scrollbar {
     width: 0px;
   }
 }
+
+//  rouge styles for markdown
+div.highlight {
+  border-radius: 0.2rem;
+  padding: 10px;
+  padding-bottom: 0px;
+  margin-bottom: 12px;
+}
+pre.highlight {
+  padding-bottom: 10px;
+}

@@ -1,6 +1,22 @@
 # frozen_string_literal: false
 
 module ApplicationHelper
+  def markdown(text)
+    options = {
+      filter_html: true,
+      hard_wrap:   true
+    }
+    extensions = {
+      autolink:           true,
+      tables:             true,
+      superscript:        true,
+      fenced_code_blocks: true
+    }
+    renderer = Rouge::Renderer.new(options)
+    markdown = Redcarpet::Markdown.new(renderer, extensions)
+    markdown.render(text).html_safe
+  end
+
   def login_helper(style = "")
     if current_user.is_a?(GuestUser)
       (link_to "Register", new_user_registration_path, class: style) +
