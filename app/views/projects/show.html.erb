@@ -2,15 +2,16 @@
   <div id="projects-show-header"
   main-image="<%= @project.main_image_url %>"></div>
   <div class="container">
-    <h1><%= @project.title %></h1>
-    <hr>
-    <em><%= @project.subtitle  %></em>
+    <div class="projects-show-title">
+      <h2><%= @project.title %></h2>
+      <div class="projects-show-title-technologies">
+        <% @project.technologies.each do |t| %>
+          <span class="badge badge-dark"><%= t.name %></span>
+        <% end %>
+      </div>
+    </div>
+    <h5><%= @project.subtitle %></h5>
     <p><%= @project.body %></p>
-    <hr>
-    <h3>Technologies Used:</h3>
-    <% @project.technologies.each do |t| %>
-      <p><%= t.name %></p>
-    <% end %>
     <% if logged_in?(:site_admin) %>
       <div>
         <%= link_to "Edit project", edit_project_path(@project), class: "btn btn-warning" %>
