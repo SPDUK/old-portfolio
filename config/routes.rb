@@ -15,9 +15,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :topics, only: [:index, :show]
-
-
+  resources :topics, only: [:index, :show, :new, :create, :destroy]
 
   get "projects/rails", to: "projects#rails"
   get "project/:id", to: "projects#show", as: "project_show"
