@@ -18,7 +18,6 @@ Rails.application.routes.draw do
   resources :topics, only: [:index, :show]
 
 
-  mount ActionCable.server => "/cable"
 
   get "projects/rails", to: "projects#rails"
   get "project/:id", to: "projects#show", as: "project_show"
