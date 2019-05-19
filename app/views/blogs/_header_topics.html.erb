@@ -1,8 +1,8 @@
 <div class="dropdown">
-  <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Blog Topics
   </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
     <% @header_topics.each do |topic| %>
       <%= link_to topic.title, topic_path(topic), class: "dropdown-item" %>
     <% end %>

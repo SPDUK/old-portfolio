@@ -1,4 +1,11 @@
 <div class="blog-main">
+  <div class="blog-description">
+    <span>Javascript, Ruby, Elixir.</span>
+    <div class="blog-links">
+      <%= render "blogs/header_topics" %>
+    </div>
+  </div>
+  <%= link_to 'New Blog Post', new_blog_path, class: "btn btn-sm btn-info mb-3" if logged_in?(:site_admin) %>
   <%= render @blogs %>
   <div class="pagination">
     <%= paginate @blogs %>

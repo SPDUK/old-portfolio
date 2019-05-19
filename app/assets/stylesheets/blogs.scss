@@ -11,41 +11,28 @@
 
 .blog {
   &-main {
+    margin-top: 3rem;
     a,
     a:hover,
     a:focus {
       text-decoration: none;
     }
   }
-  &-header {
-    text-align: center;
-    padding-top: 5rem;
-    padding-bottom: 1.25rem;
-    margin-bottom: 2rem;
-  }
-  &-title {
+  h2 {
     margin-bottom: 0;
     font-size: 2em;
     font-weight: 700;
     font-family: 'Poppins', sans-serif;
   }
   &-description {
-    font-weight: 700;
-  }
-  &-links {
+    span,
+    button,
+    a {
+      font-weight: 700;
+    }
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding-top: 1.5rem;
-    .dropdown {
-      margin-right: 1.2em;
-    }
-    .btn-info {
-      margin-left: 1.2em;
-      @media (max-width: 350px) {
-        margin-top: 1.2em;
-      }
-    }
+    justify-content: space-between;
+    margin-bottom: 1rem;
   }
   &-pagination {
     margin-bottom: 4rem;
@@ -86,10 +73,10 @@
   &-post {
     margin-bottom: 4rem;
     transition: 0.15s ease-in-out;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.15);
     &:hover {
       transform: translateY(-3px);
-      box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+      box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.175);
     }
     .card-header {
       font-size: 1.1em;
@@ -147,4 +134,11 @@
 .badge {
   height: 100%;
   font-size: 0.7em !important;
+}
+
+.nav-bg {
+  height: 48px;
+  @media (min-width: 768px) {
+    height: 60px;
+  }
 }
