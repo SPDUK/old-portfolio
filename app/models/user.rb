@@ -17,7 +17,6 @@ class User < ApplicationRecord
 
   # makes sure the name was supplied
   validates_presence_of :name
-  has_many :comments, dependent: :destroy
 
 
   # virtual attrs
