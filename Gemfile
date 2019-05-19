@@ -41,7 +41,6 @@ gem "cloudinary", "~> 1.11", ">= 1.11.1"
 gem "mini_magick", "~> 4.9", ">= 4.9.3"
 gem "cocoon", "~> 1.2", ">= 1.2.12"
 gem "gritter", "~> 1.2"
-gem "redis", "~> 4.1"
 gem "redcarpet", "~> 3.4"
 gem "rouge", "~> 3.3"
 
