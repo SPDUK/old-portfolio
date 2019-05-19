@@ -5,7 +5,7 @@ class Project < ApplicationRecord
   mount_uploader :thumb_image, ProjectUploader
   mount_uploader :main_image, ProjectUploader
 
-  has_many :technologies
+  has_many :technologies, dependent: :delete_all
   # allow nesting of technologies while creating a Project
   # Project.create(title: ..., .., technologies_attributes: [{name: "some technology"}])
   accepts_nested_attributes_for :technologies,
