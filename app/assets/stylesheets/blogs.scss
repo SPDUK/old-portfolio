@@ -11,7 +11,6 @@
 
 .blog {
   &-main {
-    margin-top: 3rem;
     a,
     a:hover,
     a:focus {
@@ -121,9 +120,8 @@
   height: 100%;
   font-size: 0.7em !important;
 }
-
 .nav-bg {
-  height: 48px;
+  height: 0px;
   @media (min-width: 768px) {
     height: 60px;
   }
