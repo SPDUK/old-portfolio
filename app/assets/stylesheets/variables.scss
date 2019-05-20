@@ -85,6 +85,8 @@ h3 {
 }
 
 body {
+  // stops the white flash when on dark mode
+  background: #303030;
   z-index: 999;
   font-family: 'Montserrat', sans-serif !important;
 }
