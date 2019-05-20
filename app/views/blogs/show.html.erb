@@ -1,8 +1,8 @@
 <div class="blog-main">
   <% if logged_in?(:site_admin) %>
-    <div class="blog-admin-actions ml-auto">
-      <i><%= @blog.status %></i> | 
-      <%= link_to @blog.draft? ? "Make Public" : "Hide from public", toggle_status_blog_path(@blog), class: "btn-sm btn-info"  %>
+    <div class="blog-admin-actions ml-auto mb-3">
+      <b><%= @blog.status %> | </b>
+      <%= link_to @blog.draft? ? "Publish blog" : "Set to private", toggle_status_blog_path(@blog), class: "btn-sm btn-info"  %>
       <%= link_to "Edit",  edit_blog_path(@blog), class: "btn-sm btn-success" %>
       <%= link_to "Delete",
          @blog, method: :delete,
