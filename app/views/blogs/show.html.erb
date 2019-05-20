@@ -22,4 +22,9 @@
     <%= ::Rouge::Themes::Gruvbox.mode(:light).render(scope: '.highlight') %>
   </style>
   <p><%= markdown @blog.body %></p>
+  <hr>
+  <div class="blog-actions">
+    <%= link_to "⬅ More Blog Posts", blogs_path, class: "text-dark" %>
+    <a id="share" class="text-dark">Copy link to clipboard 🤍</a>
+  </div>
 </div>

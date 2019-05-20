@@ -7,6 +7,16 @@
 //= require navbars/blogNav
 //= require "helpers/loadingSpinner"
 
+async function copyLink() {
+  await navigator.clipboard.writeText(window.location.href);
+  $.gritter.add({
+    title: 'Link copied to clipboard! 🤍',
+    text: ' ',
+    time: 3000
+  });
+}
 $(document).on('turbolinks:load', () => {
   loadingSpinner();
+
+  $('#share').click(copyLink);
 });
