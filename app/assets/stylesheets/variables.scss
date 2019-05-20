@@ -11,16 +11,6 @@
   }
 }
 
-#canvas {
-  position: relative;
-  height: 35%;
-  width: 100%;
-  z-index: -5;
-  @media screen and (min-width: 768px) {
-    top: 0;
-  }
-}
-
 .hidden-desktop {
   display: block !important;
   @media screen and (min-width: 768px) {

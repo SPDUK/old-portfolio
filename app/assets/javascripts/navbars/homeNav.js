@@ -1,4 +1,5 @@
 //= require animations/stars
+//= require animations/snow
 //= require animations/animateMobileNav
 //= require navbars/functions/setDarkTheme
 //= require navbars/functions/setLightTheme
@@ -10,15 +11,11 @@
 function toggleLight() {
   setLightTheme();
   toggleBackgroundImage('light');
-  $('#canvas').remove();
+  drawSnow();
 }
 function toggleDark() {
   setDarkTheme();
   toggleBackgroundImage('dark');
-  // if there is no canvas, create it and draw shooting stars
-  if (!$('#canvas').length) {
-    $('#bg').append($('<canvas/>', { id: 'canvas' }));
-  }
   drawStars();
 }
 // set the theme based on the cookies

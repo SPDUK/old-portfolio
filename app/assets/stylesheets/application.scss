@@ -202,3 +202,15 @@
   display: flex;
   justify-content: space-between;
 }
+
+#stars,
+#snow {
+  height: 35%;
+  background-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 48px;
+  width: 100%;
+  @media screen and (min-width: 768px) {
+    top: 0px;
+  }
+}
