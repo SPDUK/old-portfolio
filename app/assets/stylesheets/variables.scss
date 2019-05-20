@@ -30,49 +30,6 @@ h3 {
   font-family: 'Poppins', sans-serif !important;
   font-weight: 700 !important;
 }
-@mixin bg {
-  position: fixed;
-  z-index: -1;
-  height: 100vh;
-  width: 100%;
-  will-change: auto;
-  transform: translate3d(0px, y, 0px);
-  -webkit-backface-visibility: hidden;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center top;
-  transition: 450ms ease;
-  background-attachment: fixed;
-  @media screen and (max-width: 400px) {
-    background-size: 100% auto;
-  }
-  // keep the background taking up the full screen
-  // unless the height is 1000px
-  @media (max-width: 400px), (min-height: 1000px) {
-    background-size: cover;
-  }
-  @media (min-height: 1000px) {
-    position: absolute;
-  }
-}
-#bg {
-  @include bg;
-}
-// used on desktop views, scrolls on top of the previous background to change from day to night while scrolling
-// only shows over 10000 height (causes issues otherwise)
-#bg2 {
-  @media (min-height: 1000px) {
-    top: 80vh;
-    position: absolute;
-    @include bg;
-  }
-  @media (min-aspect-ratio: 19/9) {
-    top: 100vh;
-  }
-}
 
 body {
   // stops the white flash when on dark mode
