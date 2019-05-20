@@ -12,8 +12,10 @@ function removeSpinnerClasses() {
 // apply an animation when clicking any link to fade in the spinner
 function applyLinkAnimation() {
   $('a').each((i, el) => {
-    // if the link is just a link added there by bootstrap, don't add the loading spinenr
-    if (!el.href || el.href.endsWith('#')) return;
+    // if the link is just a link added there by bootstrap, don't add the
+    // loading spinner
+    // also skips over deletes, because we confirm them with an alert which can be cancelled
+    if (!el.href || el.href.endsWith('#') || el.getAttribute('data-method') === 'delete') return;
     const { pathname } = new URL(el.href);
     // ignore any empty links and the navbar dropdown
     if (!pathname) return;
