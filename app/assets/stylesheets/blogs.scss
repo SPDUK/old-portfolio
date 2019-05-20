@@ -135,3 +135,15 @@
 #share {
   cursor: pointer;
 }
+
+// override the navbar colors for just the blog view
+#nav.navbar-transparent {
+  text-shadow: none !important;
+
+  .navbar-brand {
+    color: unset !important;
+  }
+  .nav-link {
+    color: unset !important;
+  }
+}

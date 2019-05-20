@@ -65,5 +65,8 @@ pre.highlight {
 }
 
 .nav-spacing {
-  padding-top: 80px;
+  padding-top: 7rem;
+  @media (min-width: 768px) {
+    padding-top: 10rem;
+  }
 }
