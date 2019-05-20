@@ -11,7 +11,6 @@ class BlogsController < ApplicationController
   layout "blog"
 
   # GET /blogs
-  # GET /blogs.json
   def index
     if logged_in?(:site_admin)
       @blogs = Blog.includes(:topic).recent.page(params[:page]).per(5)
@@ -22,7 +21,6 @@ class BlogsController < ApplicationController
   end
 
   # GET /blogs/1
-  # GET /blogs/1.json
   def show
     # if the user is an admin or the blog is published, show it, else redirect back
     if logged_in?(:site_admin) || @blog.published?
@@ -30,7 +28,7 @@ class BlogsController < ApplicationController
       @page_title = @blog.title
       @seo_keywords << @blog.title
     else
-      redirect_to blogs_path, notice; "You are not authorized to access this page."
+      redirect_to root_path, notice: "You are not authorized to access this page."
     end
   end
 
@@ -43,42 +41,34 @@ class BlogsController < ApplicationController
   def edit; end
 
   # POST /blogs
-  # POST /blogs.json
   def create
     @blog = Blog.new(blog_params)
 
     respond_to do |format|
       if @blog.save
         format.html { redirect_to @blog, notice: "Blog was successfully created." }
-        format.json { render :show, status: :created, location: @blog }
       else
         format.html { render :new }
-        format.json { render json: @blog.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # PATCH/PUT /blogs/1
-  # PATCH/PUT /blogs/1.json
   def update
     respond_to do |format|
       if @blog.update(blog_params)
         format.html { redirect_to @blog, notice: "Blog was successfully updated." }
-        format.json { render :show, status: :ok, location: @blog }
       else
         format.html { render :edit }
-        format.json { render json: @blog.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # DELETE /blogs/1
-  # DELETE /blogs/1.json
   def destroy
     @blog.destroy
     respond_to do |format|
       format.html { redirect_to blogs_url, notice: "Blog was successfully destroyed." }
-      format.json { head :no_content }
     end
   end
 
