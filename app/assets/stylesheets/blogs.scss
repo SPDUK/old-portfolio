@@ -4,15 +4,15 @@
 
 .blog-container.container {
   max-width: 900px !important;
-  @media (min-width: 900px) {
-    font-size: 18px;
-  }
 }
 
 .blog {
   &-main {
     word-break: break-word;
     overflow-wrap: break-word;
+    @media (min-width: 900px) {
+      font-size: 18px;
+    }
     a,
     a:hover,
     a:focus {
