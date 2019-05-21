@@ -70,3 +70,10 @@ pre.highlight {
     padding-top: 10rem;
   }
 }
+// make fonts look a little smoother
+* {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: auto;
+}
