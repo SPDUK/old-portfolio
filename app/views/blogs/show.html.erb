@@ -1,7 +1,8 @@
 <div class="blog-main">
   <% if logged_in?(:site_admin) %>
-    <div class="blog-admin-actions ml-auto mb-3">
-      <b><%= @blog.status %></b>
+    <div class="blog-admin-actions ml-auto mb-5 bg-secondary p-3 br-5">
+      <b>Current status: <%= @blog.status %></b>
+      <hr>
       <%= link_to @blog.draft? ? "Publish blog" : "Set to private", toggle_status_blog_path(@blog), class: "btn-sm btn-info"  %>
       <%= link_to "Edit",  edit_blog_path(@blog), class: "btn-sm btn-success" %>
       <%= link_to "Delete",
@@ -10,13 +11,22 @@
          class: "btn-sm btn-danger" %>
     </div>
   <% end %>
-  <h2><%= @blog.title %></h2>
-  <div class="blog-meta border-bottom border-light">
-    <span class="border-right border-light">
-      Published <%= distance_of_time_in_words(@blog.created_at, Time.now) %> ago
-    </span>
-    <span class="border-right border-light"><%= read_time(@blog.body) %> min read</span>
-    <%= link_to @blog.topic.title, @blog.topic, class: "badge badge-dark" %>
+  <div class="blog-title">
+    <div class="blog-title-icon">
+      <%= image_tag @blog.topic.icon %>
+    </div>
+    <div class="blog-title-text">
+      <h4><%= @blog.title %></h4>
+      <div class="blog-title-text-meta">
+        <span class="font-weight-bold">
+          <%= distance_of_time_in_words(@blog.created_at, Time.now) %> ago · 
+        </span>
+        <span><%= read_time(@blog.body) %> minute read</span>
+      </div>
+      <div class="blog-title-topic">
+        <%= link_to @blog.topic.title, @blog.topic, class: "badge badge-dark" %>
+      </div>
+    </div>
   </div>
   <style>
     <%= ::Rouge::Themes::Gruvbox.mode(:light).render(scope: '.highlight') %>
@@ -25,6 +35,6 @@
   <hr>
   <div class="blog-actions">
     <%= link_to "⬅ More Blog Posts", blogs_path, class: "text-dark" %>
-    <a id="share" class="text-dark">Copy link to clipboard 🤍</a>
+    <a id="share" class="text-dark">Share Link 🤍</a>
   </div>
 </div>

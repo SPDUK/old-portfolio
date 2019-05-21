@@ -11,17 +11,41 @@
 
 .blog {
   &-main {
+    word-break: break-word;
+    overflow-wrap: break-word;
     a,
     a:hover,
     a:focus {
       text-decoration: none;
     }
   }
-  h2 {
-    margin-bottom: 0;
-    font-size: 2em;
-    font-weight: 700;
-    font-family: 'Poppins', sans-serif;
+  &-title {
+    display: flex;
+    &-icon {
+      padding-right: 10px;
+      img {
+        width: 70px;
+        height: 70px;
+        @media (min-width: 768px) {
+          width: 150px;
+          height: 150px;
+        }
+      }
+    }
+    &-text {
+      &-meta {
+        margin: 0.5rem 0;
+        font-size: 0.8em;
+      }
+      h4 {
+        line-height: 24px;
+        // align the top of the text with the top of the icon
+        margin-top: -3px;
+      }
+    }
+    &-topic {
+      font-size: 0.8em;
+    }
   }
   &-header {
     margin-bottom: 10px;
@@ -29,16 +53,7 @@
       margin-bottom: 10px;
     }
   }
-  &-description {
-    span,
-    button,
-    a {
-      font-weight: 700;
-    }
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-  }
+
   &-pagination {
     margin-bottom: 4rem;
   }
@@ -79,7 +94,6 @@
     transition: 0.15s ease-in-out;
     display: flex;
     padding: 10px 0;
-    word-break: break-all;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     @media (min-width: 768px) {
       padding: 15px 10px;
@@ -98,7 +112,6 @@
     &-body {
       width: 100%;
       h5 {
-        font-weight: 600;
         font-size: 0.97em;
         margin-bottom: 0px;
         @media (min-width: 768px) {
@@ -128,6 +141,7 @@
   }
 }
 .blog-admin-actions {
+  border-radius: 0.2rem;
   a,
   i {
     margin: 0 5px;
