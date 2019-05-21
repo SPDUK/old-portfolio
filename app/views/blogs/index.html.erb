@@ -1,7 +1,7 @@
 <div class="blog-main">
   <div class="blog-header">
     <% if logged_in?(:site_admin) %>
-      <div class="blog-header-admin">
+      <div class="blog-header-admin bg-secondary rounded p-3">
         <%= link_to "Create New Blog Post", new_blog_path, class: "badge badge-success" %>
         <%= link_to "All Topics", topics_path, class: "badge badge-warning"%>
         <%= link_to "Create New Topic", new_topic_path, class: "badge badge-warning"%>

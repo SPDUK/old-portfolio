@@ -1,6 +1,6 @@
 <div class="blog-main">
   <% if logged_in?(:site_admin) %>
-    <div class="blog-admin-actions ml-auto mb-5 bg-secondary p-3 br-5">
+    <div class="blog-admin-actions ml-auto mb-5 bg-secondary p-3 rounded">
       <b>Current status: <%= @blog.status %></b>
       <hr>
       <%= link_to @blog.draft? ? "Publish blog" : "Set to private", toggle_status_blog_path(@blog), class: "btn-sm btn-info"  %>
