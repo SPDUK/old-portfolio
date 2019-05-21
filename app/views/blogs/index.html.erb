@@ -1,13 +1,24 @@
 <div class="blog-main">
-  <div class="blog-description">
-    <span>Javascript, Ruby, Elixir.</span>
-    <div class="blog-links">
-      <%= render "blogs/header_topics" %>
-    </div>
+  <div class="blog-header">
+    <% @header_topics.each do |topic| %>
+      <%= link_to topic.title, topic_path(topic), class: "badge badge-info" %>
+    <% end %>
+    <%# TODO: create new topic path  %>
+    <% if logged_in?(:site_admin) %>
+      <div class="dropdown-divider"></div>
+      <%= link_to "All Topics", topics_path, class: "dropdown-item"%>
+      <%= link_to "Create New Topic", "/topics/new", class: "dropdown-item"%>
+    <% end %>
   </div>
   <%= link_to 'New Blog Post', new_blog_path, class: "btn btn-sm btn-info mb-3" if logged_in?(:site_admin) %>
   <%= render @blogs %>
   <div class="pagination">
     <%= paginate @blogs %>
+  </div>
+</div>
+<div class="blog-description">
+  <span>Javascript, Ruby, Elixir.</span>
+  <div class="blog-links">
+    <%= render "blogs/header_topics" %>
   </div>
 </div>
