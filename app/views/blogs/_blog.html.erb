@@ -1,26 +1,20 @@
-<div class="blog-post rounded <%= "border border-warning" if blog.draft? %>">
-  <div class="card bg-light text-dark">
-    <div class="card-header">
-      <div class="card-header-title">
-        <%= link_to blog.title, blog, class: "text-dark" %>
-        <%= link_to blog.topic.title, topic_path(blog.topic), class: "badge badge-dark" %>
+<div class="blog-post-wrapper">
+  <%= link_to(blog) do %>
+    <div class="blog-post <%= "border border-warning" if blog.draft? %>">
+      <div class="blog-post-icon">
+        <%= image_tag blog.topic.icon %>
       </div>
-      <div class="card-header-meta">
-        <% if blog.draft? %>
-          <b class="text-warning">Draft | </b>
-        <% end %>
-        <span class="card-header-meta-published">
-          Published <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago
+      <div class="blog-post-body">
+        <h5><%= blog.title %></h5>
+        <span class="blog-post-body-meta text-dark">
+          <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago
         </span>
-        <span class="card-header-meta-time">– <%= read_time(blog.body) %> min read</span>
+      </div>
+      <div class="blog-post-badge">
+        <% if Time.now - blog.created_at < 1.week %>
+          <div class="badge badge-secondary">New!</div>
+        <% end %>
       </div>
     </div>
-    <div class="card-body text-body">
-      <style>
-        <%= ::Rouge::Themes::Gruvbox.mode(:light).render(scope: '.highlight') %>
-      </style>
-      <p><%= markdown blog.body.truncate(100) %></p>
-    </div>
-    <%= link_to "Read More", blog, class: "btn btn-sm btn-light" %>
-  </div>
+  <% end %>
 </div>
