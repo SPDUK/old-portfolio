@@ -26,15 +26,17 @@
 
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
   font-family: 'Poppins', sans-serif !important;
-  font-weight: 700 !important;
 }
 
 body {
   // stops the white flash when on dark mode
   background: #303030;
-  z-index: 999;
   font-family: 'Montserrat', sans-serif !important;
 }
 
