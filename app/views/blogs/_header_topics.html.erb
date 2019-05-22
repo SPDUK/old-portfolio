@@ -6,7 +6,6 @@
     <% @header_topics.each do |topic| %>
       <%= link_to topic.title, topic_path(topic), class: "dropdown-item" %>
     <% end %>
-    <%# TODO: create new topic path  %>
     <% if logged_in?(:site_admin) %>
       <div class="dropdown-divider"></div>
       <%= link_to "All Topics", topics_path, class: "dropdown-item"%>
