@@ -175,9 +175,7 @@
 #nav.navbar-transparent {
   text-shadow: none !important;
   background: rgba(0, 0, 0, 0) !important;
-  .navbar-brand {
-    color: unset !important;
-  }
+  .navbar-brand,
   .nav-link {
     color: unset !important;
   }
