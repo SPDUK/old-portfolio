@@ -36,6 +36,7 @@ h6 {
 
 body {
   // stops the white flash when on dark mode
+  transition: background 0.2s ease-out, color 0.2s ease-out;
   background: #303030;
   font-family: 'Montserrat', sans-serif !important;
 }
