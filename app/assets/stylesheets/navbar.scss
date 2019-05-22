@@ -6,10 +6,18 @@
   transition: 0.2s ease-out;
   padding: 1.8px 1rem;
   box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.15);
-
   @media screen and (min-width: 768px) {
     box-shadow: none;
     height: 60px;
+  }
+}
+
+// align the brand correctly in the center due to the toggler
+.navbar-brand {
+  margin-left: 1.5rem !important;
+  margin-right: 0 !important;
+  @media (min-width: 768px) {
+    margin-left: 0 !important;
   }
 }
 // add overlay for glass effect
