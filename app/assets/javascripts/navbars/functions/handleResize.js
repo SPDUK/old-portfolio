@@ -19,6 +19,7 @@ function handleResize() {
     isWide = true;
     handleNavScroll();
   }
+  nav.style.top = '0px';
 }
 
 // TODO: fix resize bug
