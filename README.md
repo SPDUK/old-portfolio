@@ -82,6 +82,8 @@ The width of the blogs container is set up to be 80 characters wide at most, so 
 
 `!important` is used sometimes with the css, it is used to prevent the styles being reset when changing themes, as bootstrap also likes to use `!important` too, not a big deal, but if you remove it bootstrap will override the styles when the theme is changed.
 
+---
+
 ### Deployment
 
 **Initial setup**
@@ -102,4 +104,4 @@ Because we're using [volumes](https://docs.docker.com/storage/volumes/) for the 
 We previously set up git hooks, we can set the remote for production (locally) `git remote add production ssh://somebody@somewebsite.com`
 Now we have done this, to deploy to production all we need to do is `git push production` when we make changes.
 
----
+(For future me, this can be done with [github webhooks](https://developer.github.com/webhooks/) instead, or better with a proper CI/CD tool like travis or circleci)
