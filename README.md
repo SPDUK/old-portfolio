@@ -37,20 +37,14 @@ It will also be a full width banner on the view page.
 
 ---
 
-**Create the DB**
-For development I use a heroku free tier postgres database.
-
-- Log in to Heroku, create a new app, then add click "Configure Add-ons" while on the overview page
-- Click Heroku Postgres, make sure it's hobby tier (free).
-- Click on the database when it's created, go to settings and click view credentials
-- Grab the URI, place it into secrets.yml like so: `DEV_DB_URI: "postgres URI goes here"`
-
 **During development use Docker**
-Allow the `run.sh` script to be run with `chmod u+x ./run.sh`, this will run `docker compose run web` so we can run commands just like we would if it wasn't inside docker.
+Allow the `run.sh` script to be run with `chmod u+x ./run.sh`, this will run `docker compose run app` so we can run commands just like we would if it wasn't inside docker.
 Create the DB: `./run rake db:create`
 Migrate the DB: `./run rake db:migrate`
 
 simply start the server with `docker-compose up`
+
+Visit `localhost:3000` where the server is running.
 
 ---
 
@@ -86,6 +80,10 @@ The width of the blogs container is set up to be 80 characters wide at most, so 
 
 ### Deployment
 
+When deploying we use the `docker-compose.prod.yml` setup, where we launch an nginx server and serve the static files from rails with it, so after deploying you can just visit the website and nginx is already set up.
+
+The database is hosted on the same server as the rails app.
+
 **Initial setup**
 
 - Create a digital ocean droplet, a \$5 one is good enough.
@@ -101,7 +99,8 @@ Because we're using [volumes](https://docs.docker.com/storage/volumes/) for the 
 
 **Set up remote to track changes with git**
 
-We previously set up git hooks, we can set the remote for production (locally) `git remote add production ssh://somebody@somewebsite.com`
-Now we have done this, to deploy to production all we need to do is `git push production` when we make changes.
+We previously set up git hooks, we can set the remote for production (locally) `git remote add production ssh://somebody@somewebsite.com/~/portfolio/.git` to assign our remote as the git repo contained in this specific project we cloned.
 
-(For future me, this can be done with [github webhooks](https://developer.github.com/webhooks/) instead, or better with a proper CI/CD tool like travis or circleci)
+Now we have done this, to deploy to production all we need to do is `git push production` when we make changes we want to push.
+
+(For future me, this can be done with [github webhooks](https://developer.github.com/webhooks/) instead, or better with a proper CI/CD tool like travis or circleci, but all I care about here is pushing stuff to the server.)
