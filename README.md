@@ -87,7 +87,7 @@ The width of the blogs container is set up to be 80 characters wide at most, so 
 **Initial setup**
 
 - Create a digital ocean droplet, a \$5 one is good enough.
-- ssh into the droplet, clone the repo, and open the folder with `cd portfolio`
+- ssh into the droplet, clone the repo, and open the directory with `cd portfolio`
 - _we'll need to create the files being ignored by git and fill in the info._
 - `sudo nano config/master.key` copy/paste a rails secret into it.
 - `sudo nano config/cloudinary.yml` copy/paste the cloudinary.yml settings into it
