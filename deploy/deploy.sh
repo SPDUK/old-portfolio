@@ -1,3 +1,4 @@
+#!/bin/bash
 # stop the currently running server
 docker-compose down
 

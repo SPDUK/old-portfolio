@@ -27,13 +27,13 @@ test:
 ---
 
 When uploading an image for the projects, the resolutions should be
+
 - Main image: 2500x800
 - Thumb image: 768x768
 
 The main image will be used in the carousel if it's featured,
 
 It will also be a full width banner on the view page.
-
 
 ---
 
@@ -81,3 +81,25 @@ Any hidpi/modern phones will download the 1080p image.
 The width of the blogs container is set up to be 80 characters wide at most, so 99% of code will naturally fit correctly inside the container.
 
 `!important` is used sometimes with the css, it is used to prevent the styles being reset when changing themes, as bootstrap also likes to use `!important` too, not a big deal, but if you remove it bootstrap will override the styles when the theme is changed.
+
+### Deployment
+
+**Initial setup**
+
+- Create a digital ocean droplet, a \$5 one is good enough.
+- ssh into the droplet, clone the repo, and open the folder with `cd portfolio`
+- _we'll need to create the files being ignored by git and fill in the info._
+- `sudo nano config/master.key` copy/paste a rails secret into it.
+- `sudo nano config/cloudinary.yml` copy/paste the cloudinary.yml settings into it
+- `cp deploy/post-receive .git/hooks && chmod +x .git/hooks/post-receive` to copy the post-recieve file in this repo to the `.git` folder
+- `chmod +x deploy/deploy.sh && ./deploy/deploy.sh` to run the initial deployment which will start up the server.
+
+Docker should start up, build the containers and load nginx, now we can visit the droplet and see it live.
+Because we're using [volumes](https://docs.docker.com/storage/volumes/) for the database the data will persist even if the containers are stopped or deleted.
+
+**Set up remote to track changes with git**
+
+We previously set up git hooks, we can set the remote for production (locally) `git remote add production ssh://somebody@somewebsite.com`
+Now we have done this, to deploy to production all we need to do is `git push production` when we make changes.
+
+---
