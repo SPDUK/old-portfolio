@@ -2,5 +2,4 @@
 cd ..
 GIT_DIR='.git'
 umask 002 && git reset --hard
-
 ./deploy.sh
