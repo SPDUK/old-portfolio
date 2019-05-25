@@ -8,6 +8,7 @@
 //= require "helpers/loadingSpinner"
 
 async function copyLink() {
+  // this only works with https or while using localhost
   await navigator.clipboard.writeText(window.location.href);
   $.gritter.add({
     title: 'Link copied to clipboard! 🤍',
