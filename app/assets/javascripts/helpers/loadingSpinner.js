@@ -39,14 +39,14 @@ function loadingSpinner() {
 
   applyLinkAnimation();
 
-  // check to see if the page has loaded every 30ms until it has,
+  // check to see if the page has loaded every 10ms until it has,
   // then fade out and stop checking
   const interval = setInterval(function() {
     if (document.readyState === 'complete') {
       clearInterval(interval);
 
-      // fade out after 100ms to make the animation look smoother
-      setTimeout(removeSpinnerClasses, 150);
+      // stop the loading animation
+      removeSpinnerClasses();
     }
-  }, 30);
+  }, 10);
 }
