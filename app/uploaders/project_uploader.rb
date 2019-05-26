@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# TODO: make this always use https
 class ProjectUploader < CarrierWave::Uploader::Base
   include Cloudinary::CarrierWave
 
