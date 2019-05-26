@@ -13,7 +13,7 @@
 .project {
   margin-bottom: 1.5rem;
   img {
-    transition: 0.2s ease;
+    transition: 0.2s ease-out;
     outline: 1px solid rgba(255, 255, 255, 0.15);
     outline-offset: -1px;
   }
@@ -116,11 +116,11 @@
 }
 
 .file-container {
-  height: 80px;
+  height: 80px !important;
 }
 .file-upload {
-  height: 40px;
-  padding: 5px;
+  height: 40px !important;
+  padding: 5px !important;
 }
 
 .projects-show {
