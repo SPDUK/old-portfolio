@@ -5,7 +5,7 @@
     <% end %>
   <% end %>
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-lg-6">
       <div class="form-group">
         <%= f.label :title %>
         <%= f.text_field :title, class: "form-control" %>
@@ -27,10 +27,10 @@
         <%= f.file_field :thumb_image, class: "form-control file-upload" %>
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-lg-6">
       <div class="form-group">
         <%= f.label :body %>
-        <%= f.text_area :body, class: "form-control", rows: 10 %>
+        <%= f.text_area :body, class: "form-control", rows: 15 %>
       </div>
     </div>
   </div>
@@ -45,11 +45,13 @@
         <%= render "technology_fields", f: technology_form %>
       <% end %>
       <div>
-        <%= link_to_add_association 'add technology', f, :technologies %>
+        <%= link_to_add_association 'add technology', f, :technologies, class: "btn btn-" %>
       </div>
     </div>
+    <hr>
     <div class="form-group">
-      <%= f.submit 'Save Project', class: "btn btn-primary btn-block" %>
+      <%= f.submit 'Save Project', class: "btn btn-info" %>
     </div>
+    <%= link_to 'Back', projects_path, class: "btn btn-sm btn-outline-danger mr-2" %>
   </div>
 <% end %>

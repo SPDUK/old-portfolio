@@ -1,7 +1,11 @@
 <%= render "carousel" %>
 <div class="container">
   <div class="projects">
-    <%= link_to "Create New Project", new_project_path if logged_in?(:site_admin) %>
+    <% if logged_in?(:site_admin) %>
+      <div class="bg-secondary p-3 rounded">
+        <%= link_to "Create New Project", new_project_path, class: "btn btn-sm btn-info"  %>
+      </div>
+    <% end %>
     <h5>More Projects</h5>
     <div class="row" id="<%= 'sortable' if logged_in?(:site_admin) %>">
       <%= render @projects %>
