@@ -74,7 +74,9 @@ class ProjectsController < ApplicationController
       params.require(:project).permit(:title,
                                       :subtitle,
                                       :thumb_image,
+                                      :thumb_image_cache,
                                       :main_image,
+                                      :main_image_cache,
                                       :body,
                                       :featured,
                                       technologies_attributes: [:id, :name, :_destroy])
