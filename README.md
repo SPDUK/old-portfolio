@@ -3,6 +3,8 @@
 [Set up cloudinary file uploads](https://cloudinary.com/documentation/rails_integration)
 Create `cloudinary.yml` in the /config folder and fill out this info:
 
+*the api_key must be in quotes*
+
 ```
 development:
   cloud_name: cloudinary_name
@@ -24,16 +26,7 @@ test:
   static_file_support: false
 ```
 
----
 
-When uploading an image for the projects, the resolutions should be
-
-- Main image: 2500x800
-- Thumb image: 768x768
-
-The main image will be used in the carousel if it's featured,
-
-It will also be a full width banner on the view page.
 
 ---
 
@@ -57,7 +50,7 @@ Or update the correct user by finding it first if you have multiple test users.
 
 ---
 
-### Background Image
+### Home Background Image
 
 The background images should have 4 versions for different resolutions, and 2 variants (light/dark)
 It builds a URL like so`.../firewatch-${color}-${width}.jpg` where color will be `light` or `dark` and `width` is one of:
@@ -65,10 +58,23 @@ It builds a URL like so`.../firewatch-${color}-${width}.jpg` where color will be
 - 3840 (4k, 3840x2160)
 - 2560 (1440p, 2560x1440)
 - 1920 (1080p, 1920x1080)
-- 420 (mobile, 900x420)
+- 420 (mobile, 420x900)
 
 So for example an image should be named `firewatch-dark-1080.jpg` when uploaded to cloudinary.
 Any hidpi/modern phones will download the 1080p image.
+
+
+### Project Images
+
+
+When uploading an image for the projects, the resolutions should be
+  - Main image: 2500x800
+  - Thumb image: 768x768
+
+The top 60px of all main image should be blurred (5px gaussian blur, preserve alpha) to enable the blur effect.
+
+The main image will be used in the carousel if it's featured, it will also be a full width banner on the view page.
+
 
 ### Other info
 
@@ -104,3 +110,26 @@ We previously set up git hooks, we can set the remote for production (locally) `
 Now we have done this, to deploy to production all we need to do is `git push production` when we make changes we want to push.
 
 (For future me, this can be done with [github webhooks](https://developer.github.com/webhooks/) instead, or better with a proper CI/CD tool like travis or circleci, but all I care about here is pushing stuff to the server.)
+
+**Set up domain**
+
+- Use [cloudflare](https://www.cloudflare.com/) for basic DDOS protection and caching.
+- Set up the cloudflare DNS settings and domain settings to point to the DO droplet.
+
+**Set up certbot for HTTPS**
+- Install certbot
+  ```
+    sudo apt-get update
+    sudo apt-get install software-properties-common
+    sudo add-apt-repository universe
+    sudo add-apt-repository ppa:certbot/certbot
+    sudo apt-get update
+    sudo apt-get install -y certbot python-certbot-nginx
+    sudo certbot --nginx
+  ```
+- Get the cert (replace domain.com and www.domain.com with the correct domains)
+  
+  ```
+  sudo certbot certonly --webroot -w /root/certs-data/ -d domain.com -d www.domain.com
+  ```
+- Our site now has HTTPS, and it should have created a renew script in `/etc/cron.d/certbot`, if it didn't just create a cronjob to renew it.
