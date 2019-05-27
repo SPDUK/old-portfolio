@@ -13,6 +13,7 @@ development:
   enhance_image_tag: true
   static_file_support: false
   secure: true
+  cdn_subdomain: true
 production:
   cloud_name: cloudinary_name
   api_key: 'cloudinary_api_key'
@@ -20,6 +21,7 @@ production:
   enhance_image_tag: true
   static_file_support: true
   secure: true
+  cdn_subdomain: true
 test:
   cloud_name: cloudinary_name
   api_key: 'cloudinary_api_key'
@@ -27,6 +29,7 @@ test:
   enhance_image_tag: true
   static_file_support: false
   secure: true
+  cdn_subdomain: true
 ```
 
 
