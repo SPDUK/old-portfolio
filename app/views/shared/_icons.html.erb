@@ -1,90 +1,10 @@
-<div class="row">
-  <div class="col-3">
-    <img src="https://res.cloudinary.com/dmjolhdaq/image/upload/v1556302614/Portfolio/html5-original.svg" alt="HTML5">
-    <span>HTML5</span>
+<%= topics.each_slice(4) do |sliced_topics| %>
+  <div class="row">
+    <% sliced_topics.each do |topic| %>
+      <div class="col-3">
+        <img src="<%= topic.icon %>" alt="<%= topic.title %>">
+        <span><%= topic.title %></span>
+      </div>
+    <% end %>
   </div>
-  <div class="col-3">
-    <img src="https://res.cloudinary.com/dmjolhdaq/image/upload/v1556302560/Portfolio/css3-original.svg" alt="CSS3">
-    <span>CSS</span>
-  </div>
-  <div class="col-3">
-    <img src="https://res.cloudinary.com/dmjolhdaq/image/upload/v1556302758/Portfolio/sass-original.svg" alt="Sass">
-    <span>Sass</span>
-  </div>
-  <div class="col-3">
-    <img src="https://res.cloudinary.com/dmjolhdaq/image/upload/v1556302644/Portfolio/jquery-original.svg" alt="jQuery">
-    <span>jQuery</span>
-  </div>
-</div>
-<div class="row">
-  <div class="col-3">
-    <img src="https://res.cloudinary.com/dmjolhdaq/image/upload/v1556302682/Portfolio/javascript-original.svg" alt="JavaScript">
-    <span>JavaScript</span>
-  </div>
-  <div class="col-3">
-    <img src="https://res.cloudinary.com/dmjolhdaq/image/upload/v1556302738/Portfolio/ruby-original.svg" alt="Ruby">
-    <span>Ruby</span>
-  </div>
-  <div class="col-3">
-    <img src="https://res.cloudinary.com/dmjolhdaq/image/upload/v1556302819/Portfolio/rails-original-wordmark.svg" alt="Rails">
-    <span>Rails</span>
-  </div>
-  <div class="col-3">
-    <img src="https://res.cloudinary.com/dmjolhdaq/image/upload/v1556303055/Portfolio/logo-elixir.svg" alt="Elixir">
-    <span>Elixir</span>
-  </div>
-</div>
-<div class="row">
-  <div class="col-3">
-    <img src="https://res.cloudinary.com/dmjolhdaq/image/upload/v1556302728/Portfolio/react-original.svg" alt="React">
-    <span>React</span>
-  </div>
-  <div class="col-3">
-    <img src="https://res.cloudinary.com/dmjolhdaq/image/upload/v1556304915/Portfolio/redux-original.svg" alt="Redux">
-    <span>Redux</span>
-  </div>
-  <div class="col-3">
-    <img src="https://res.cloudinary.com/dmjolhdaq/image/upload/v1556302721/Portfolio/nodejs-original.svg" alt="NodeJS">
-    <span>Node.js</span>
-  </div>
-  <div class="col-3">
-    <img src="https://res.cloudinary.com/dmjolhdaq/image/upload/v1556302786/Portfolio/webpack-original.svg" alt="Webpack">
-    <span>Webpack</span>
-  </div>
-</div>
-<div class="row">
-  <div class="col-3">
-    <img src="https://res.cloudinary.com/dmjolhdaq/image/upload/v1556302631/Portfolio/heroku-original.svg" alt="Heroku">
-    <span>Heroku</span>
-  </div>
-  <div class="col-3">
-    <img src="https://res.cloudinary.com/dmjolhdaq/image/upload/v1556302849/Portfolio/google-original.svg" alt="GoogleCloud">
-    <span>GCP</span>
-  </div>
-  <div class="col-3">
-    <img src="https://res.cloudinary.com/dmjolhdaq/image/upload/v1556302578/Portfolio/docker-original.svg" alt="Docker">
-    <span>Docker</span>
-  </div>
-  <div class="col-3">
-    <img src="https://res.cloudinary.com/dmjolhdaq/image/upload/v1556304721/Portfolio/postgresql-original.svg" alt="PostgreSQL">
-    <span>PostgreSQL</span>
-  </div>
-</div>
-<div class="row">
-  <div class="col-3">
-    <img src="https://res.cloudinary.com/dmjolhdaq/image/upload/v1556302711/Portfolio/mongodb-original.svg" alt="MongoDB">
-    <span>MongoDB</span>
-  </div>
-  <div class="col-3">
-    <img src="https://res.cloudinary.com/dmjolhdaq/image/upload/v1556304915/Portfolio/redis-original.svg" alt="Redis">
-    <span>Redis</span>
-  </div>
-  <div class="col-3">
-    <img src="https://res.cloudinary.com/dmjolhdaq/image/upload/v1556302663/Portfolio/git-original.svg" alt="Git">
-    <span>Git</span>
-  </div>
-  <div class="col-3">
-    <img src="https://res.cloudinary.com/dmjolhdaq/image/upload/v1556302702/Portfolio/linux-original.svg" alt="Linux">
-    <span>Linux</span>
-  </div>
-</div>
+<% end %>
