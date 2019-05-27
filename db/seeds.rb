@@ -47,11 +47,3 @@ puts "topics created"
 end
 
 puts "10 blog posts created"
-
-5.times do |idx|
-  Skill.create!(
-    title: "Rails #{idx}",
-    percent: 15
-  )
-end
-puts "5 skills created"
