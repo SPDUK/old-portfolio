@@ -3,12 +3,19 @@
   <head>
     <title><%=@page_title%></title>
     <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="keywords" content=<%= @seo_keywords %> />
+    <link rel="apple-touch-icon" sizes="180x180" href='<%= asset_path('favicons/apple-touch-icon.png') %>'>
+    <link rel="icon" type="image/png" sizes="32x32" href='<%= asset_path('favicons/favicon-32x32.png') %>'>
+    <link rel="icon" type="image/png" sizes="16x16" href='<%= asset_path('favicons/favicon-16x16.png') %>'>
+    <link rel="manifest" href='<%= asset_path('favicons/site.webmanifest') %>'>
+    <link rel="mask-icon" href='<%= asset_path('favicons/safari-pinned-tab.svg') %>' color="#303030">
+    <meta name="msapplication-TileColor" content="#303030">
+    <meta name="theme-color" content="#303030">
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <%= cdn_links %>
-    <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
