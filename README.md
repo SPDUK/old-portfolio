@@ -51,8 +51,8 @@ To generate placeholder content run `./run rake db:seed` and a test admin user i
 `hello@world.com` with the password `password`.
 You can modify the seeds in the `/db/seeds.rb` file.
 
-To give a user admin, currently run `./run rails console` and then enter `User.first.update!(roles: [:site_admin])`
-Or update the correct user by finding it first if you have multiple test users.
+To give a user admin, run `./run rake promote_admin`
+Or update the correct user by opening `./run rails console` and finding the correct user(s)
 
 ---
 

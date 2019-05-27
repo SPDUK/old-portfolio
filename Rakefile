@@ -6,3 +6,7 @@
 require_relative "config/application"
 
 Rails.application.load_tasks
+
+task promote_admin: :environment do
+  User.first.update!(roles: [:site_admin])
+end
