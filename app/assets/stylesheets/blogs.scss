@@ -3,14 +3,14 @@
 @import './navbar.scss';
 
 .blog-container.container {
-  max-width: 900px !important;
+  max-width: 920px !important;
 }
 
 .blog {
   &-main {
     word-break: break-word;
     overflow-wrap: break-word;
-    @media (min-width: 900px) {
+    @media (min-width: 920px) {
       font-size: 18px;
     }
     a,
@@ -182,5 +182,5 @@
 }
 // make the nav only go to the same width as the blogs
 #nav .container {
-  max-width: 900px !important;
+  max-width: 920px !important;
 }
