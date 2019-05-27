@@ -5,10 +5,11 @@ class Project < ApplicationRecord
   mount_uploader :thumb_image, ProjectUploader
   mount_uploader :main_image, ProjectUploader
 
+
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
   validates_presence_of :title, :body, :main_image, :thumb_image
-
-
-
 
   # not featured projects (bottom grid)
   def self.by_position
