@@ -64,7 +64,7 @@ class ProjectsController < ApplicationController
       @project = Project.find(params[:id])
     end
 
-    # whitelists the fields and technologies_attributes
+    # whitelists the fields
     def project_params
       params.require(:project).permit(:title,
                                       :subtitle,
@@ -73,7 +73,6 @@ class ProjectsController < ApplicationController
                                       :main_image,
                                       :main_image_cache,
                                       :body,
-                                      :featured,
-                                      technologies_attributes: [:id, :name, :_destroy])
+                                      :featured)
     end
 end

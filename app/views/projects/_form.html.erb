@@ -34,20 +34,8 @@
       </div>
     </div>
   </div>
-  <%# form within a form for nested attributes, 
-  from accepts_nested_attributes_for in controller, 
-  creates a field for each of the built technologies  %>
   <hr>
   <div class="col-md-12">
-    <h2>Technologies Used</h2>
-    <div>
-      <%= f.fields_for :technologies do |technology_form|  %>
-        <%= render "technology_fields", f: technology_form %>
-      <% end %>
-      <div>
-        <%= link_to_add_association 'add technology', f, :technologies, class: "btn btn-sm btn-success" %>
-      </div>
-    </div>
     <hr>
     <div class="form-group">
       <%= f.submit 'Save Project', class: "btn btn-info" %>
