@@ -12,18 +12,21 @@ development:
   api_secret: cloudinary_secret
   enhance_image_tag: true
   static_file_support: false
+  secure: true
 production:
   cloud_name: cloudinary_name
   api_key: 'cloudinary_api_key'
   api_secret: cloudinary_secret
   enhance_image_tag: true
   static_file_support: true
+  secure: true
 test:
   cloud_name: cloudinary_name
   api_key: 'cloudinary_api_key'
   api_secret: cloudinary_secret
   enhance_image_tag: true
   static_file_support: false
+  secure: true
 ```
 
 
