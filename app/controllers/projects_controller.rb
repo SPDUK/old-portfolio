@@ -67,7 +67,6 @@ class ProjectsController < ApplicationController
     # whitelists the fields
     def project_params
       params.require(:project).permit(:title,
-                                      :subtitle,
                                       :thumb_image,
                                       :thumb_image_cache,
                                       :main_image,
