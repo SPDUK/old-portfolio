@@ -27,8 +27,4 @@ class Project < ApplicationRecord
   def self.featured
     where(featured: true)
   end
-
-  def self.rails
-    where(subtitle: "Ruby on Rails")
-  end
 end

@@ -3,7 +3,7 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: %i[show edit update destroy]
   # user authorization
-  access all: [:show, :index, :rails],
+  access all: [:show, :index],
   user: { except: [:destroy, :new, :create, :update, :edit, :sort] },
   site_admin: :all
   layout "project"
@@ -12,11 +12,6 @@ class ProjectsController < ApplicationController
     @featured = Project.featured
     @projects = Project.by_position
   end
-
-  def rails
-    @rails = Project.rails
-  end
-
 
   def sort
     if logged_in?(:site_admin)
