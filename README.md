@@ -37,7 +37,8 @@ test:
 ---
 
 **During development use Docker**
-Allow the `run.sh` script to be run with `chmod u+x ./run.sh`, this will run `docker compose run app` so we can run commands just like we would if it wasn't inside docker.
+
+Allow the `run.sh` script to be run with `chmod +x ./run.sh`, this will run `docker compose run app` so we can run commands just like we would if it wasn't inside docker.
 Create the DB: `./run rake db:create`
 Migrate the DB: `./run rake db:migrate`
 
@@ -53,6 +54,11 @@ You can modify the seeds in the `/db/seeds.rb` file.
 
 To give a user admin, run `./run rake promote_admin`
 Or update the correct user by opening `./run rails console` and finding the correct user(s)
+
+
+**During production** 
+
+You can use the `prod.sh` script to do a similar thing, enable it with `chmod +x ./prod.sh` on the production server, and you can then run things like `./prod.sh db:reset`.  
 
 ---
 
@@ -111,7 +117,7 @@ Because we're using [volumes](https://docs.docker.com/storage/volumes/) for the 
 
 **Set up remote to track changes with git**
 
-We previously set up git hooks, we can set the remote for production (locally) `git remote add production ssh://somebody@somewebsite.com/~/portfolio/.git` to assign our remote as the git repo contained in this specific project we cloned.
+We previously set up git hooks, we can set the remote for production (locally) `git remote add production ssh://somebody@someip/~/portfolio/.git` to assign our remote as the git repo contained in this specific project we cloned.
 
 Now we have done this, to deploy to production all we need to do is `git push production` when we make changes we want to push.
 
