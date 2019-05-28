@@ -16,7 +16,6 @@
   <div class="mb-4">
     <%= link_to "Create New Topic", new_topic_path, class: "btn btn-sm btn-info"%>
   </div>
-  <hr>
   <div class="form-group mb-1">
     [<b><%= blog.status %></b>] | 
     <%= f.label :status, "Draft" %>
@@ -25,13 +24,14 @@
     <%= f.radio_button :status, "published" %>
   </div>
   <small class="font-italic">Publishing the blog makes it visible to the public.</small>
-  <hr>
   <div class="form-group">
     <%= f.label :body %>
     <%= f.text_area :body, class: "form-control", rows: 10 %>
     <small class="font-italic">Blog posts can be formatted using markdown, including code blocks.</small>
   </div>
+  <hr>
   <div class="form-group">
-    <%= f.submit "Submit", class: "btn btn-primary btn-block" %>
+    <%= f.submit "Submit", class: "btn btn-info" %>
   </div>
+  <%= link_to 'Back', blogs_path, class: "btn btn-sm btn-outline-danger" %>
 <% end %>
