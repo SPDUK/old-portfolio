@@ -31,7 +31,9 @@
   <style>
     <%= ::Rouge::Themes::Gruvbox.mode(:light).render(scope: '.highlight') %>
   </style>
-  <p><%= markdown @blog.body %></p>
+  <div class="markdown">
+    <%= markdown @blog.body %>
+  </div>
   <hr>
   <div class="blog-actions">
     <%= link_to "🙌 More Blog Posts", blogs_path, class: "text-dark" %>

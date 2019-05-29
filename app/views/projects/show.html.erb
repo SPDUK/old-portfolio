@@ -16,6 +16,9 @@
     <style>
       <%= ::Rouge::Themes::Gruvbox.mode(:light).render(scope: '.highlight') %>
     </style>
-    <p><%= markdown @project.body %></p>
+    <div class="markdown">
+      <%= markdown @project.body %>
+    </div>
+    <%= link_to "👨‍💻 All Projects", projects_path, class: "text-dark" %>
   </div>
 </div>
