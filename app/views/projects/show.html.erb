@@ -1,6 +1,8 @@
 <div class="projects-show">
-  <div id="projects-show-header"
+  <div id="projects-show-header-wrapper">
+    <div id="projects-show-header"
   main-image="<%= @project.main_image_url %>"></div>
+  </div>
   <div class="container">
     <% if logged_in?(:site_admin) %>
       <div class="bg-secondary rounded m-4 p-3">

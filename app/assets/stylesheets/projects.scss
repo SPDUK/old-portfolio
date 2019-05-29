@@ -25,12 +25,13 @@
     }
   }
   &-overlay {
-    display: none;
+    display: block;
+    opacity: 1;
     @media (min-width: 768px) {
-      display: block;
+      animation: hideOverlayBackground 0.2s ease-out forwards;
+      opacity: 0;
     }
-    opacity: 0;
-    animation: hideOverlayBackground 0.2s ease-out forwards;
+
     position: absolute;
     // have to calculate the bootstrap column padding
     bottom: 24px;
@@ -42,7 +43,11 @@
     border: 1px solid #36bfff;
 
     &-text {
-      animation: hideOverlayText 0.2s ease-out forwards;
+      font-size: 1.1em;
+      @media (min-width: 768px) {
+        font-size: 1em;
+        animation: hideOverlayText 0.2s ease-out forwards;
+      }
       height: 100%;
       display: flex;
       flex-direction: column;
@@ -69,10 +74,14 @@
 }
 
 .project:hover > .project-overlay {
-  animation: showOverlayBackground 0.2s ease-out forwards;
+  @media (min-width: 768px) {
+    animation: showOverlayBackground 0.2s ease-out forwards;
+  }
 }
 .project:hover > .project-overlay > .project-overlay-text {
-  animation: showOverlayText 0.2s ease-out forwards;
+  @media (min-width: 768px) {
+    animation: showOverlayText 0.2s ease-out forwards;
+  }
 }
 
 @keyframes showOverlayText {
@@ -124,11 +133,18 @@
 }
 
 .projects-show {
-  margin-top: -48px;
+  margin-top: -12px;
   @media (min-width: 768px) {
     margin-top: 0px;
   }
+  #projects-show-header-wrapper {
+    // max-width: 2500px;
+    width: 100%;
+    background: rgb(0, 0, 0);
+  }
   #projects-show-header {
+    margin: 0 auto;
+    max-width: 2500px;
     background-color: rgb(0, 0, 0);
     height: 70vh;
     max-height: 800px;

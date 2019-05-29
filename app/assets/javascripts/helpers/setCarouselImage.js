@@ -10,8 +10,8 @@ function applyBackgroundImage(backgroundImage, el, carousel) {
       backgroundImage: `radial-gradient(
           circle,
           rgba(0, 0, 0, 0) 0%,
-          rgba(0, 0, 0, 0) 70%,
-          rgba(0, 0, 0, 1) 95%
+          rgba(0, 0, 0, 0) 80%,
+          rgba(0, 0, 0, 1) 97%
         ),
         url('${backgroundImage}')`
     });
