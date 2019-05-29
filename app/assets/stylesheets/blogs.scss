@@ -2,10 +2,6 @@
 @import './toggle.scss';
 @import './navbar.scss';
 
-.blog-container.container {
-  max-width: 920px !important;
-}
-
 .blog {
   &-main {
     word-break: break-word;
@@ -173,8 +169,4 @@
   .nav-link {
     color: unset !important;
   }
-}
-// make the nav only go to the same width as the blogs
-#nav .container {
-  max-width: 920px !important;
 }

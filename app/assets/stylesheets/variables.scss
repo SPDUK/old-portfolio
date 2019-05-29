@@ -63,8 +63,16 @@ div.highlight {
   padding-bottom: 0px;
   margin-bottom: 12px;
 }
-
-.markdown a {
+// specifies the max width for a markdown page (100chars width)
+// used on the blog and projects page to keep them the correct spacing for markdown
+.markdown {
+  margin: 0 auto;
+  max-width: 920px !important;
+  @media (min-width: 920px) {
+    font-size: 16px;
+  }
+}
+.markdown p a {
   color: #3498db !important;
 }
 pre.highlight {
