@@ -18,6 +18,6 @@ class Project < ApplicationRecord
 
   # featured projects (carousel)
   def self.featured
-    where(featured: true)
+    where(featured: true).order(created_at: :desc)
   end
 end
