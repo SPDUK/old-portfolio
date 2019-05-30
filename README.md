@@ -1,6 +1,23 @@
-# README
+# Portfolio
 
-[Set up cloudinary file uploads](https://cloudinary.com/documentation/rails_integration)
+My markdown oriented portfolio, made with rails.
+
+List of basic features: 
+- Admin CRUD actions
+- Light/Dark mode toggle across every layout, including code syntax highlighting
+- Staging for blog posts to review them before making them public
+- Drag and drop re-ordering of project listings, carousel to highlight featured projects
+- Markdown parsing
+
+___
+
+
+
+
+### Set up cloudinary api keys for file uploads
+- [Cloudinary docs for rails](https://cloudinary.com/documentation/rails_integration)
+
+
 Create `cloudinary.yml` in the /config folder and fill out this info:
 
 *the api_key must be in quotes*
@@ -35,8 +52,7 @@ test:
 
 
 ---
-
-**During development use Docker**
+### Development setup with docker
 
 Allow the `run.sh` script to be run with `chmod +x ./run.sh`, this will run `docker compose run app` so we can run commands just like we would if it wasn't inside docker.
 Create the DB: `./run rake db:create`
@@ -58,7 +74,7 @@ Or update the correct user by opening `./run rails console` and finding the corr
 
 **During production** 
 
-You can use the `prod.sh` script to do a similar thing, enable it with `chmod +x ./prod.sh` on the production server, and you can then run things like `./prod.sh db:reset`.  
+You can use the `prod.sh` script to run a command using the correct Dockerfile for production, enable it with `chmod +x ./prod.sh` on the production server, and you can then run things like `./prod.sh db:reset`.  
 
 ---
 
@@ -78,7 +94,6 @@ Any hidpi/modern phones will download the 1080p image.
 
 ### Project Images
 
-
 When uploading an image for the projects, the resolutions should be
   - Main image: 2500x800
   - Thumb image: 768x768
@@ -90,7 +105,7 @@ The main image will be used in the carousel if it's featured, it will also be a 
 
 ### Other info
 
-The width of the blogs container is set up to be 80 characters wide at most, so 99% of code will naturally fit correctly inside the container.
+The width of the blogs container is set up to be 100 characters wide at most, so 99% of code will naturally fit correctly inside the container if you use a code linter that limits line length.
 
 `!important` is used sometimes with the css, it is used to prevent the styles being reset when changing themes, as bootstrap also likes to use `!important` too, not a big deal, but if you remove it bootstrap will override the styles when the theme is changed.
 
