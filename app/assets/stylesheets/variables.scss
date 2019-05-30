@@ -83,6 +83,9 @@ div.highlight {
     border-bottom: 1px solid darken(#3498db, 10%);
   }
 }
+.markdown img {
+  width: 100%;
+}
 pre.highlight {
   padding-bottom: 10px;
 }
