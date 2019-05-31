@@ -3,6 +3,7 @@
 //= require navbars/functions/setLightTheme
 //= require navbars/functions/handleResize
 //= require navbars/functions/handleNavScroll
+//= require navbars/functions/addBlockquoteStyles
 
 // if we are on the blog layout all we need to do is set the theme
 function setTheme() {
@@ -21,6 +22,7 @@ function toggleTheme() {
 $(document).on('turbolinks:load', () => {
   animateMobileNav();
   setTheme();
+  addBlockquoteStyles();
   $('.theme-toggle').click(toggleTheme);
   const nav = document.querySelector('#nav');
 

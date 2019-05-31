@@ -4,6 +4,7 @@
 //= require navbars/functions/handleResize
 //= require navbars/functions/handleNavScroll
 //= require helpers/setCarouselImage
+//= require navbars/functions/addBlockquoteStyles
 
 // if we are on the blog layout all we need to do is set the theme
 function setTheme() {
