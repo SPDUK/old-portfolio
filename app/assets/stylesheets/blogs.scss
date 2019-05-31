@@ -6,9 +6,6 @@
   &-main {
     word-break: break-word;
     overflow-wrap: break-word;
-    @media (min-width: 920px) {
-      font-size: 18px;
-    }
     a,
     a:hover,
     a:focus {
