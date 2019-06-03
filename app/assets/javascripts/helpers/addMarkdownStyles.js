@@ -1,15 +1,13 @@
 // when clicked copy any of the code inside to the clipboard
 async function handleCopyClick(evt) {
-  // get all of the pre divs (code blocks), remove any extra divs, such as the copy button
-  const codeBlocks = $(evt.target.parentElement)
-    .children()
-    .filter('pre');
-
-  // get the text of the codeBlocks
-  const text = codeBlocks.text();
+  // get the children of the parent element
+  const { children } = evt.target.parentElement;
+  // filter out any of the child divs that are not <pre> tags, then grab the first element
+  // destructure the innerText from the code block
+  const { innerText } = Array.from(children).filter(el => el.tagName === 'PRE')[0];
 
   // copy all of the text to the clipboard
-  await navigator.clipboard.writeText(text);
+  await navigator.clipboard.writeText(innerText);
 
   // notify of success
   $.gritter.add({
