@@ -4,7 +4,7 @@
 //= require cocoon
 //= require gritter
 // = require navbars/projectsNav
-//= require "helpers/loadingSpinner"
+//= require helpers/loadingSpinner
 
 // returns a new array with the data pos added on to the card
 function setPositions() {

@@ -6,7 +6,7 @@
 //= require navbars/homeNav
 //= require animations/animateGrid
 //= require animations/animateInfoList
-//= require "helpers/loadingSpinner"
+//= require helpers/loadingSpinner
 
 // stops preserving scroll, no need to scroll up on page visit
 history.scrollRestoration = 'manual';

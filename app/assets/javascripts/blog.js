@@ -4,7 +4,7 @@
 //= require turbolinks
 //= require gritter
 //= require navbars/blogNav
-//= require "helpers/loadingSpinner"
+//= require helpers/loadingSpinner
 
 async function copyLink() {
   // this only works with https or while using localhost
