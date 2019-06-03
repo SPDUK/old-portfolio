@@ -1,6 +1,7 @@
 @import 'gritter';
 @import './loading.scss';
 @import './footer.scss';
+@import './syntax.scss';
 // a lot of !important is used as when toggling between stylesheets they will simply override the defaults again, so we need to make sure our settings here are persistant after toggles
 // apply to body to stop scrolling
 .no-scroll {
@@ -62,16 +63,16 @@ div.highlight {
   border-radius: 0.2rem;
   padding: 10px;
   margin: 1.5rem 0;
-  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.05);
-  border: 1px solid rgba(0,0,0,0.25);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
   .copy {
     box-sizing: border-box;
     transition: 0.2s ease-out;
     cursor: pointer;
     user-select: none;
-    background: rgba(0,0,0, 0.15);
-    border: 1px solid rgba(0,0,0,0);
+    background: rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0);
     padding: 5px 10px;
     font-size: 0.8em;
     position: absolute;
@@ -79,11 +80,11 @@ div.highlight {
     right: 0;
     border-radius: 0 0.15rem;
     &:hover {
-      background: rgba(0,0,0,0.2);
+      background: rgba(0, 0, 0, 0.2);
     }
     &:active {
-      background: rgba(0,0,0,0.25);
-      border: 1px solid rgba(0,0,0, 0.5);
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(0, 0, 0, 0.5);
     }
   }
 }

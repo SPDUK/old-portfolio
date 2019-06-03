@@ -15,7 +15,7 @@ async function downloadDarkCSS() {
   $('#loading').addClass('show');
 
   const syntaxDark =
-    'https://res.cloudinary.com/dmjolhdaq/raw/upload/v1555203029/Portfolio/dracula.css';
+    'https://res.cloudinary.com/dmjolhdaq/raw/upload/v1559604892/Portfolio/atom-one-dark.css';
   const bootstrapDark =
     'https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/darkly/bootstrap.min.css';
 
