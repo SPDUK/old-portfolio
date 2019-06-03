@@ -60,9 +60,14 @@ html.no-scrollbar {
 div.highlight {
   border-radius: 0.2rem;
   padding: 10px;
-  padding-bottom: 0px;
-  margin-bottom: 12px;
+  margin: 1.5rem 0;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.25);
 }
+pre.highlight {
+  margin-bottom: 0;
+}
+
 // specifies the max width for a markdown page (100chars width)
 // used on the blog and projects page to keep them the correct spacing for markdown
 .markdown {
@@ -88,9 +93,6 @@ div.highlight {
 }
 .markdown img {
   width: 100%;
-}
-pre.highlight {
-  padding-bottom: 10px;
 }
 // space out the actions at the bottom of a markdown post
 .markdown-actions {
