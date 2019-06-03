@@ -23,8 +23,9 @@ function addMarkdownStyles() {
 
   $('div.highlight').each((_idx, el) => {
     // add a copy button to each code block
-    $(el).append($('<div class="copy">Copy</div>'));
+    const copy = $('<div class="copy">Copy</div>');
+    $(el).append(copy);
     // add an event to run when the button is clicked to copy the code to clipboard
-    $(el).click(handleCopyClick);
+    $(copy).click(handleCopyClick);
   });
 }
