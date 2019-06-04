@@ -42,7 +42,7 @@ class TopicsController < ApplicationController
     else
       @blogs = @topic.blogs.recent.published.order(created_at: :desc)
     end
-    @page_title = "My blogs!"
+    @page_title = @topic.title
   end
 
   private

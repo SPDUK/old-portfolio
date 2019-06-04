@@ -17,7 +17,7 @@ class BlogsController < ApplicationController
     else
       @blogs = Blog.includes(:topic).recent.published.page(params[:page]).per(20).order(created_at: :desc)
     end
-    @page_title = "My blogs!"
+    @page_title = "Blog | SP"
   end
 
   # GET /blogs/1
@@ -25,7 +25,7 @@ class BlogsController < ApplicationController
     # if the user is an admin or the blog is published, show it, else redirect back
     if logged_in?(:site_admin) || @blog.published?
       @blog = Blog.friendly.find(params[:id])
-      @page_title = @blog.title
+      @page_title = "#{@blog.title} | SP"
       @seo_keywords << @blog.title
     else
       redirect_to root_path, notice: "You are not authorized to access this page."

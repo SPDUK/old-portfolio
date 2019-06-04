@@ -9,6 +9,7 @@ class ProjectsController < ApplicationController
   layout "project"
 
   def index
+    @page_title = "Projects | SP"
     @featured = Project.featured
     @projects = Project.by_position
   end
@@ -26,7 +27,9 @@ class ProjectsController < ApplicationController
     @project = Project.new
   end
 
-  def show; end
+  def show
+    @page_title = "#{@project.title} | SP"
+  end
 
   def edit; end
 

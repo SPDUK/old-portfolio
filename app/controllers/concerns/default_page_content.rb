@@ -8,7 +8,7 @@ module DefaultPageContent
   end
 
   def set_page_defaults
-    @page_title = "SP | Portfolio"
+    @page_title = "Portfolio | SP"
     @seo_keywords = "spdevuk spduk portfolio react ruby rails elixir javascript nodejs uk england cambridge cambridgeshire"
   end
 end
