@@ -2,7 +2,7 @@
   <%= link_to(blog) do %>
     <div class="blog-post <%= "border border-warning" if blog.draft? %>">
       <div class="blog-post-icon">
-        <%= image_tag blog.topic.icon %>
+        <%= image_tag blog.topic.icon, alt: blog.topic.title %>
       </div>
       <div class="blog-post-body">
         <h5><%= blog.title %></h5>

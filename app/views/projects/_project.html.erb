@@ -1,7 +1,7 @@
 <%# display a grid 4 wide if the amount of projects is even, otherwise a grid of 3 %>
 <div class="col-6 <%= @projects.length.even? ? "col-lg-3" : "col-lg-4" %>">
   <div class="project" data-id="<%= project.id %>">
-    <%= image_tag(project.thumb_image_url, width: "100%") %>
+    <%= image_tag(project.thumb_image_url, width: "100%", alt: project.title) %>
     <div class="project-overlay">
       <p class="project-overlay-text">
         <span class="text-white"><%= project.title %></span>
