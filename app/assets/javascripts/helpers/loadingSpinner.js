@@ -1,7 +1,9 @@
 function applySpinnerClasses() {
   $('html').addClass('no-scrollbar');
   $('#loading').addClass('show');
+  // make the background theme dark or light depending on the theme
   if (Cookies.get('theme') === 'dark') $('#loading').addClass('bg-black');
+  else $('#loading').addClass('bg-light');
 }
 function removeSpinnerClasses() {
   $('html').removeClass('no-scrollbar');
