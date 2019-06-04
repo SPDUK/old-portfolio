@@ -88,6 +88,12 @@ div.highlight {
     }
   }
 }
+p code {
+  color: unset !important;
+  padding: 2px 5px;
+  background-color: rgba(160, 159, 159, 0.2);
+  border-radius: 0.2rem;
+}
 pre.highlight {
   margin-bottom: 0;
 }
