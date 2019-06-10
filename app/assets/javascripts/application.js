@@ -89,16 +89,6 @@ $(document).on('turbolinks:load', () => {
       duration: 1200
     });
 
-  // animate the scroller inside the mouse
-  anime({
-    targets: '#mouse-scroll-line',
-    translateY: 25,
-    loop: true,
-    easing: 'easeOutExpo',
-    opacity: [1, 0],
-    duration: 1300
-  });
-
   // add an event listener to each icon, animate in the grid from that index on click
   $('.application-info-icons .col-3').each((idx, el) => {
     $(el).click(_evt => {
