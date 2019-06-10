@@ -32,7 +32,7 @@ $(document).on('turbolinks:load', () => {
       targets: '#title .letters-left',
       opacity: [0, 1],
       translateX: ['0.5em', 0],
-      duration: 300,
+      duration: 400,
       offset: '-=300',
       delay: 350
     })
@@ -40,7 +40,7 @@ $(document).on('turbolinks:load', () => {
       targets: '#title .letters-center',
       opacity: [0, 1],
       translateX: ['0.5em', 0],
-      duration: 300,
+      duration: 400,
       offset: '0'
     })
     .add({
@@ -53,7 +53,7 @@ $(document).on('turbolinks:load', () => {
     .add({
       targets: '.application-title-subtitle .letter', // subtitle animation
       opacity: [0, 0.85],
-      duration: 400,
+      duration: 500,
       offset: '-=775',
       delay(el, i) {
         return 36 * (i + 1);
@@ -74,15 +74,13 @@ $(document).on('turbolinks:load', () => {
     .add({
       targets: '.translucent-bg',
       opacity: [0, 1],
-      translateY: ['5rem', 0]
-      // delay: anime.stagger(250, { grid: [3, 1], from: 1 }) // fade from the center
+      translateY: ['5rem', 0],
+      duration: 500,
+      complete: () => {
+        animateIconGrid();
+        document.body.classList.remove('no-scroll');
+      }
     });
-
-  // complete: () => {
-  //   animateInfoList();
-  //   animateIconGrid();
-  //   document.body.classList.remove('no-scroll');
-  // }
 
   // add an event listener to each icon, animate in the grid from that index on click
   $('.application-icons .col-3').each((idx, el) => {
