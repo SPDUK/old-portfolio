@@ -7,7 +7,7 @@ function animateIconGrid(from = 'center') {
 }
 
 // seperate function to be called manually sometimes
-function animateGrid(from = 'center', stagger = '350') {
+function animateGrid(from = 'center', stagger = '250') {
   anime({
     targets: '.application-icons .col-3',
     easing: 'easeOutExpo',
