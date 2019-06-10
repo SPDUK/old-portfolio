@@ -9,7 +9,7 @@ function animateIconGrid(from = 'center') {
 // seperate function to be called manually sometimes
 function animateGrid(from = 'center', stagger = '350') {
   anime({
-    targets: '.application-info-icons .col-3',
+    targets: '.application-icons .col-3',
     easing: 'easeOutExpo',
     opacity: [0, 1],
     delay: anime.stagger(stagger, { grid: [4, 5], from })

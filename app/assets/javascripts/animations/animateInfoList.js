@@ -15,7 +15,7 @@ function animateInfoList() {
       easing: 'easeOutExpo',
       opacity: [0, 1],
       translateY: [30, 0],
-      delay: anime.stagger(250)
+      delay: anime.stagger(250, { grid: [3, 1], from: 2 })
     });
 
   listAnimated = true;

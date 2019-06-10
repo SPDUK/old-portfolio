@@ -40,31 +40,14 @@ function toggleTheme() {
 }
 
 $(document).on('turbolinks:load', () => {
-  animateMobileNav();
+  const nav = document.querySelector('#nav');
 
+  animateMobileNav();
   setTheme();
   $('.theme-toggle').click(toggleTheme);
 
-  const nav = document.querySelector('#nav');
-
-  function handleScroll() {
-    // animate the info list if it comes into view
-    const infoList = $('.application-info-list');
-    if (window.scrollY - infoList.position().top > 100) {
-      animateInfoList();
-    }
-    // animate the icon grid if it comes into view
-    const icons = $('.application-info-icons');
-    if (window.scrollY - icons.position().top > 100) {
-      animateIconGrid();
-    }
-
-    handleNavScroll();
-    // if on the blogs page and the page can be paginated, use infinite scrolling
-  }
-
-  $(window).scroll(handleScroll);
-  handleScroll();
+  $(window).scroll(handleNavScroll);
+  handleNavScroll();
 
   $(window).resize(() => {
     handleResize();

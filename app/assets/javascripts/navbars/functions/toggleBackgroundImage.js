@@ -15,12 +15,8 @@ const bgUrl = color =>
 
 function toggleBackgroundImage(color) {
   const bg = document.getElementById('bg');
-  const bg2 = document.getElementById('bg2');
-  const opposite = color === 'dark' ? 'light' : 'dark';
-
   // if the url hasn't changed, don't do anything
   const url = bgUrl(color);
   if (url === bg.style.background) return;
   bg.style.backgroundImage = url;
-  bg2.style.backgroundImage = bgUrl(opposite);
 }

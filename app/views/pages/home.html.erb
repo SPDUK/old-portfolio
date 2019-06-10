@@ -5,30 +5,19 @@
       <span class="letters letters-center">I'm</span>
       <span class="letters letters-right">Steve</span>
     </div>
-    <span class="application-title-subtitle letters">Software Developer from Cambridgeshire, UK.</span>
-  </h1>
-</div>
-<div class="application-info">
-  <p id="about" class="application-info-about">I am a full stack developer, focusing on <span>Javascript</span>,
-    <span>Ruby</span> & <span>Elixir</span>.
-    Interested in <span>Concurrency</span>, <span>Automation</span> and <span>Functional Programming.</span>
-  </p>
-  <ul class="application-info-list">
-    <li>I'm self-taught, always learning.</li>
-    <li>Passionate about good code.</li>
-    <li>I Follow best practices, and strict style guides.</li>
-    <li>All of my code is documented.</li>
-    <li>My functions are simple, small and modular.</li>
-    <li>I leave comments as I create and maintain code.</li>
-  </ul>
-  <div class="application-info-links">
-    <p class="application-info-animate">You can check out my <%= link_to "Blogs", blogs_path %>, 
-      take a look at my recent <%= link_to "Projects", projects_path %>, 
-      or just follow my <a href="https://github.com/SPDUK">Github</a>.
-    </p>
+    <span class="application-title-subtitle letters">Full-stack Developer from Cambridgeshire, UK</span>
+    <div id="about" class="application-title-about">
+      <p>I'm self taught and always learning. I love making things on the web, focusing on javascript and functional programming.</p>
+    </div>
+    <div class="application-links">
+      <%= link_to "Blog", blogs_path, class: "btn btn-primary" %>
+      <%= link_to "Projects", projects_path, class: "btn btn-primary" %>
+      <a class="btn btn-primary" href="https://github.com/SPDUK">Github</a>
+    </div>
+    <div class="application-icons">
+      <div class="translucent-bg">
+        <h5>Tools I use</h5>
+        <%= render "shared/icons", topics: @topics %>
+      </div>
+    </div>
   </div>
-  <div class="application-info-icons">
-    <h5>Tools I use</h5>
-    <%= render "shared/icons", topics: @topics %>
-  </div>
-</div>
