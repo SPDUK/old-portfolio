@@ -9,15 +9,16 @@
     <div id="about" class="application-title-about">
       <p>I'm self taught and always learning. I love making things on the web, focusing on javascript and functional programming.</p>
     </div>
-    <div class="application-links">
-      <%= link_to "Blog", blogs_path, class: "btn btn-primary" %>
-      <%= link_to "Projects", projects_path, class: "btn btn-primary" %>
-      <a class="btn btn-primary" href="https://github.com/SPDUK">Github</a>
-    </div>
-    <div class="application-icons">
-      <div class="translucent-bg">
-        <h5>Tools I use</h5>
-        <%= render "shared/icons", topics: @topics %>
-      </div>
+  </div>
+  <div class="application-links">
+    <%= link_to "Blog", blogs_path, class: "btn btn-primary" %>
+    <%= link_to "Projects", projects_path, class: "btn btn-light" %>
+    <a class="btn btn-dark" href="https://github.com/SPDUK">Github</a>
+  </div>
+  <div class="application-icons">
+    <div class="translucent-bg">
+      <h5>Tools I use</h5>
+      <%= render "shared/icons", topics: @topics %>
     </div>
   </div>
+</div>
