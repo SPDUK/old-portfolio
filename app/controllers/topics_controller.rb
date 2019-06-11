@@ -3,7 +3,7 @@
 class TopicsController < ApplicationController
   layout "blog"
   before_action :header_topics
-  before_action :set_topic, only: :destroy
+  before_action :set_topic, only: [:show, :destroy]
 
   access all: [:show],
          user: [:show],
@@ -36,7 +36,6 @@ class TopicsController < ApplicationController
   end
 
   def show
-    @topic = Topic.find(params[:id])
     if logged_in?(:site_admin)
       @blogs = @topic.blogs.recent
     else
@@ -52,7 +51,7 @@ class TopicsController < ApplicationController
 
 
     def set_topic
-      @topic = Topic.find(params[:id])
+      @topic = Topic.friendly.find(params[:id])
     end
 
 
