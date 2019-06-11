@@ -1,20 +1,15 @@
+//= require helpers/copyToClipboard
+
 // when clicked copy any of the code inside to the clipboard
 async function handleCopyClick(evt) {
   // get the children of the parent element
   const { children } = evt.target.parentElement;
-  // filter out any of the child divs that are not <pre> tags, then grab the first element
+  // grab the first element (we append the copy div on afterwards, so the first will be the code element)
   // destructure the innerText from the code block
-  const { innerText } = Array.from(children).filter(el => el.tagName === 'PRE')[0];
+  const { innerText } = Array.from(children)[0];
 
-  // copy all of the text to the clipboard
-  await navigator.clipboard.writeText(innerText);
-
-  // notify of success
-  $.gritter.add({
-    title: 'Code copied to clipboard! 👍',
-    text: ' ',
-    time: 3000
-  });
+  // copy all of the code to the clipboard
+  copyToClipboard(innerText, 'Code copied to clipboard! 👍');
 }
 
 function addMarkdownStyles() {

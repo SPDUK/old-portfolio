@@ -5,18 +5,17 @@
 //= require gritter
 //= require navbars/blogNav
 //= require helpers/loadingSpinner
+//= require helpers/copyToClipboard
 
-async function copyLink() {
-  // this only works with https or while using localhost
-  await navigator.clipboard.writeText(window.location.href);
-  $.gritter.add({
-    title: 'Link URL copied to clipboard! 👍',
-    text: ' ',
-    time: 3000
-  });
-}
+const handleShareClick = () => {
+  copyToClipboard(
+    window.location.href,
+    'Link URL copied to clipboard! 👍',
+    $('.blog-title-text h4').text()
+  );
+};
 $(document).on('turbolinks:load', () => {
   loadingSpinner();
 
-  $('#share').click(copyLink);
+  $('#share').click(handleShareClick);
 });
