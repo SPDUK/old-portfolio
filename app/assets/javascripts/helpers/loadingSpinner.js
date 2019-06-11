@@ -46,7 +46,7 @@ function loadingSpinner() {
       opacity: [0, 1],
       translateY: ['1rem', 0],
       duration: 450,
-      delay: anime.stagger(10)
+      delay: anime.stagger(window.innerWidth > 768 ? 10 : 15)
     });
 
   applyLinkAnimation();
