@@ -39,9 +39,15 @@ function loadingSpinner() {
     .add({
       targets: 'body',
       opacity: [0, 1],
-      duration: 450
+      duration: 200
     })
-    .add({});
+    .add({
+      targets: '.markdown *',
+      opacity: [0, 1],
+      translateY: ['1rem', 0],
+      duration: 450,
+      delay: anime.stagger(10)
+    });
 
   applyLinkAnimation();
 
