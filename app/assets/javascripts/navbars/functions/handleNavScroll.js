@@ -12,15 +12,11 @@ function handleNavScroll() {
     if (isWide) {
       toggleNavColors('transparent');
     }
-    // if the window is scrolled down fade out, if scrolled up fade in
-    $('#mouse-scroll').fadeIn(300);
   } else if (isWide) {
     toggleNavColors('light');
   }
   // always hide navbar if scrolling down, show if scrolling up
   if (window.scrollY > 60) {
     hideScrolledNav();
-    // hide the mouse-scroll icon if scrolling down
-    $('#mouse-scroll').fadeOut(300);
   }
 }
