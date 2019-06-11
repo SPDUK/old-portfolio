@@ -10,7 +10,7 @@ function animateIconGrid(from = 'center') {
 function animateGrid(from = 'center', stagger = '250') {
   anime({
     targets: '.application-icons .col-3',
-    easing: 'easeOutExpo',
+    easing: 'easeOutQuad',
     opacity: [0, 1],
     delay: anime.stagger(stagger, { grid: [4, 5], from })
   });

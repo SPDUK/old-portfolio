@@ -32,12 +32,16 @@ function loadingSpinner() {
   if (Cookies.get('theme') === 'dark') $('#loading').addClass('bg-black');
 
   // fade the body in on page load
-  anime({
-    targets: 'body',
-    easing: 'easeInOutSine',
-    opacity: [0, 1],
-    duration: 450
-  });
+  anime
+    .timeline({
+      easing: 'easeOutQuad'
+    })
+    .add({
+      targets: 'body',
+      opacity: [0, 1],
+      duration: 450
+    })
+    .add({});
 
   applyLinkAnimation();
 

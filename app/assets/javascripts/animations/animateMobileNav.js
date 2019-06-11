@@ -5,7 +5,7 @@ function animateMobileNav() {
         targets: '.nav-link',
         opacity: [0, 1],
         duration: 900,
-        easing: 'easeOutExpo',
+        easing: 'easeOutQuad',
         delay: anime.stagger(110)
       });
     }
