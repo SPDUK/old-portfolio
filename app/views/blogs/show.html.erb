@@ -16,7 +16,7 @@
       <%= image_tag @blog.topic.icon, alt: @blog.topic.title %>
     </div>
     <div class="blog-title-text">
-      <h4><%= @blog.title %></h4>
+      <h4 id="title"><%= @blog.title %></h4>
       <div class="blog-title-text-meta">
         <span class="font-weight-bold">
           <%= distance_of_time_in_words(@blog.created_at, Time.now) %> ago · 

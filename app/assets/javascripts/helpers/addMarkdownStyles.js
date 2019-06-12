@@ -17,6 +17,23 @@ function addMarkdownStyles() {
   // add borders to each blockquote
   $('blockquote').each((_idx, el) => $(el).addClass('border-left border-dark '));
 
+  const headings = $(
+    '.markdown h6, .markdown h5, .markdown h4, .markdown h3, .markdown h2 .markdown h1'
+  );
+
+  // add anchors to all headings inside markdown divs
+  headings.each((_idx, el) => {
+    // don't add the anchor to the title
+    if (el.id === 'title') return;
+
+    const text = $(el).text();
+    // create a hyphenated version of the text so it works as an id
+    const id = text.split(' ').join('-');
+
+    $(el).attr('id', id);
+    $(el).append($(`<a aria-label="${text} permalink" class="anchor text-info" href=#${id}>#</a>`));
+  });
+
   // add a the button to each code block
   $('div.highlight').each((_idx, el) => {
     const copy = $('<button class="text-dark">Copy</button>');

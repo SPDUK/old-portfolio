@@ -17,7 +17,15 @@ function applyLinkAnimation() {
     // if the link is just a link added there by bootstrap, don't add the
     // loading spinner
     // also skips over deletes, because we confirm them with an alert which can be cancelled
-    if (!el.href || el.href.endsWith('#') || el.getAttribute('data-method') === 'delete') return;
+    // skips over any anchor links (links to current page)
+    if (
+      !el.href ||
+      el.href.endsWith('#') ||
+      el.getAttribute('data-method') === 'delete' ||
+      el.classList.contains('anchor')
+    )
+      return;
+
     const { pathname } = new URL(el.href);
     // ignore any empty links and the navbar dropdown
     if (!pathname) return;
@@ -54,4 +62,22 @@ function loadingSpinner() {
       removeSpinnerClasses();
     }
   }, 10);
+
+  // https://github.com/turbolinks/turbolinks/issues/75#issuecomment-445325162
+  // stops links to the current page from re-loading the page when clicked
+  document.addEventListener('turbolinks:click', function(event) {
+    const anchorElement = event.target;
+    const isSamePageAnchor =
+      anchorElement.hash &&
+      anchorElement.origin === window.location.origin &&
+      anchorElement.pathname === window.location.pathname;
+
+    if (isSamePageAnchor) {
+      Turbolinks.controller.pushHistoryWithLocationAndRestorationIdentifier(
+        event.data.url,
+        Turbolinks.uuid()
+      );
+      event.preventDefault();
+    }
+  });
 }

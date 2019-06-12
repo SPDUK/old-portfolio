@@ -24,6 +24,7 @@ $(document).on('turbolinks:load', () => {
   // set carousel images based on width on page load
   setCarouselImage();
   setBackgroundImage();
+  addMarkdownStyles();
 
   animateMobileNav();
   setTheme();

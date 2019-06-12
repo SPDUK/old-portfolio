@@ -33,6 +33,18 @@ h5,
 h6 {
   font-weight: 600;
   font-family: 'Poppins', sans-serif !important;
+  &:hover {
+    .anchor {
+      opacity: 1;
+    }
+  }
+}
+
+.anchor {
+  font-family: 'Montserrat', sans-serif;
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+  margin-left: 5px;
 }
 
 body {
@@ -99,9 +111,11 @@ pre.highlight {
 
 // specifies the max width for a markdown page (100chars width)
 // used on the blog and projects page to keep them the correct spacing for markdown
-.markdown {
+.mw-920 {
   margin: 0 auto;
   max-width: 920px !important;
+}
+.markdown {
   @media (min-width: 920px) {
     font-size: 16px;
   }
