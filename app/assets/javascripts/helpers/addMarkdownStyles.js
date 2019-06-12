@@ -12,13 +12,14 @@ function handleCopyClick(evt) {
   copyToClipboard(innerText, 'Code copied to clipboard! 👍');
 }
 
+// todo: add links to h1-h6 with ids
 function addMarkdownStyles() {
   // add borders to each blockquote
   $('blockquote').each((_idx, el) => $(el).addClass('border-left border-dark '));
 
   // add a the button to each code block
   $('div.highlight').each((_idx, el) => {
-    const copy = $('<div class="copy">Copy</div>');
+    const copy = $('<button class="text-dark">Copy</button>');
     // add an event to run when the button is clicked to copy the code to clipboard
     $(copy).click(handleCopyClick);
     $(el).append(copy);
