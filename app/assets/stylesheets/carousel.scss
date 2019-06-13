@@ -93,6 +93,9 @@
       @media (min-width: 768px) {
         height: 5px !important;
       }
+      &:hover {
+        opacity: 0.9;
+      }
     }
     li.active {
       position: relative;
