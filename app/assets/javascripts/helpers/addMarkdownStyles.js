@@ -18,7 +18,7 @@ function addMarkdownStyles() {
   $('blockquote').each((_idx, el) => $(el).addClass('border-left border-dark '));
 
   const headings = $(
-    '.markdown h6, .markdown h5, .markdown h4, .markdown h3, .markdown h2 .markdown h1'
+    '.markdown h6, .markdown h5, .markdown h4, .markdown h3, .markdown h2, .markdown h1'
   );
 
   // add anchors to all headings inside markdown divs
