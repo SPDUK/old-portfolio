@@ -95,7 +95,19 @@
       }
     }
     li.active {
+      position: relative;
       background-color: #3498db;
+      &:after {
+        background-color: #36bfff;
+        height: 100%;
+        animation: animateActiveBar 5s forwards linear;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
     }
     @media (min-width: 768px) {
       margin-bottom: 5px;
@@ -103,6 +115,15 @@
   }
   span {
     cursor: pointer;
+  }
+}
+
+@keyframes animateActiveBar {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
   }
 }
 
