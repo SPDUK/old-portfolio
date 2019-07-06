@@ -32,7 +32,7 @@ $(document).on('turbolinks:load', () => {
       targets: '#title .letters-left',
       opacity: [0, 1],
       translateX: ['0.5em', 0],
-      duration: 400,
+      duration: 300,
       offset: '-=300',
       delay: 350
     })
@@ -40,20 +40,20 @@ $(document).on('turbolinks:load', () => {
       targets: '#title .letters-center',
       opacity: [0, 1],
       translateX: ['0.5em', 0],
-      duration: 400,
+      duration: 300,
       offset: '0'
     })
     .add({
       targets: '#title .letters-right',
       opacity: [0, 1],
       translateX: ['-0.5em', 0],
-      duration: 600,
+      duration: 400,
       offset: '-=600'
     })
     .add({
       targets: '.application-title-subtitle .letter', // subtitle animation
       opacity: [0, 0.85],
-      duration: 500,
+      duration: 400,
       offset: '-=775',
       delay(el, i) {
         return 36 * (i + 1);
@@ -63,7 +63,7 @@ $(document).on('turbolinks:load', () => {
       targets: '.application-title-about',
       opacity: [0, 1],
       translateY: ['2rem', 0],
-      duration: 600
+      duration: 400
     })
     .add({
       targets: '.application-links a',
