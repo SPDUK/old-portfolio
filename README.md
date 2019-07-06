@@ -134,6 +134,8 @@ Because we're using [volumes](https://docs.docker.com/storage/volumes/) for the 
 
 We previously set up git hooks, we can set the remote for production (locally) `git remote add production ssh://somebody@someip/~/portfolio/.git` to assign our remote as the git repo contained in this specific project we cloned.
 
+We also need to enable pushes from master branch to master branch on the server, so run `git config receive.denyCurrentBranch ignore`.
+
 Now we have done this, to deploy to production all we need to do is `git push production` when we make changes we want to push.
 
 (For future me, this can be done with [github webhooks](https://developer.github.com/webhooks/) instead, or better with a proper CI/CD tool like travis or circleci, but all I care about here is pushing stuff to the server.)
