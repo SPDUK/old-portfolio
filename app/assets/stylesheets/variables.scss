@@ -157,3 +157,10 @@ pre.highlight {
   -moz-osx-font-smoothing: grayscale;
   font-kerning: auto;
 }
+
+.nav-bg {
+  @media (min-width: 768px) {
+    background: #000000;
+    height: 60px;
+  }
+}

@@ -23,7 +23,6 @@ function toggleTheme() {
 $(document).on('turbolinks:load', () => {
   // set carousel images based on width on page load
   setCarouselImage();
-  setBackgroundImage();
   addMarkdownStyles();
 
   animateMobileNav();
@@ -37,6 +36,5 @@ $(document).on('turbolinks:load', () => {
   $(window).resize(() => {
     handleResize();
     setCarouselImage();
-    setBackgroundImage();
   });
 });

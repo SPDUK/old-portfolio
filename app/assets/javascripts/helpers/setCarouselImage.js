@@ -35,9 +35,3 @@ function setCarouselImage() {
     applyBackgroundImage(backgroundImage, el, true);
   });
 }
-
-function setBackgroundImage() {
-  const el = $('#projects-show-header');
-  const backgroundImage = $(el).attr('main-image');
-  applyBackgroundImage(backgroundImage, el, false);
-}
