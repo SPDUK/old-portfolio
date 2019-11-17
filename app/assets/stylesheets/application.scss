@@ -20,8 +20,12 @@
       margin: 0 5px;
     }
   }
+  &-title,
+  &-subtitle,
+  &-about {
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.2);
+  }
   &-title {
-    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.1);
     display: block;
     width: 100%;
     font-size: 0.9em;
@@ -54,8 +58,6 @@
       margin: 10px auto;
       max-width: 600px;
       font-size: 0.9em;
-      @media (min-width: 768px) {
-      }
     }
   }
   &-icons {

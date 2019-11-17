@@ -2,25 +2,23 @@
 
 My markdown oriented portfolio, made with rails.
 
-List of basic features: 
+List of basic features:
+
 - Admin CRUD actions
 - Light/Dark mode toggle across every layout, including code syntax highlighting
 - Staging for blog posts to review them before making them public
 - Drag and drop re-ordering of project listings, carousel to highlight featured projects
 - Markdown parsing
 
-___
-
-
-
+---
 
 ### Set up cloudinary api keys for file uploads
-- [Cloudinary docs for rails](https://cloudinary.com/documentation/rails_integration)
 
+- [Cloudinary docs for rails](https://cloudinary.com/documentation/rails_integration)
 
 Create `cloudinary.yml` in the /config folder and fill out this info:
 
-*the api_key must be in quotes*
+_the api_key must be in quotes_
 
 ```
 development:
@@ -49,14 +47,13 @@ test:
   cdn_subdomain: true
 ```
 
-
-
 ---
+
 ### Development setup with docker
 
 Allow the `run.sh` script to be run with `chmod +x ./run.sh`, this will run `docker compose run app` so we can run commands just like we would if it wasn't inside docker.
-Create the DB: `./run rake db:create`
-Migrate the DB: `./run rake db:migrate`
+Create the DB: `./run.sh rake db:create`
+Migrate the DB: `./run.sh rake db:migrate`
 
 simply start the server with `docker-compose up`
 
@@ -71,10 +68,9 @@ You can modify the seeds in the `/db/seeds.rb` file.
 To give a user admin, run `./run rake promote_admin`
 Or update the correct user by opening `./run rails console` and finding the correct user(s)
 
+**During production**
 
-**During production** 
-
-You can use the `prod.sh` script to run a command using the correct Dockerfile for production, enable it with `chmod +x ./prod.sh` on the production server, and you can then run things like `./prod.sh db:reset`.  
+You can use the `prod.sh` script to run a command using the correct Dockerfile for production, enable it with `chmod +x ./prod.sh` on the production server, and you can then run things like `./prod.sh db:reset`.
 
 ---
 
@@ -91,17 +87,16 @@ It builds a URL like so`.../firewatch-${color}-${width}.jpg` where color will be
 So for example an image should be named `firewatch-dark-1080.jpg` when uploaded to cloudinary.
 Any hidpi/modern phones will download the 1080p image.
 
-
 ### Project Images
 
 When uploading an image for the projects, the resolutions should be
-  - Main image: 2500x800
-  - Thumb image: 768x768
+
+- Main image: 2500x800
+- Thumb image: 768x768
 
 The top 60px of all main image should be blurred (5px gaussian blur, preserve alpha) to enable the blur effect.
 
 The main image will be used in the carousel if it's featured, it will also be a full width banner on the view page.
-
 
 ### Other info
 
@@ -146,6 +141,7 @@ Now we have done this, to deploy to production all we need to do is `git push pr
 - Set up the cloudflare DNS settings and domain settings to point to the DO droplet.
 
 **Set up certbot for HTTPS**
+
 - Install certbot
   ```
     sudo apt-get update
@@ -157,8 +153,9 @@ Now we have done this, to deploy to production all we need to do is `git push pr
     sudo certbot --nginx
   ```
 - Get the cert (replace domain.com and www.domain.com with the correct domains)
-  
+
   ```
   sudo certbot certonly --webroot -w /root/certs-data/ -d domain.com -d www.domain.com
   ```
+
 - Our site now has HTTPS, and it should have created a renew script in `/etc/cron.d/certbot`, if it didn't just create a cronjob to renew it.
