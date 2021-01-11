@@ -41,7 +41,7 @@ gem "cloudinary", "~> 1.11", ">= 1.11.1"
 gem "mini_magick", "~> 4.9"
 gem "cocoon", "~> 1.2", ">= 1.2.12"
 gem "gritter", "~> 1.2"
-gem "redcarpet", "~> 3.4"
+gem "redcarpet", "~> 3.5"
 gem "rouge", "~> 3.3"
 
 group :development, :test do
