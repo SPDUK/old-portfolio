@@ -35,7 +35,7 @@ gem "bootsnap", ">= 1.1.0", require: false
 gem "friendly_id", "~> 5.2", ">= 5.2.5"
 gem "devise", "~> 4.7"
 gem "petergate", "~> 2.0", ">= 2.0.1"
-gem "carrierwave", "~> 1.3", ">= 1.3.1"
+gem "carrierwave", "~> 1.3"
 gem "kaminari", "~> 1.1", ">= 1.1.1"
 gem "cloudinary", "~> 1.11", ">= 1.11.1"
 gem "mini_magick", "~> 4.9"
